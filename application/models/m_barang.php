@@ -1,8 +1,12 @@
 <?php
 class m_barang extends CI_Model{
 	
-	function show_barang($limit, $offset){
-		$hasil=$this->db->query("SELECT * FROM tb_barang LIMIT $limit OFFSET $offset");
+	function show_barang($mulai, $halaman){
+		$hasil=$this->db->query("SELECT * FROM tb_barang LIMIT $mulai, $halaman");
+		return $hasil;
+	}
+	function count_barang(){
+		$hasil=$this->db->query("SELECT COUNT(*) as jum FROM tb_barang");
 		return $hasil;
 	}
 
