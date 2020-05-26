@@ -9,6 +9,10 @@ class m_barang extends CI_Model{
 		$hasil=$this->db->query("SELECT COUNT(*) as jum FROM tb_barang");
 		return $hasil;
 	}
+	function show_barang1(){
+		$hasil=$this->db->query("SELECT * FROM tb_barang ");
+		return $hasil;
+	}
 
 	function simpan_barang($id_barang,$nama_barang,$jumlah_barang,$harga_barang,$gambar){
 		$hasil=$this->db->query("INSERT INTO tb_barang(id_barang,nama_barang,jumlah_barang,harga_barang,gambar) VALUES('$id_barang','$nama_barang','$jumlah_barang','$harga_barang','$gambar')");	

@@ -12,7 +12,7 @@ function __construct(){
 	public function index()
 	{
 
-		$jumhal = 2; // jumlah halaman per page
+		$jumhal = 6; // jumlah halaman per page
 		
 		$page = isset($_GET['page']) ? $_GET['page'] : 1;
 		$mulai = ($page>1) ? ($page * $jumhal) - $jumhal : 0;

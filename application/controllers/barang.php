@@ -1,4 +1,4 @@
-l<?php
+<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class barang extends CI_Controller{
@@ -10,7 +10,7 @@ class barang extends CI_Controller{
 	}
 
 	function index(){
-		$x['data']=$this->m_barang->show_barang();
+		$x['data']=$this->m_barang->show_barang1();
 		$this->load->view("t_admin/header");
 		$this->load->view("t_admin/navbar");
 		$this->load->view("v_admin/v_barang",$x);
