@@ -9,44 +9,40 @@
                                 <h2>Checkout</h2>
                             </div>
 
-                            <form action="#" method="post">
+                            <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/checkout/simpan_pemesanan'?>"enctype="multipart/form-data" >
                                 <div class="row">
                                     <div class="col-md-12 mb-3">
-                                       Nama <input type="text" class="form-control" id="nama" value="" placeholder="Nama" required>
+                                       Nama <input type="text" class="form-control" name="nama_pemesanan" value="" placeholder="Nama" required>
                                     </div>
-                                    <div class="col-12 mb-3"> Provinsi
+                                     <div class="col-md-12 mb-3">
+                                       Provinsi <input type="text" class="form-control" name="provinsi_pemesanan" value="" placeholder="Provinsi" required>
+                                    </div>
+                                     <div class="col-md-12 mb-3">
+                                       Kabupaten <input type="text" class="form-control" name="kabupaten_pemesanan" value="" placeholder="Kabupaten" required>
+                                    </div>
+                                     <div class="col-md-12 mb-3">
+                                       Kecamatan <input type="text" class="form-control" name="kecamatan_pemesanan" value="" placeholder="Kecamatan" required>
+                                    </div>
+                                   <!-- <div class="col-12 mb-3"> Provinsi
                                         <select class="w-100" id="country">
                                         <option value="usa">Bali</option>
                                         <option value="uk">Jawa Timur</option>
                                         <option value="ger">Jawa Tengah</option>
                                     </select>
                                     </div>
-                                    <div class="col-12 mb-3"> Kabupaten
-                                        <select class="w-100" id="country">
-                                        <option value="usa">Tabanan</option>
-                                        <option value="uk">Buleleng</option>
-                                        <option value="ger">Badung</option>
-                                    </select>
-                                    </div>
-                                    <div class="col-12 mb-3"> Kecamatan
-                                        <select class="w-100" id="country">
-                                        <option value="usa">Kediri Rock City</option>
-                                        <option value="uk">Marga</option>
-                                        <option value="ger">Selemadeg</option>
-                                    </select>
-                                    </div>
-                                    <div class="col-12 mb-3">Catatan
-                                        <textarea name="comment" class="form-control w-100" id="comment" cols="30" rows="10" placeholder="Leave a comment about your order"></textarea>
+                                    -->
+                                    <div class="col-12 mb-3">Alamat
+                                        <textarea name="alamat_pemesanan" class="form-control w-100"  cols="30" rows="10" placeholder="Alamat"></textarea>
                                     </div>
                                     <div class="col-md-6 mb-3">Kode Pos
-                                        <input type="text" class="form-control" id="kode pos" placeholder="Kode Pos" value="">
+                                        <input type="text" class="form-control" name="kodepos_pemesanan" placeholder="Kode Pos" value="">
                                     </div>
                                     <div class="col-md-6 mb-3">No Telepon
-                                        <input type="number" class="form-control" id="phone_number" min="0" placeholder="No Telepon" value="">
+                                        <input type="number" class="form-control" name="nohp_pemesanan" min="0" placeholder="No Telepon" value="">
                                     </div>
 
                                     <div class="col-12">
-                                         <a href="#" class="btn amado-btn w-100">Simpan</a>
+                                         <button class="btn amado-btn w-100">Simpan</button>
                                     </div>
                                 </div>
                             </form>
