@@ -12,7 +12,7 @@ class menyuplai extends CI_Controller{
 
 	function index(){
 		$x['data']=$this->m_menyuplai->show_menyuplai();
-		$x['barang']=$this->m_barang->show_barang();
+		$x['barang']=$this->m_barang->show_barang1();
 		$x['supplier']=$this->m_supplier->show_supplier();
 		$this->load->view("t_admin/header");
 		$this->load->view("t_admin/navbar");

@@ -66,7 +66,10 @@
                     <a href="<?=site_url('keranjang')?>"><img src="<?=base_url()?>assets/img/core-img/cart.png" alt="">Keranjang <span>(0)</span></a>
                 </li>
                 <li>
-                <a href="cart.html" class="cart-nav"><i class="fa "></i> <span>Akun Saya</a>
+                     <li <?=$this->uri->segment(1) == 'akunsaya' || $this->uri->segment(1) == '' ? 'class="active-menu"' : ''?>>
+                    <a href="<?=site_url('akunsaya')?>">
+                        <i class="fa "></i> <span>Akun Saya</span>
+                    </a>
                 </li>
                 </ul>
             </nav>
