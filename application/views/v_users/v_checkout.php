@@ -52,9 +52,9 @@
                         <div class="cart-summary">
                             <h5>Cart Total</h5>
                             <ul class="summary-table">
-                                <li><span>subtotal:</span> <span>$140.00</span></li>
-                                <li><span>delivery:</span> <span>Free</span></li>
-                                <li><span>total:</span> <span>$140.00</span></li>
+                                <li><span>Subtotal:</span> <span>630000</span></li>
+                                <li><span>Ongkos Kirim:</span> <span>Free</span></li>
+                                <li><span>Total:</span> <span>630000</span></li>
                             </ul>
                         </div>
                     </div>
