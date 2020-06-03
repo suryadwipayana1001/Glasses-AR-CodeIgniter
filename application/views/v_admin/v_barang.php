@@ -26,6 +26,7 @@
                                         <th>Jumlah</th>
                                         <th>Harga</th>
                                         <th>Foto</th>
+                                        <th>Brand</th>
                                         <th>Tindakan</th>
                                     </tr>
                                 </thead>
@@ -40,7 +41,9 @@
                                             <td><?php echo $nama_barang=$i['nama_barang'];?></td>
                                             <td><?php echo $jumlah_barang=$i['jumlah_barang'];?></td>
                                             <td><?php echo $harga_barang=$i['harga_barang'];?></td>
+                                            <td><?php echo $brand_barang=$i['brand_barang'];?></td>
                                             <td><img src="<?=base_url('assets/img/foto/'.$gambar=$i['gambar'])?>" style="width:100px"></td>
+                                           
                                             <td style="width: 120px;">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"data-toggle="modal" data-target="#modal_edit<?php echo $id_barang;?>"></i></button>
                                              <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal_hapus<?php echo $id_barang;?>"><i class="fa fa-trash-o "></i></button> 
@@ -81,6 +84,12 @@
                                         <input name="harga_barang" class="form-control" type="text" placeholder="Harga" required>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label class="control-label col-xs-3" >Brand</label>
+                                    <div class="col-xs-8">
+                                        <input name="brand_barang" class="form-control" type="text" placeholder="Brand" required>
+                                    </div>
+                                </div>
                                  <div class="form-group">
                                     <label class="control-label col-xs-3" >Foto</label>
                                     <div class="col-xs-8">
@@ -104,6 +113,7 @@
                 $nama_barang=$i['nama_barang'];
                 $jumlah_barang=$i['jumlah_barang'];
                 $harga_barang=$i['harga_barang'];
+                $brand_barang=$i['brand_barang'];
                 $gambar=$i['gambar'];
                 ?>
                 <div class="modal fade" id="modal_edit<?php echo $id_barang;?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
@@ -132,6 +142,12 @@
                                         <label class="control-label col-xs-3" >Harga</label>
                                         <div class="col-xs-8">
                                             <input name="harga_barang" value="<?php echo $harga_barang;?>" class="form-control" type="text" placeholder="harga" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3" >Brand</label>
+                                        <div class="col-xs-8">
+                                            <input name="brand_barang" value="<?php echo $brand_barang;?>" class="form-control" type="text" placeholder="Brand" required>
                                         </div>
                                     </div>
                                     <div class="form-group">

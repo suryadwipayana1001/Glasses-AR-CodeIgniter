@@ -8,7 +8,7 @@
 
         <!--  Catagories  -->
         <a href="#" class="btn amado-btn mb-15">Diskon</a>
-        <a href="#" class="btn amado-btn active mb-15">Produk Terbaru</a>
+        <a href="<?php echo base_url().'index.php/belanja'?>" class="btn amado-btn mb-15">Produk Terbaru</a>
     </div>
 
         <div class="widget catagory mb-50">
@@ -16,8 +16,8 @@
         <h6 class="widget-title mb-30">Kategori Brand:</h6>
 
         <!--  Catagories  -->
-        <a href="#" class="btn amado-btn mb-15">Moscot</a>
-        <a href="#" class="btn amado-btn mb-15">Rayband</a>
+        <a href="<?php echo base_url().'index.php/belanja/show_moscot'?>" class="btn amado-btn mb-15">Moscot</a>
+        <a href="<?php echo base_url().'index.php/belanja/show_rayband'?>" class="btn amado-btn mb-15">Rayband</a>
         <a href="#" class="btn amado-btn mb-15">Oakley</a>
 
     </div>
@@ -86,8 +86,9 @@
                                 <div class="line"></div>
                                 <p class="product-price"><?php echo 'Rp '.number_format($harga_barang=$i['harga_barang']) ;?></p>
                                 <a href="product-details.html">
-                                    <h6><?php echo $nama_barang=$i['nama_barang'];?></h6>
+                                    <h4><?php echo $nama_barang=$i['nama_barang'];?></h4>
                                 </a>
+                                    <h6><?php echo $brand_barang=$i['brand_barang'];?></h6>
                                 <input type="number" name="quantity" id="<?php echo $id_barang=$i['id_barang'];?>" value="1" class="quantity form-control">
                                 
                             </div>
