@@ -30,7 +30,41 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="<?php echo base_url('assets/js/plugins.js')?>"></script>
     <!-- Active js -->
     <script src="<?php echo base_url('assets/js/active.js')?>"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.add_cart').click(function(){
+            var id_barang    = $(this).data("id_barang");
+            var nama_barang  = $(this).data("nama_barang");
+            var harga_barang = $(this).data("harga_barang");
+            var quantity     = $('#' + id_barang).val();
+            $.ajax({
+                url : "<?php echo base_url().'index.php/keranjang/add_to_cart'?>",
+                method : "POST",
+                data : {id_barang: id_barang, nama_barang: nama_barang, harga_barang: harga_barang, quantity: quantity},
+                success: function(data){
+                    $('#detail_cart').html(data);
+                }
+            });
+        });
 
+        // Load shopping cart
+        
+        $('#detail_cart').load("<?php echo base_url().'index.php/keranjang/load_cart'?>");
+
+        //Hapus Item Cart
+        $(document).on('click','.hapus_cart',function(){
+            var row_id=$(this).attr("id"); //mengambil row_id dari artibut id
+            $.ajax({
+                url : "<?php echo base_url().'index.php/keranjang/hapus_cart'?>",
+                method : "POST",
+                data : {row_id : row_id},
+                success :function(data){
+                    $('#detail_cart').html(data);
+                }
+            });
+        });
+    });
+</script>
 </body>
 
 </html>

@@ -84,10 +84,12 @@
                             <!-- Product Meta Data -->
                             <div class="product-meta-data">
                                 <div class="line"></div>
-                                <p class="product-price"><?php echo $harga_barang=$i['harga_barang'];?></p>
+                                <p class="product-price"><?php echo 'Rp '.number_format($harga_barang=$i['harga_barang']) ;?></p>
                                 <a href="product-details.html">
                                     <h6><?php echo $nama_barang=$i['nama_barang'];?></h6>
                                 </a>
+                                <input type="number" name="quantity" id="<?php echo $id_barang=$i['id_barang'];?>" value="1" class="quantity form-control">
+                                
                             </div>
                             <!-- Ratings & Cart -->
                             <div class="ratings-cart text-right">
@@ -98,8 +100,9 @@
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                 </div>
+
                                 <div class="cart">
-                                    <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="<?=base_url()?>assets/img/core-img/cart.png" alt=""></a>
+                                    <a href="<?=site_url('keranjang')?>" data-placement="left" title="Add to Cart" data-id_barang="<?php echo $id_barang=$i['id_barang']?>" data-nama_barang="<?php echo $nama_barang=$i['nama_barang']?>" data-harga_barang="<?php echo $harga_barang=$i['harga_barang']?>"><img src="<?=base_url()?>assets/img/core-img/cart.png" alt=""></a>
                                 </div>
                             </div>
                         </div>
