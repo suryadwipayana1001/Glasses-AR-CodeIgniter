@@ -20,4 +20,12 @@ class m_admin extends CI_Model{
 		$hasil=$this->db->query("DELETE FROM tb_admin WHERE	id_admin='$id_admin'");
 		return $hasil;
 	}
+	 function login($username_admin	,$password_admin){
+        $hasil  = $this->db->query("SELECT * from tb_admin where username_admin	='$username_admin' and password_admin='$password_admin'");
+        if($hasil->num_rows() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
