@@ -61,16 +61,19 @@
                         <i class="fa "></i> <span>Belanja</span>
                     </a>
                    </li>
-                    <li>
                     <li <?=$this->uri->segment(1) == 'keranjang' || $this->uri->segment(1) == '' ? 'class="active-menu"' : ''?>>
                     <a href="<?=site_url('keranjang')?>"><img src="<?=base_url()?>assets/img/core-img/cart.png" alt="">Keranjang <span>(0)</span></a>
-                </li>
-                <li>
+                   </li>
+                   <li <?=$this->uri->segment(1) == 'transaksi' || $this->uri->segment(1) == '' ? 'class="active-menu"' : ''?>>
+                    <a href="<?=site_url('transaksi')?>">
+                        <i class="fa "></i> <span>Transaksi</span>
+                    </a>
+                    </li>
                      <li <?=$this->uri->segment(1) == 'akunsaya' || $this->uri->segment(1) == '' ? 'class="active-menu"' : ''?>>
                     <a href="<?=site_url('akunsaya')?>">
                         <i class="fa "></i> <span>Akun Saya</span>
                     </a>
-                </li>
+                    </li>
                 </ul>
             </nav>
             <!-- Button Group -->

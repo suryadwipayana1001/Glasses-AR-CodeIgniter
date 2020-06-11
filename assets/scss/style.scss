@@ -410,7 +410,7 @@ img {
     z-index: 5000;
     top: -350px;
     left: 0;
-    background-color: #f5f7fa;
+    
     @include trans-duration(500ms);
     .search-content {
         form {
@@ -647,7 +647,7 @@ img {
         @include flex(0 0 230px);
         width: 230px;
         max-width: 230px;
-        background-color: #f5f7fa;
+        
         padding: 100px 40px;
         @media #{$breakpoint-md} {
             @include flex(0 0 180px);
@@ -727,7 +727,7 @@ img {
                     @include display-flex(flex);
                     width: 100%;
                     height: 40px;
-                    background-color: #f5f7fa;
+                    
                     th {
                         border-top: none;
                         border-bottom: none;
@@ -772,7 +772,7 @@ img {
                                 line-height: 40px;
                                 height: 40px;
                                 padding: 0 15px;
-                                background-color: #f5f7fa;
+                                
                                 color: #242424;
                                 font-size: 14px;
                                 @media #{$breakpoint-md} {
@@ -784,7 +784,7 @@ img {
                                 z-index: 1;
                                 input {
                                     text-align: center;
-                                    background-color: #f5f7fa;
+                                    
                                     height: 40px;
                                     width: 60px;
                                     border: none;
@@ -831,7 +831,7 @@ img {
             }
         }
         .cart-summary {
-            background-color: #f5f7fa;
+            
             margin-top: 118px;
             position: relative;
             z-index: 1;
@@ -1012,14 +1012,14 @@ img {
                     line-height: 40px;
                     height: 40px;
                     padding: 0 15px;
-                    background-color: #f5f7fa;
+                    
                 }
                 .quantity {
                     position: relative;
                     z-index: 1;
                     input {
                         text-align: center;
-                        background-color: #f5f7fa;
+                        
                         height: 40px;
                         width: 100px;
                         border: none;
@@ -1572,7 +1572,7 @@ img {
             margin-bottom: 0;
             font-size: 14px;
             height: 40px;
-            background-color: #f5f7fa;
+            
             line-height: 40px;
             color: #959595;
             padding-left: 15px;
@@ -1588,7 +1588,7 @@ img {
         }
         form {
             select {
-                background-color: #f5f7fa;
+                
                 border: none;
                 height: 40px;
                 min-width: 80px;
@@ -1600,7 +1600,7 @@ img {
                     font-weight: 400;
                     color: $heading-color;
                     text-transform: uppercase;
-                    background-color: #f5f7fa;
+                    
                 }
             }
         }
@@ -1613,7 +1613,7 @@ img {
         padding-left: 0;
         line-height: 40px;
         margin: 0;
-        background-color: #f5f7fa;
+        
         border-radius: 0;
         text-align: center !important;
         min-width: 100px;
@@ -1643,7 +1643,7 @@ img {
         height: 60px;
         border: none;
         border-radius: 0;
-        background-color: #f5f7fa;
+        
         padding: 30px;
         color: #6b6b6b;
         font-size: 14px;
@@ -1661,14 +1661,14 @@ img {
         border-radius: 0;
         height: 60px;
         line-height: 60px;
-        background-color: #f5f7fa;
+        
         border: none;
         color: #6b6b6b;
         font-size: 14px;
         .list {
             width: 100%;
             border-radius: 0;
-            background-color: #f5f7fa;
+            
         }
     }
 }

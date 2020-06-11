@@ -23,6 +23,7 @@
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Email</th>
+                                        <th>Password</th>
                                         <th>Tanggal Lahir</th>
                                         <th>Tindakan</th>
                                     </tr>
@@ -37,6 +38,7 @@
                                             <td><?php echo $no++?></td>
                                             <td><?php echo $nama_customer=$i['nama_customer'];?></td>
                                             <td><?php echo $email_customer=$i['email_customer'];?></td>
+                                            <td><?php echo $password_customer=$i['password_customer'];?></td>
                                             <td><?php echo $tanggallahir_customer=$i['tanggallahir_customer'];?></td>
                                             <td style="width: 120px;">
                                              <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal_hapus<?php echo $id_customer;?>"><i class="fa fa-trash-o "></i></button> 
