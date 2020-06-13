@@ -87,7 +87,11 @@
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Brand</label>
                                     <div class="col-xs-8">
-                                        <input name="brand_barang" class="form-control" type="text" placeholder="Brand" required>
+                                        <select name="brand_barang">
+                                        <option value="Oakley">Oakley</option>
+                                        <option value="Rayband">Rayband</option>
+                                        <option value="Moscot">Moscot</option>
+                                        </select>
                                     </div>
                                 </div>
                                  <div class="form-group">
@@ -147,7 +151,21 @@
                                     <div class="form-group">
                                         <label class="control-label col-xs-3" >Brand</label>
                                         <div class="col-xs-8">
-                                            <input name="brand_barang" value="<?php echo $brand_barang;?>" class="form-control" type="text" placeholder="Brand" required>
+                                        <select name="brand_barang">
+                                       <?php if($brand_barang=='Moscot'):?>
+                                        <option value="Moscot" selected>Moscot</option>
+                                        <option value="Rayband">Rayband</option>
+                                        <option value="Oakley">Oakley</option>
+                                        <?php elseif($brand_barang=='Rayband'):?>
+                                        <option value="Moscot">Moscot</option>
+                                        <option value="Rayband" selected>Rayband</option>
+                                        <option value="Oakley">Oakley</option>
+                                         <?php elseif($brand_barang=='Oakley'):?>
+                                        <option value="Moscot">Moscot</option>
+                                        <option value="Rayband">Rayband</option>
+                                        <option value="Oakley" selected>Oakley</option>
+                                         <?php endif;?>
+                                        </select>
                                         </div>
                                     </div>
                                     <div class="form-group">

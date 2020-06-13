@@ -16,7 +16,7 @@
                 <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/checkout/simpan_pemesanan'?>"enctype="multipart/form-data" >
                 <div class="row">
                 <div class="col-md-12 mb-3">Provinsi 
-                    <select onchange="get_kota('asal')" id="provinsi_asal" class="w-100 provinsi">
+                    <select onchange="get_kota('asal')" id="provinsi_asal"  value="Bali" class="w-100 provinsi">
                         
                     </select>
                 </div>

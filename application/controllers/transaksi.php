@@ -17,5 +17,13 @@ function __construct(){
 		$this->load->view("t_users/footer");
 
 	}
+	function menunggutransaksi(){
+		$status_pemesanan=$this->input->post('status_pemesanan');
+		if ($status_pemesanan=='') {
+			echo "Menunggu Konfirmasi";
+			# code...
+		}
+
+	}
 }
 ?>
