@@ -33,6 +33,9 @@
                                 <tbody>
                                     <?php
                                     $no=1;
+                                    echo "<pre>";
+                                    var_dump($data);
+                                    echo "</pre>";
                                     foreach ($data->result_array()as $i):
                                         $id_barang=$i['id_barang'];
                                         ?>

@@ -8,12 +8,15 @@ class keranjang extends CI_Controller{
 function __construct(){
 		parent::__construct();
 		$this->load->model('m_barang');
+
+		$this->load->library('cart');
+
+
 	}
 	public function index()
 	{
-		$x['data']=$this->m_barang->show_barang1();
 		$this->load->view("t_users/header");
-		$this->load->view("v_users/v_keranjang",$x);
+		$this->load->view("v_users/v_keranjang");
 		$this->load->view("t_users/footer");
 
 	}
@@ -22,32 +25,66 @@ function add_to_cart(){ //fungsi Add To Cart
 			'id' => $this->input->post('id_barang'), 
 			'name' => $this->input->post('nama_barang'), 
 			'price' => $this->input->post('harga_barang'), 
-			'qty' => $this->input->post('quantity'), 
+			'qty' => $this->input->post('quantity'),
+			'gambar' => $this->input->post('gambar'),
 		);
 		$this->cart->insert($data);
-		echo $this->show_cart(); //tampilkan cart setelah added
+		$data['gambar'] = $this->input->post('gambar');
+		echo $this->show_cart($data); //tampilkan cart setelah added
 	}
 
 	function show_cart(){ //Fungsi untuk menampilkan Cart
 		$output = '';
+		$output .= '<div class="col-12 col-lg-8">
+                <div class="cart-title mt-50">
+                    <h2>Shopping Cart</h2>
+                </div>
+
+                <div class="cart-table clearfix keranjang">
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Gambar</th>
+                                <th>Nama</th>
+                                <th>Harga</th>
+                                <th>Jumlah</th>
+                                <th>Sub Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="detail_cart">';
+
 		$no = 0;
 		foreach ($this->cart->contents() as $items) {
 			$no++;
 			$output .='
 				<tr>
+					<td><img width="50%" src="'.$items['gambar'].'"></td>
 					<td>'.$items['name'].'</td>
 					<td>'.number_format($items['price']).'</td>
 					<td>'.$items['qty'].'</td>
 					<td>'.number_format($items['subtotal']).'</td>
+					<td><button type="button" id="'.$items['rowid'].'" class="hapus_cart btn btn-danger btn-xs">Batal</button></td>
 				</tr>
 			';
 		}
-		$output .= '
-			<tr>
-				<th colspan="3">Total</th>
-				<th colspan="2">'.'Rp '.number_format($this->cart->total()).'</th>
-			</tr>
-		';
+
+		$output .= '</tbody>
+                            </table>
+                        </div>
+                    </div>
+   
+                    <div class="col-12 col-lg-4">
+                        <div class="cart-summary">
+                            <h5>Cart Total</h5>
+                            <ul class="summary-table">
+                                <li><span>Total:</span> <span>Rp. '.number_format($this->cart->total()).'</span></li>
+                            </ul>
+                            <div class="cart-btn mt-100">
+                                <a href="'.site_url('checkout').'" class="btn amado-btn w-100">Checkout</a>
+                            </div>
+                        </div>
+                    </div>';
 		return $output;
 	}
 

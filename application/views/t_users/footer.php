@@ -36,11 +36,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             var id_barang    = $(this).data("id_barang");
             var nama_barang  = $(this).data("nama_barang");
             var harga_barang = $(this).data("harga_barang");
+            var gambar = $(this).data("gambar");
             var quantity     = $('#' + id_barang).val();
             $.ajax({
                 url : "<?php echo base_url().'index.php/keranjang/add_to_cart'?>",
                 method : "POST",
-                data : {id_barang: id_barang, nama_barang: nama_barang, harga_barang: harga_barang, quantity: quantity},
+                data : {id_barang: id_barang, nama_barang: nama_barang, harga_barang: harga_barang, quantity: quantity, gambar: gambar},
                 success: function(data){
                     $('#detail_cart').html(data);
                 }
@@ -102,6 +103,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             let tujuan = $('#kota_tujuan').val();
             let kurir = $('#kurir').val();
             let output ='';
+
+            console.log(asal);
 
                 $.get("<?= site_url('checkout/get_biaya/') ?>"+`${asal}/${tujuan}/${berat}/${kurir}`,{}, (response)=>{
                     console.log(response);

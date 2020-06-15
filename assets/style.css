@@ -11,3 +11,28 @@
     /* ---------------------------------------
     ##### - PLACE YOUR CUSTOM CSS HERE - #####
     --------------------------------------- */
+
+
+    .keranjang th {
+        flex: 0 0 16% !important;
+        width: 16% !important;
+        max-width: 16% !important;
+    }
+
+    .keranjang td {
+        flex: 0 0 16% !important;
+        width: 16% !important;
+        max-width: 16% !important;
+    }
+
+#form-checkout input, #form-checkout select {
+
+    padding: 12px 20px !important;
+    margin: 8px 0 !important;
+    display: inline-block !important;
+    border: none !important;
+    border-radius: 4px !important;
+    box-sizing: border-box !important;
+    background-color: #f5f7fa !important;
+
+}

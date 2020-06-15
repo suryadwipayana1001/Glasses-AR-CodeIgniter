@@ -103,7 +103,7 @@
                                 </div>
 
                                 <div class="cart">
-                                    <a href="<?=site_url('keranjang')?>" data-placement="left" title="Add to Cart" data-id_barang="<?php echo $id_barang=$i['id_barang']?>" data-nama_barang="<?php echo $nama_barang=$i['nama_barang']?>" data-harga_barang="<?php echo $harga_barang=$i['harga_barang']?>"><img src="<?=base_url()?>assets/img/core-img/cart.png" alt=""></a>
+                                    <a href="<?=site_url('keranjang')?>" class="add_cart" data-gambar="<?=base_url('assets/img/foto/'.$gambar=$i['gambar'])?>" data-placement="left" title="Add to Cart" data-id_barang="<?php echo $id_barang=$i['id_barang']?>" data-nama_barang="<?php echo $nama_barang=$i['nama_barang']?>" data-harga_barang="<?php echo $harga_barang=$i['harga_barang']?>"><img src="<?=base_url()?>assets/img/core-img/cart.png" alt=""></a>
                                 </div>
                             </div>
                         </div>

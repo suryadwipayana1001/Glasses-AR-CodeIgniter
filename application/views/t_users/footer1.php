@@ -42,6 +42,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 })
                 $('.provinsi').html(output)
             })
+
+            $('#kota_tujuan').change(function() { // do something } );
+                get_ongkir();   
+            });
+
         });
 
         function get_kota(type){
@@ -65,6 +70,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             let tujuan = $('#kota_tujuan').val();
             let kurir = $('#kurir').val();
             let output ='';
+
+            console.log(asal);
 
                 $.get("<?= site_url('checkout/get_biaya/') ?>"+`${asal}/${tujuan}/${berat}/${kurir}`,{}, (response)=>{
                     console.log(response);
