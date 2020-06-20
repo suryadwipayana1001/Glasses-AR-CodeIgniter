@@ -22,13 +22,17 @@ class menyuplai extends CI_Controller{
 
 	function simpan_menyuplai(){
 		$id_menyuplai=$this->input->post('id_menyuplai');
-		$id_barang=$this->input->post('id_barang');
+		$barang=$this->input->post('id_barang');
+
+        $barang = explode('|', $barang);
+        $id_barang = $barang[0];
+        $nama_barang = $barang[1];
 		$id_supplier=$this->input->post('id_supplier');
 		$harga_menyuplai=$this->input->post('harga_menyuplai');
 		$jumlah_menyuplai=$this->input->post('jumlah_menyuplai');
 		$totalharga_menyuplai=$this->input->post('totalharga_menyuplai');
 		$tanggal_menyuplai=$this->input->post('tanggal_menyuplai');
-		$this->m_menyuplai->simpan_menyuplai($id_menyuplai,$id_barang,$id_supplier,$harga_menyuplai,$jumlah_menyuplai,$totalharga_menyuplai,$tanggal_menyuplai);
+		$this->m_menyuplai->simpan_menyuplai($id_menyuplai,$id_barang,$nama_barang,$id_supplier,$harga_menyuplai,$jumlah_menyuplai,$totalharga_menyuplai,$tanggal_menyuplai);
 		redirect('menyuplai');
 	}
 	function edit_menyuplai(){

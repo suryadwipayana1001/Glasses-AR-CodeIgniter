@@ -73,7 +73,7 @@
                                        <select name="id_barang" class="form-control" required>
                                         <option value="0">-PILIH-</option>
                                          <?php foreach($barang->result() as $rows):?>
-                                         <option value="<?php echo $rows->id_barang;?>"><?php echo $rows->nama_barang;?></option>
+                                         <option value="<?php echo $rows->id_barang.'|'.$rows->nama_barang; ?>"><?php echo $rows->nama_barang;?></option>
                                          <?php endforeach;?>
                                         </select>
                                     </div>
@@ -149,7 +149,7 @@
                                         <div class="col-xs-8">
                                             <select name="id_barang" class="form-control" required>
                                             <?php foreach($barang->result() as $rows):?>
-                                            <option value="<?php $z=$rows->id_barang; echo $z; ?>"
+                                            <option value="<?php $z=$rows->id_barang.'|'.$rows->nama_barang; echo $z; ?>"
                                               <?php if($id_barang==$z){echo 'selected';}?>
                                               ><?php echo $rows->nama_barang ;?></option>
                                             <?php endforeach;?>

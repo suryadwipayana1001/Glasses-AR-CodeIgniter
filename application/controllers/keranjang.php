@@ -40,7 +40,7 @@ function add_to_cart(){ //fungsi Add To Cart
                     <h2>Shopping Cart</h2>
                 </div>
 
-                <div class="cart-table clearfix keranjang">
+                <div class="cart-table clearfix keranjang ">
                     <table class="table table-responsive">
                         <thead>
                             <tr>
@@ -59,12 +59,13 @@ function add_to_cart(){ //fungsi Add To Cart
 			$no++;
 			$output .='
 				<tr>
-					<td><img width="50%" src="'.$items['gambar'].'"></td>
+					<td><img  src="'.$items['gambar'].'"></td>
 					<td>'.$items['name'].'</td>
 					<td>'.number_format($items['price']).'</td>
 					<td>'.$items['qty'].'</td>
 					<td>'.number_format($items['subtotal']).'</td>
-					<td><button type="button" id="'.$items['rowid'].'" class="hapus_cart btn btn-danger btn-xs">Batal</button></td>
+					<td><button type="button" id="'.$items['rowid'].'" class="hapus_cart tulisbtn btn btn-danger btn-xs">Batal</button></td>
+
 				</tr>
 			';
 		}

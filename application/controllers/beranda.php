@@ -8,10 +8,20 @@ class beranda extends CI_Controller{
 
 	public function index()
 	{
-		$this->load->view("t_admin/header");
-		$this->load->view("t_admin/navbar");
-		$this->load->view("v_admin/v_beranda");
-		$this->load->view("t_admin/footer");
+		if($this->session->logged_in == FALSE){
+            redirect('login');
+        }else{
+        	
+        	if($this->session->level == 'Admin'){
+	            $this->load->view("t_admin/header");
+				$this->load->view("t_admin/navbar");
+				$this->load->view("v_admin/v_beranda");
+				$this->load->view("t_admin/footer");
+			} else {
+				redirect('c_beranda');
+			}
+        }
+		
 	}
 }
 ?>

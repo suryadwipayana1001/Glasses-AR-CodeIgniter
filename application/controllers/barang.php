@@ -35,7 +35,8 @@ class barang extends CI_Controller{
 		$jumlah_barang=$this->input->post('jumlah_barang');
 		$harga_barang=$this->input->post('harga_barang');
 		$brand_barang=$this->input->post('brand_barang');
-		$this->m_barang->simpan_barang($id_barang,$nama_barang,$jumlah_barang,$harga_barang,$gambar,$brand_barang);
+		$lensa_barang=$this->input->post('lensa_barang');
+		$this->m_barang->simpan_barang($id_barang,$nama_barang,$jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang);
 		redirect('barang');
 	}else{
 	                echo "Gambar Gagal Upload. Gambar harus bertipe gif|jpg|png|jpeg|bmp";
@@ -64,7 +65,8 @@ class barang extends CI_Controller{
 		$jumlah_barang=$this->input->post('jumlah_barang');
 		$harga_barang=$this->input->post('harga_barang');
 		$brand_barang=$this->input->post('brand_barang');
-		$this->m_barang->edit_barang($id_barang,$nama_barang, $jumlah_barang,$harga_barang,$gambar,$brand_barang);
+		$lensa_barang=$this->input->post('lensa_barang');
+		$this->m_barang->edit_barang($id_barang,$nama_barang, $jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang);
 		redirect('barang');
 		}else{
 	                echo "Gambar Gagal Upload. Gambar harus bertipe gif|jpg|png|jpeg|bmp";

@@ -5,26 +5,20 @@ class editakun extends CI_Controller {
  
     function __construct(){
         parent::__construct();
-        $this->load->model('m_customer');
+        $this->load->model('m_user');
 
     }
      
     public function index()
     {
-        $x['data']=$this->m_customer->show_customer();
+        
+        $id_user = $this->session->id_user;
+        $x['data_user'] = $this->m_user->tampil_user($id_user);
+
         $this->load->view("t_users/header");
         $this->load->view("v_users/v_editakun",$x);
         $this->load->view("t_users/footer");
        
     }
-        function dataakun(){
-        $id_customer=$this->input->post('id_customer');
-        $nama_customer=$this->input->post('nama_customer');
-        $email_customer=$this->input->post('email_customer');
-        $password_customer=$this->input->post('password_customer');
-        $tanggallahir_customer=$this->input->post('tanggallahir_customer');
-        $this->m_customer->edit_customer($id_customer,$nama_customer, $email_customer,$password_customer,$tanggallahir_customer);
-        redirect('editakun');
-}
 }
 ?>

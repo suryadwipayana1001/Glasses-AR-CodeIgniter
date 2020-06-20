@@ -25,17 +25,16 @@
                                         <th>Nama</th>
                                         <th>Jumlah</th>
                                         <th>Harga</th>
-                                        <th>Foto</th>
                                         <th>Brand</th>
+                                        <th>Lensa</th>
+                                        <th>Foto</th>
                                         <th>Tindakan</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
                                     $no=1;
-                                    echo "<pre>";
-                                    var_dump($data);
-                                    echo "</pre>";
+                                  
                                     foreach ($data->result_array()as $i):
                                         $id_barang=$i['id_barang'];
                                         ?>
@@ -45,6 +44,7 @@
                                             <td><?php echo $jumlah_barang=$i['jumlah_barang'];?></td>
                                             <td><?php echo $harga_barang=$i['harga_barang'];?></td>
                                             <td><?php echo $brand_barang=$i['brand_barang'];?></td>
+                                            <td><?php echo $lensa_barang=$i['lensa_barang'];?></td>
                                             <td><img src="<?=base_url('assets/img/foto/'.$gambar=$i['gambar'])?>" style="width:100px"></td>
                                            
                                             <td style="width: 120px;">
@@ -97,6 +97,12 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label class="control-label col-xs-3" >Lensa</label>
+                                    <div class="col-xs-8">
+                                        <input name="lensa_barang" class="form-control" type="text" placeholder="Lensa" required>
+                                    </div>
+                                </div>
                                  <div class="form-group">
                                     <label class="control-label col-xs-3" >Foto</label>
                                     <div class="col-xs-8">
@@ -122,6 +128,7 @@
                 $harga_barang=$i['harga_barang'];
                 $brand_barang=$i['brand_barang'];
                 $gambar=$i['gambar'];
+                $lensa_barang=$i['lensa_barang'];
                 ?>
                 <div class="modal fade" id="modal_edit<?php echo $id_barang;?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
                     <div class="modal-dialog">
@@ -169,6 +176,12 @@
                                         <option value="Oakley" selected>Oakley</option>
                                          <?php endif;?>
                                         </select>
+                                        </div>
+                                    </div>
+                                      <div class="form-group">
+                                        <label class="control-label col-xs-3" >Lensa</label>
+                                        <div class="col-xs-8">
+                                            <input name="lensa_barang" value="<?php echo $lensa_barang;?>" class="form-control" type="text" placeholder="Lensa" required>
                                         </div>
                                     </div>
                                     <div class="form-group">

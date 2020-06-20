@@ -5,13 +5,12 @@ class login extends CI_Controller {
  
     function __construct(){
         parent::__construct();
-        $this->load->model('m_admin');
+        $this->load->model('m_user');
     }
      
     public function index()
     {
     	$this->load->view("t_admin/header");
-      
        
         if($this->session->logged_in == FALSE){
             $this->load->view("v_admin/v_login");
@@ -24,14 +23,20 @@ class login extends CI_Controller {
  
     public function Login()
     {
-        $username_admin       = $this->input->post('username_admin');
-        $password_admin       = $this->input->post('password_admin');
+        $email_user       = $this->input->post('email_user');
+        $password_user       = $this->input->post('password_user');
  
-        $status         = $this->m_admin->login($username_admin,($password_admin));
+        $status         = $this->m_user->login($email_user,($password_user));
         if($status){
+            foreach ($status->result_array()as $i) {
+                $id_user=$i['id_user'];
+                $level = $i['level_user'];
+            }
             $session = array(
-                'nama'          => $username_admin,
-                'logged_in'     => TRUE
+                'nama'          => $email_user,
+                'logged_in'     => TRUE,
+                'id_user'       => $id_user,
+                'level'         => $level 
                 );
             $this->session->set_userdata($session);
             $this->session->unset_userdata('gagal');

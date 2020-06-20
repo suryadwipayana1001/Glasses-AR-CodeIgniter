@@ -34,7 +34,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             $.get("<?= site_url('checkout/get_provinsi')?>",{},(response)=>{
                 let output= '';
                 let provinsi = response.rajaongkir.results
-                console. log(response)
                 provinsi.map((val,i)=>{
                     output+=`<option value="${val.province_id}" >${val.province}
 
@@ -70,14 +69,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             let tujuan = $('#kota_tujuan').val();
             let kurir = $('#kurir').val();
             let output ='';
+            let ongkir = '';
 
             console.log(asal);
 
                 $.get("<?= site_url('checkout/get_biaya/') ?>"+`${asal}/${tujuan}/${berat}/${kurir}`,{}, (response)=>{
                     console.log(response);
                 let biaya = response.rajaongkir.results
-
-                console.log(biaya)
 
                 biaya.map((val,i)=>{
                     for (var i = 0; i < val.costs.length; i++) {
@@ -87,8 +85,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         })
                     }
                 })
+                
                 $('#service').html(output)
+                
                 })
+        }
+
+        function update_total() {
+            $("#service").change(function(){
+                var ongkir = $(this).children("option:selected").val();
+                console.log(ongkir);
+                $('#ongkir').text(ongkir);
+            });
         }
 
 

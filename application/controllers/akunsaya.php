@@ -5,7 +5,7 @@ class akunsaya extends CI_Controller {
  
     function __construct(){
         parent::__construct();
-        $this->load->model('m_customer');
+        $this->load->model('m_user');
     }
      
     public function index()
@@ -23,16 +23,25 @@ class akunsaya extends CI_Controller {
        
     }
  
-    public function Login()
+    public function Loginakun()
     {
-        $email_customer       = $this->input->post('email_customer');
-        $password_customer       = $this->input->post('password_customer');
+        $email_user       = $this->input->post('email_user');
+        $password_user       = $this->input->post('password_user');
  
-        $status         = $this->m_customer->login($email_customer,($password_customer));
+        $status         = $this->m_user->login($email_user,($password_user));
+
         if($status){
+
+            foreach ($status->result_array()as $i) {
+                $id_user=$i['id_user'];
+                $level = $i['level_user'];
+            }
+
             $session = array(
-                'nama'          => $email_customer,
-                'logged_in'     => TRUE
+                'nama'          => $email_user,
+                'logged_in'     => TRUE,
+                'id_user'       => $id_user,
+                'level'         => $level 
                 );
             $this->session->set_userdata($session);
             $this->session->unset_userdata('gagal');
@@ -44,7 +53,7 @@ class akunsaya extends CI_Controller {
         }
     }
  
-    public function Logout()
+    public function Logoutakun()
     {
         $this->session->sess_destroy();
         redirect('akunsaya');

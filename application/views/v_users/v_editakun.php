@@ -13,32 +13,36 @@
                          
                      </div>
                      <br>
-                     
+                     <?php
+                        foreach($data_user->result_array() as $i):
+                        $nama_user = $i['nama_user'];
+                        $email_user = $i['email_user'];
+                        $password_user = $i['password_user'];
+                        $tanggallahir_user = $i['tanggallahir_user'];
+                     ?>
                      <form class="form-horizontal" method="post" action=""enctype="multipart/form-data" >
                         <div class="row">
                             <div class="col-md-12 mb-3">
-                             Nama <input type="text" class="form-control" name="nama_customer" value="<?php echo $nama_customer ?>" placeholder="Nama" required>
+                             Nama <input type="text" class="form-control" name="nama_customer" value="<?php echo $nama_user ?>" placeholder="Nama" required>
                          </div>
                          <div class="col-md-12 mb-3">
-                             Email <input type="text" class="form-control" name="email_customer" value="<?php echo $email_customer ?>"placeholder="Email" required>
+                             Email <input type="text" class="form-control" name="email_customer" value="<?php echo $email_user ?>"placeholder="Email" required>
                          </div>
                          <div class="col-md-12 mb-3">
-                           Password <input type="text" class="form-control" name="email_customer" value="<?php echo $password_customer ?>" placeholder="Email" required>
+                           Password <input type="text" class="form-control" name="email_customer" value="<?php echo $password_user?>" placeholder="Email" required>
                        </div>
-                       <div class="col-md-12 mb-3">
-                         Password <input type="text" class="form-control" name="password_customer" value="<?php echo $password_customer?>" placeholder="Password" required>
-                     </div>
                      <div class="col-md-12 mb-3">
-                         Tanggal Lahir <input type="date" class="form-control" name="tanggallahir_customer"  value="<?php echo $tanggallahir_customer?>" required>
+                         Tanggal Lahir <input type="date" class="form-control" name="tanggallahir_customer"  value="<?php echo $tanggallahir_user?>" required>
                      </div>
                      <div class="col-md-6 mb-3">
                         <button class="btn amado-btn w-100">Simpan</button>
                     </div>
                     <div class="col-md-6 mb-3">
-                     <a href="<?php echo base_url('index.php/akunsaya/Logout'); ?>" class="btn amado-btn w-100">Logout</a>
+                     <a href="<?php echo base_url('index.php/akunsaya/Logoutakun'); ?>" class="btn amado-btn w-100">Logout</a>
                  </div>
              </div>
          </form>
+         <?php endforeach;?>
      </div>
  </div>
 </div>

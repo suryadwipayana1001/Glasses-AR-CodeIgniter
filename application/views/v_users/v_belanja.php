@@ -88,7 +88,8 @@
                                 <a href="product-details.html">
                                     <h4><?php echo $nama_barang=$i['nama_barang'];?></h4>
                                 </a>
-                                    <h6><?php echo $brand_barang=$i['brand_barang'];?></h6>
+                                    <h5><?php echo $brand_barang=$i['brand_barang'];?></h5>
+                                    <h6><?php echo $lensa_barang=$i['lensa_barang'];?></h6>
                                 <input type="number" name="quantity" id="<?php echo $id_barang=$i['id_barang'];?>" value="1" class="quantity form-control">
                                 
                             </div>

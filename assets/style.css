@@ -14,15 +14,32 @@
 
 
     .keranjang th {
+        font-size: 14px !important;
+        flex: 0 0 16% !important;
+        width: 16% !important;
+        max-width: 16% !important;
+        background-color:#f5f7fa;
+    }
+
+    .keranjang td {
+        font-size: 14px !important;
         flex: 0 0 16% !important;
         width: 16% !important;
         max-width: 16% !important;
     }
+     .transaksi th {
+        font-size: 14px !important;
+        flex: 0 0 14% !important;
+        width: 14% !important;
+        max-width: 14% !important;
+        background-color:#f5f7fa;
+    }
 
-    .keranjang td {
-        flex: 0 0 16% !important;
-        width: 16% !important;
-        max-width: 16% !important;
+    .transaksi td {
+        font-size: 14px !important;
+        flex: 0 0 14% !important;
+        width: 14% !important;
+        max-width: 14% !important;
     }
 
 #form-checkout input, #form-checkout select {
@@ -34,5 +51,8 @@
     border-radius: 4px !important;
     box-sizing: border-box !important;
     background-color: #f5f7fa !important;
-
+    height: 50px !important;
+}
+.tulisbtn{
+    font-size: 12px !important;
 }

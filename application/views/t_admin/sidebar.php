@@ -5,14 +5,9 @@
         <div class="sidebar-collapse">
             <ul class="nav" id="main-menu">
                 <li <?=$this->uri->segment(1) == 'beranda' || $this->uri->segment(1) == '' ? 'class="active-menu"' : ''?>>
+                   
                     <a href="<?=site_url('beranda')?>">
                         <i class="fa fa-dashboard"></i> <span>Beranda</span>
-                    </a>
-                </li>
-                <li <?=$this->uri->segment(1) == 'admin' ? 'class="active-menu"' : ''?>> 
-                    <a href="<?=site_url('admin')?>">
-                        <i class="fa fa-user"></i>
-                        <span>Admin</span>
                     </a>
                 </li>
                 <li <?=$this->uri->segment(1) == 'supplier' ? 'class="active-menu"' : ''?>> 
@@ -21,10 +16,10 @@
                         <span>Supplier</span>
                     </a>
                 </li>
-                <li <?=$this->uri->segment(1) == 'customer' ? 'class="active-menu"' : ''?>> 
-                    <a href="<?=site_url('customer')?>">
+                <li <?=$this->uri->segment(1) == 'user' ? 'class="active-menu"' : ''?>> 
+                    <a href="<?=site_url('user')?>">
                         <i class="fa fa-users"></i>
-                        <span>Customer</span>
+                        <span>User</span>
                     </a>
                 </li>
                 <li <?=$this->uri->segment(1) == 'barang' ? 'class="active-menu"' : ''?>> 

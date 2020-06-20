@@ -1,43 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Halaman Login</title>
 </head>
-<body style="margin: 10%;">
-<div class="container">
- 
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h4 style="font-weight: bold;">Login</h4>
-    </div>
-<div class="panel-body">
-    <form method="post" action="<?php echo base_url('index.php/login/Login'); ?>">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-4"></div>
-            <div class="form-group col-md-4">
-                <label for="username">Username</label>
-                <input required id="username" class="form-control" type="text" name="username_admin"></input>
-            </div>
-        </div>
-    </div>
- 
-    <div class="row">
-        <div class="col-md12">
-            <div class="col-md-4"></div>
-            <div class="form-group col-md-4">
-                <label for="password">Password</label>
-                <input required id="password" class="form-control" type="password" name="password_admin"></input>
-            </div>
-        </div>
-    </div>
- 
- 
-    <center><button type="submit" class="btn btn-success">Submit</button></center>
-</form>
-</div>
-</div>
-</div>
-</body>
+<body style="background-color: #09192A">
+    <div class="col-md-4 col-md-offset-4 form-login">
+        <p><p>
 
-</html>
+            <div class="outter-form-login">
+                <form  method="post" action="<?php echo base_url('index.php/login/Login'); ?>">
+                    <h3 class="text-center title-login"> <h4 style="font-weight: bold; color:white">Login <em class="glyphicon glyphicon-user"></em></h4></h3>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="email_user" placeholder="Username">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password_user" placeholder="Password">
+                    </div>
+
+                    <input type="submit" class="btn btn-block btn-custom-green" value="LOGIN" />
+
+                    <div class="text-center forget">
+                        <p>Forgot Password ?</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+    </html>
