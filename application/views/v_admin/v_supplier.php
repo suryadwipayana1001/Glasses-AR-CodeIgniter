@@ -37,10 +37,10 @@
                                         ?>
                                         <tr class="odd gradeX">
                                             <td><?php echo $no++?></td>
-                                            <td><?php echo $nama_supplier=$i['nama_supplier'];?></td>
-                                            <td><?php echo $alamat_supplier=$i['alamat_supplier'];?></td>
-                                            <td><?php echo $nohp_supplier=$i['nohp_supplier'];?></td>
-                                            <td><?php echo $email_supplier=$i['email_supplier'];?></td>
+                                            <td><?php echo $i['nama_supplier'];?></td>
+                                            <td><?php echo $i['alamat_supplier'];?></td>
+                                            <td><?php echo $i['nohp_supplier'];?></td>
+                                            <td><?php echo $i['email_supplier'];?></td>
                                             <td style="width: 120px;">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"data-toggle="modal" data-target="#modal_edit<?php echo $id_supplier;?>"></i></button>
                                              <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal_hapus<?php echo $id_supplier;?>"><i class="fa fa-trash-o "></i></button> 

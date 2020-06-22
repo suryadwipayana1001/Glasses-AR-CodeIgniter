@@ -38,12 +38,12 @@
                                         ?>
                                         <tr class="odd gradeX">
                                             <td><?php echo $no++?></td>
-                                            <td><?php echo $nama_barang=$i['nama_barang'];?></td>
-                                            <td><?php echo $harga_menyuplai=$i['harga_menyuplai'];?></td>
-                                            <td><?php echo $jumlah_menyuplai=$i['jumlah_menyuplai'];?></td>
-                                            <td><?php echo $totalharga_menyuplai=$i['totalharga_menyuplai'];?></td>
-                                            <td><?php echo $tanggal_menyuplai=$i['tanggal_menyuplai'];?></td>
-                                            <td><?php echo $nama_supplier=$i['nama_supplier'];?></td>
+                                            <td><?php echo $i['nama_barang'];?></td>
+                                            <td><?php echo $i['harga_menyuplai'];?></td>
+                                            <td><?php echo $i['jumlah_menyuplai'];?></td>
+                                            <td><?php echo $i['totalharga_menyuplai'];?></td>
+                                            <td><?php echo $i['tanggal_menyuplai'];?></td>
+                                            <td><?php echo $i['nama_supplier'];?></td>
 
                                             <td style="width: 120px;">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"data-toggle="modal" data-target="#modal_edit<?php echo $id_menyuplai;?>"></i></button>
@@ -63,7 +63,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                            <h3 class="modal-title" id="myModalLabel">Tambah Data menyuplai</h3>
+                            <h3 class="modal-title" id="myModalLabel">Tambah Data Transaksi Supplier</h3>
                         </div>
                         <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/menyuplai/simpan_menyuplai'?>">
                               <div class="modal-body">
@@ -73,7 +73,7 @@
                                        <select name="id_barang" class="form-control" required>
                                         <option value="0">-PILIH-</option>
                                          <?php foreach($barang->result() as $rows):?>
-                                         <option value="<?php echo $rows->id_barang.'|'.$rows->nama_barang; ?>"><?php echo $rows->nama_barang;?></option>
+                                         <option value="<?php echo $rows->id_barang/*.'|'.$rows->nama_barang;*/ ?>"><?php echo $rows->nama_barang;?></option>
                                          <?php endforeach;?>
                                         </select>
                                     </div>

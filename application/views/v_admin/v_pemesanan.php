@@ -12,8 +12,9 @@
             <div class="col-md-12">
                 <!-- Advanced Tables -->
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                     <div class="panel-heading">
                     </div>
+                  
                     <div class="panel-body">
                         <div class="table-responsive">
 
@@ -23,8 +24,8 @@
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Alamat</th>
-                                        <th>No Telepon</th>
-                                        <th>Kurir</th>
+                                        <th>Produk</th>
+                                        <th>Struk</th>
                                         <th>Status</th>
                                         <th>Tindakan</th>
                                     </tr>
@@ -37,12 +38,13 @@
                                         ?>
                                         <tr class="odd gradeX">
                                             <td><?php echo $no++?></td>
-                                            <td><?php echo $nama_pemesanan=$i['nama_pemesanan'];?></td>
-                                            <td><?php echo $alamat_pemesanan=$i['alamat_pemesanan'];?>, <?php echo $kecamatan_pemesanan=$i['kecamatan_pemesanan'];?>, <?php echo $kabupaten_pemesanan=$i['kabupaten_pemesanan'];?>,  <?php echo $provinsi_pemesanan=$i['provinsi_pemesanan'];?>, <?php echo $kodepos_pemesanan=$i['kodepos_pemesanan'];?></td>
-                                            <td><?php echo $nohp_pemesanan=$i['nohp_pemesanan'];?></td>
-                                            <td><?php echo $kurir_pemesanan=$i['kurir_pemesanan'];?></td>
-                                            <td><?php echo $status_pemesanan=$i['status_pemesanan'];?></td>
+                                            <td><?php echo $i['nama_pemesanan'];?></td>
+                                            <td><?php echo $i['alamat_pemesanan'];?>, <?php echo $i['kecamatan_pemesanan'];?>, <?php echo $i['kabupaten_pemesanan'];?>,  <?php echo $i['provinsi_pemesanan'];?>, <?php echo $i['kodepos_pemesanan'];?></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><?php echo $i['status_pemesanan'];?></td>
                                             <td style="width: 120px;">
+                                                <a href="<?=site_url('pemesanan/detail_pemesanan/'.$i['id_pemesanan'])?>"  class="btn btn-success btn-xs"><i class="fa fa-check-square-o"></i></a>
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"data-toggle="modal" data-target="#modal_edit<?php echo $id_pemesanan;?>"></i></button>
                                                 <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal_hapus<?php echo $id_pemesanan;?>"><i class="fa fa-trash-o "></i></button> 
                                             </td>
@@ -55,55 +57,25 @@
                 </div>
                 <!--End Advanced Tables -->
                 <!-- ============ MODAL EDIT BARANG =============== -->
-                <?php 
-                foreach($data->result_array() as $i):
-                    $id_pemesanan=$i['id_pemesanan'];
-                    $nama_pemesanan=$i['nama_pemesanan'];
-                    $provinsi_pemesanan=$i['provinsi_pemesanan'];
-                    $kabupaten_pemesanan=$i['kabupaten_pemesanan'];
-                    $kecamatan_pemesanan=$i['kecamatan_pemesanan'];
-                    $alamat_pemesanan=$i['alamat_pemesanan'];
-                    $kodepos_pemesanan=$i['kodepos_pemesanan'];
-                    $nohp_pemesanan=$i['nohp_pemesanan'];
-                    ?>
-                    <div class="modal fade" id="modal_edit<?php echo $id_pemesanan;?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                                    <h3 class="modal-title" id="myModalLabel">Edit Data barang</h3>
-                                </div>
-                                <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/pemesanan/edit_pemesanan'?>" enctype="multipart/form-data">
-                                    <div class="modal-body">
-                                     <input name="id_pemesanan" value="<?php echo $id_pemesanan;?>" class="form-control" type="hidden"  readonly>
-                                     <div class="form-group">
-                                        <label class="control-label col-xs-3" >Nama</label>
-                                        <div class="col-xs-8">
-                                            <input name="nama_pemesanan" value="<?php echo $nama_pemesanan;?>" class="form-control" type="text" placeholder="nama" readonly>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-xs-3" >Alamat</label>
-                                        <div class="col-xs-8">
-                                            <input class="form-control" name="alamat_pemesanan" value="<?php echo $alamat_pemesanan;?> <?php echo $kecamatan_pemesanan;?> <?php echo $kabupaten_pemesanan;?> <?php echo $provinsi_pemesanan;?> <?php echo $kodepos_pemesanan;?> "  type="text" placeholder="Alamat" readonly>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-xs-3" >No Hp</label>
-                                        <div class="col-xs-8">
-                                            <input name="nohp_pemesanan" value="<?php echo $nohp_pemesanan;?>" class="form-control" type="text" placeholder="No Hp" readonly>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-xs-3" >Kurir</label>
-                                        <div class="col-xs-8">
-                                            <input name="kurir_pemesanan" value="<?php echo $kurir_pemesanan;?>" class="form-control" type="text" placeholder="Kurir" readonly>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
+                 <?php 
+            foreach($data->result_array() as $i):
+                $id_pemesanan=$i['id_pemesanan'];
+                $status_pemesanan=$i['status_pemesanan'];
+                ?>
+                <div class="modal fade" id="modal_edit<?php echo $id_pemesanan;?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                                <h3 class="modal-title" id="myModalLabel">Edit Data Pemesanan</h3>
+                            </div>
+                            <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/pemesanan/edit_pemesanan'?>">
+                                <div class="modal-body">
+                                            <input name="id_pemesanan" value="<?php echo $id_pemesanan;?>" class="form-control" type="hidden"  readonly>
+                                   <div class="form-group">
                                         <label class="control-label col-xs-3" >Status</label>
                                         <div class="col-xs-8">
-                                        <select name="status_pemesanan">
+                                        <select name="status_pemesanan" class="form-control input-sm">
                                        <?php if($status_pemesanan=='Menunggu Konfirmasi'):?>
                                         <option value="Menunggu Konfirmasi" selected>Menunggu Konfirmasi</option>
                                         <option value="Sedang di Proses">Sedang di Proses</option>
@@ -130,7 +102,8 @@
                     </div>
                 </div>
             <?php endforeach;?>
-            <!--END MODAL EDIT BARANGid            <!-- ============ MODAL HAPUS =============== -->
+            <!--END MODAL EDIT BARANGid  -->          
+            <!-- ============ MODAL HAPUS =============== -->
             <?php 
             foreach($data->result_array() as $i):
                 $id_pemesanan=$i['id_pemesanan'];

@@ -6,13 +6,13 @@ class m_menyuplai extends CI_Model{
 		return $hasil;
 	}
 
-	function simpan_menyuplai($id_menyuplai,$id_barang,$nama_barang,$id_supplier,$harga_menyuplai,$jumlah_menyuplai,$totalharga_menyuplai,$tanggal_menyuplai){
-		$hasil=$this->db->query("INSERT INTO tb_menyuplai(id_menyuplai,id_barang,nama_barang,id_supplier,harga_menyuplai,jumlah_menyuplai,totalharga_menyuplai,tanggal_menyuplai) VALUES('$id_menyuplai','$id_barang','$nama_barang','$id_supplier','$harga_menyuplai','$jumlah_menyuplai','$totalharga_menyuplai','$tanggal_menyuplai')");	
+	function simpan_menyuplai($id_menyuplai,$id_barang,$id_supplier,$harga_menyuplai,$jumlah_menyuplai,$totalharga_menyuplai,$tanggal_menyuplai){
+		$hasil=$this->db->query("INSERT INTO tb_menyuplai(id_menyuplai,id_barang,id_supplier,harga_menyuplai,jumlah_menyuplai,totalharga_menyuplai,tanggal_menyuplai) VALUES('$id_menyuplai','$id_barang','$id_supplier','$harga_menyuplai','$jumlah_menyuplai','$totalharga_menyuplai','$tanggal_menyuplai')");	
 		return $hasil;
 	}
 
-	function edit_menyuplai($id_menyuplai,$id_barang,$nama_barang,$id_supplier,$harga_menyuplai,$jumlah_menyuplai,$totalharga_menyuplai,$tanggal_menyuplai){
-		$hasil=$this->db->query("UPDATE tb_menyuplai SET id_barang='$id_barang', nama_barang='$nama_barang', id_supplier='$id_supplier',harga_menyuplai='$harga_menyuplai',jumlah_menyuplai ='$jumlah_menyuplai',totalharga_menyuplai='$totalharga_menyuplai',tanggal_menyuplai='$tanggal_menyuplai' WHERE id_menyuplai='$id_menyuplai' ");
+	function edit_menyuplai($id_menyuplai,$id_barang,$id_supplier,$harga_menyuplai,$jumlah_menyuplai,$totalharga_menyuplai,$tanggal_menyuplai){
+		$hasil=$this->db->query("UPDATE tb_menyuplai SET id_barang='$id_barang', id_supplier='$id_supplier',harga_menyuplai='$harga_menyuplai',jumlah_menyuplai ='$jumlah_menyuplai',totalharga_menyuplai='$totalharga_menyuplai',tanggal_menyuplai='$tanggal_menyuplai' WHERE id_menyuplai='$id_menyuplai' ");
 		return $hasil;
 	}
 

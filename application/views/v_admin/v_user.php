@@ -40,11 +40,11 @@
                                         ?>
                                         <tr class="odd gradeX">
                                             <td><?php echo $no++?></td>
-                                            <td><?php echo $nama_user=$i['nama_user'];?></td>
-                                            <td><?php echo $email_user=$i['email_user'];?></td>
-                                            <td><?php echo $password_user=$i['password_user'];?></td>
-                                            <td><?php echo $tanggallahir_user=$i['tanggallahir_user'];?></td>
-                                            <td><?php echo $level_user=$i['level_user'];?></td>
+                                            <td><?php echo $i['nama_user'];?></td>
+                                            <td><?php echo $i['email_user'];?></td>
+                                            <td><?php echo $i['password_user'];?></td>
+                                            <td><?php echo $i['tanggallahir_user'];?></td>
+                                            <td><?php echo $i['level_user'];?></td>
                                             <td style="width: 120px;">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"data-toggle="modal" data-target="#modal_edit<?php echo $id_user;?>"></i></button>
                                              <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal_hapus<?php echo $id_user;?>"><i class="fa fa-trash-o "></i></button> 
@@ -78,9 +78,9 @@
                                     </div>
                                 </div>
                                  <div class="form-group">
-                                    <label class="control-label col-xs-3" >No Hp</label>
+                                    <label class="control-label col-xs-3" >Password</label>
                                     <div class="col-xs-8">
-                                        <input name="password_user" class="form-control" type="text" placeholder="No Hp" required>
+                                        <input name="password_user" class="form-control" type="text" placeholder="Password" required>
                                     </div>
                                 </div>
                                  <div class="form-group">
@@ -141,9 +141,9 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-xs-3" >No Hp</label>
+                                        <label class="control-label col-xs-3" >Password</label>
                                         <div class="col-xs-8">
-                                            <input name="password_user" value="<?php echo $password_user;?>" class="form-control" type="text" placeholder="No Hp" required>
+                                            <input name="password_user" value="<?php echo $password_user;?>" class="form-control" type="text" placeholder="Password" required>
                                         </div>
                                     </div>
                                     <div class="form-group">

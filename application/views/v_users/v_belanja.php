@@ -68,7 +68,6 @@
             <?php
             $no=1;
             foreach ($data->result_array()as $i):
-                $id_barang=$i['id_barang'];
                 ?>
                 <!-- Single Product Area -->
                 <div class="col-12 col-sm-6 col-md-12 col-xl-6">
@@ -84,12 +83,12 @@
                             <!-- Product Meta Data -->
                             <div class="product-meta-data">
                                 <div class="line"></div>
-                                <p class="product-price"><?php echo 'Rp '.number_format($harga_barang=$i['harga_barang']) ;?></p>
+                                <p class="product-price"><?php echo 'Rp '.number_format($i['harga_barang']) ;?></p>
                                 <a href="product-details.html">
-                                    <h4><?php echo $nama_barang=$i['nama_barang'];?></h4>
+                                    <h4><?php echo $i['nama_barang'];?></h4>
                                 </a>
-                                    <h5><?php echo $brand_barang=$i['brand_barang'];?></h5>
-                                    <h6><?php echo $lensa_barang=$i['lensa_barang'];?></h6>
+                                    <h5><?php echo $i['brand_barang'];?></h5>
+                                    <h6><?php echo $i['lensa_barang'];?></h6>
                                 <input type="number" name="quantity" id="<?php echo $id_barang=$i['id_barang'];?>" value="1" class="quantity form-control">
                                 
                             </div>

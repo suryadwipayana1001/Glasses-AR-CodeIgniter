@@ -23,27 +23,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                           <?php
-                           $no=1;
-                           foreach ($data->result_array()as $i):
+                         <?php
+                         $no=1;
+                         foreach ($data->result_array()as $i):
                             ?>
                             <tr>
-                            <td><?php echo $no++?></td>
-                            <td><?php echo $i['nama_pemesanan'];?></td>
-                            <td><?php echo $i['alamat_pemesanan'];?>, <?php echo $i['kecamatan_pemesanan'];?>, <?php echo $i['kabupaten_pemesanan'];?>, <?php echo $i['provinsi_pemesanan'];?>, <?php echo $i['kodepos_pemesanan'];?>.</td>
-                            <td></td>
-                            <td>
-                
-                            </td>
-                            <td><?php echo $status_pemesanan=$i['status_pemesanan'];?></td>
-                            <td><a href="<?=site_url('detailtransaksi/idpemesanan/'.$i['id_pemesanan'])?>"  class="tulisbtn btn btn-success btn-xs"><i class="fa fa-check-square-o"></i></a></td>
+                                <td><?php echo $no++?></td>
+                                <td><?php echo $i['nama_pemesanan'];?></td>
+                                <td><?php echo $i['alamat_pemesanan'];?>, <?php echo $i['kecamatan_pemesanan'];?>, <?php echo $i['kabupaten_pemesanan'];?>, <?php echo $i['provinsi_pemesanan'];?>, <?php echo $i['kodepos_pemesanan'];?>.</td>
+                                <td></td>
+                                <td>
+                                </td>
+                                <td><?php echo $status_pemesanan=$i['status_pemesanan'];?></td>
+                                <td><a href="<?=site_url('transaksi/detail/'.$i['id_pemesanan'])?>"  class="tulisbtn btn btn-success btn-xs"><i class="fa fa-check-square-o"></i></a></td>
                             </tr>
                         <?php endforeach;?>
                     </tbody>
                 </table>
             </div>
         </div>
-
     </div>
 </div>
 </div>

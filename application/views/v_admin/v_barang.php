@@ -40,11 +40,11 @@
                                         ?>
                                         <tr class="odd gradeX">
                                             <td><?php echo $no++?></td>
-                                            <td><?php echo $nama_barang=$i['nama_barang'];?></td>
-                                            <td><?php echo $jumlah_barang=$i['jumlah_barang'];?></td>
-                                            <td><?php echo $harga_barang=$i['harga_barang'];?></td>
-                                            <td><?php echo $brand_barang=$i['brand_barang'];?></td>
-                                            <td><?php echo $lensa_barang=$i['lensa_barang'];?></td>
+                                            <td><?php echo $i['nama_barang'];?></td>
+                                            <td><?php echo $i['jumlah_barang'];?></td>
+                                            <td><?php echo $i['harga_barang'];?></td>
+                                            <td><?php echo $i['brand_barang'];?></td>
+                                            <td><?php echo $i['lensa_barang'];?></td>
                                             <td><img src="<?=base_url('assets/img/foto/'.$gambar=$i['gambar'])?>" style="width:100px"></td>
                                            
                                             <td style="width: 120px;">
@@ -90,7 +90,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Brand</label>
                                     <div class="col-xs-8">
-                                        <select name="brand_barang">
+                                        <select name="brand_barang" class="form-control input-sm">
                                         <option value="Oakley">Oakley</option>
                                         <option value="Rayband">Rayband</option>
                                         <option value="Moscot">Moscot</option>
@@ -161,7 +161,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-xs-3" >Brand</label>
                                         <div class="col-xs-8">
-                                        <select name="brand_barang">
+                                        <select name="brand_barang" class="form-control input-sm">
                                        <?php if($brand_barang=='Moscot'):?>
                                         <option value="Moscot" selected>Moscot</option>
                                         <option value="Rayband">Rayband</option>

@@ -17,13 +17,17 @@ function __construct(){
 		$this->load->view("t_users/footer");
 
 	}
-	function menunggutransaksi(){
-		$status_pemesanan=$this->input->post('status_pemesanan');
-		if ($status_pemesanan=='') {
-			echo "Menunggu Konfirmasi";
-			# code...
-		}
+	public function detail()
+	{
+	  $id_pemesanan =  $this->uri->segment(3);
 
-	}
+	 $x['data']=$this->m_pemesanan->detail_pemesanan($id_pemesanan);
+	
+	  
+		$this->load->view("t_users/header");
+		$this->load->view("v_users/v_detailtransaksi",$x);
+		$this->load->view("t_users/footer");
+
+}
 }
 ?>

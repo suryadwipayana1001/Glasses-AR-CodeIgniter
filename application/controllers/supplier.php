@@ -9,11 +9,21 @@ class supplier extends CI_Controller{
 	}
 
 	function index(){
-		$x['data']=$this->m_supplier->show_supplier();
-		$this->load->view("t_admin/header");
-		$this->load->view("t_admin/navbar");
-		$this->load->view("v_admin/v_supplier",$x);
-		$this->load->view("t_admin/footer");
+		if($this->session->logged_in == FALSE){
+			redirect('login');
+		}else{
+			
+			if($this->session->level == 'Admin'){
+				$x['data']=$this->m_supplier->show_supplier();
+				$this->load->view("t_admin/header");
+				$this->load->view("t_admin/navbar");
+				$this->load->view("v_admin/v_supplier",$x);
+				$this->load->view("t_admin/footer");
+			} else {
+				redirect('c_beranda');
+			}
+		}
+		
 	}
 
 	function simpan_supplier(){
@@ -33,7 +43,7 @@ class supplier extends CI_Controller{
 		$email_supplier=$this->input->post('email_supplier');
 		$this->m_supplier->edit_supplier($id_supplier,$nama_supplier, $alamat_supplier,$nohp_supplier,$email_supplier);
 		redirect('supplier');
-}
+	}
 
 	function hapus_supplier(){
 		$id_supplier=$this->input->post('id_supplier');
