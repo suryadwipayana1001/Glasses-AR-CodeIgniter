@@ -55,15 +55,16 @@ class menyuplai extends CI_Controller{
 		$this->m_menyuplai->hapus_menyuplai($id_menyuplai);
 		redirect('menyuplai');
 
-
 	}
+	public function detail_menyuplai()
+	{
+	  	$id_menyuplai =  $this->uri->segment(3);
+	 	$x['data']=$this->m_menyuplai->detail_menyuplai($id_menyuplai);
+		$this->load->view("t_admin/header");
+		$this->load->view("t_admin/navbar");
+		$this->load->view("v_admin/v_detailmenyuplai",$x);
+		$this->load->view("t_admin/footer");
 
-	function transaksi(){
-		$harga_menyuplai('harga_menyuplai');
-		$jumlah_menyuplai('jumlah_menyuplai');
-
-		$hasil=$harga_menyuplai * $jumlah_menyuplai;
-		return hasil;
-	}
+}
 }
 ?>

@@ -14,12 +14,14 @@
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
+                 <h4>Data Pemesan</h4>
             </div>
             <?php
             foreach ($data->result_array()as $i):
                 ?>
                 <div class="panel-body">
                     <table class="table table-striped">
+
                         <tr>
                             <th width="20%">Nama</th>
                             <th width="1%">:</th>
@@ -51,7 +53,7 @@
                             <td><?php echo $i['kodepos_pemesanan'] ?></td>
                         </tr>
                     </table>
-                    Data Produk
+                   <h4>Data Produk</h4>
                     <hr>
                      <table class="table table-striped">
                         <tr>
@@ -93,6 +95,7 @@
                     <!-- /.row (nested) -->
                 </div>
             <?php endforeach;?>
+             <a href="<?=site_url('pemesanan')?>" class="">Kembali</a>
             <!-- /.panel-body -->
         </div>
         <!-- /.panel -->

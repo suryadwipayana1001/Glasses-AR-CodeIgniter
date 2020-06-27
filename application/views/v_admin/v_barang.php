@@ -48,6 +48,7 @@
                                             <td><img src="<?=base_url('assets/img/foto/'.$gambar=$i['gambar'])?>" style="width:100px"></td>
                                            
                                             <td style="width: 120px;">
+                                                 <a href="<?=site_url('barang/detail_barang/'.$i['id_barang'])?>"  class="btn btn-success btn-xs"><i class="fa fa-check-square-o"></i></a>
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"data-toggle="modal" data-target="#modal_edit<?php echo $id_barang;?>"></i></button>
                                              <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal_hapus<?php echo $id_barang;?>"><i class="fa fa-trash-o "></i></button> 
                                          </td>

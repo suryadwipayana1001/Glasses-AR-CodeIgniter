@@ -13,6 +13,9 @@
                 <!-- Advanced Tables -->
                 <div class="panel panel-default">
                      <div class="panel-heading">
+                        <div class="panel-heading">
+                        <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal_add_new"><i class="glyphicon glyphicon-plus"></i>Tambah Data</button> 
+                    </div>
                     </div>
                   
                     <div class="panel-body">
@@ -55,6 +58,82 @@
                         </div>
                     </div>
                 </div>
+                  <!--End Advanced Tables -->
+             <!-- ============ MODAL ADD =============== -->
+            
+             <div class="modal fade" id="modal_add_new" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                            <h3 class="modal-title" id="myModalLabel">Tambah Data Pemesanan</h3>
+                        </div>
+                        <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/pemesanan/simpan_pemesanan'?>">
+                            <div class="modal-body">
+                                
+                                <div class="form-group">
+                                    <label class="control-label col-xs-3" >Nama</label>
+                                    <div class="col-xs-8">
+                                        <input type="text" class="form-control" name="nama_pemesanan" placeholder="Nama">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-xs-3" >Provinsi</label>
+                                    <div class="col-xs-8">
+                                        <input name="provinsi_pemesanan" class="form-control" type="text" placeholder="Alamat" required>
+                                    </div>
+                                </div>
+                                 <div class="form-group">
+                                    <label class="control-label col-xs-3" >Kabupaten</label>
+                                    <div class="col-xs-8">
+                                        <input name="kabupaten_pemesanan" class="form-control" type="text" placeholder="No Hp" required>
+                                    </div>
+                                </div>
+                                 <div class="form-group">
+                                    <label class="control-label col-xs-3" >Kecamatan</label>
+                                    <div class="col-xs-8">
+                                       <input type="text" class="form-control" name="kecamatan_pemesanan" placeholder="Kecamatan">
+                                    </div>
+                                </div>
+                                  <div class="form-group">
+                                    <label class="control-label col-xs-3" >Alamat</label>
+                                    <div class="col-xs-8">
+                                      <input type="text" class="form-control" name="alamat_pemesanan" placeholder="Alamat">
+                                    </div>
+                                </div>
+                                  <div class="form-group">
+                                    <label class="control-label col-xs-3" >Kode Pos</label>
+                                    <div class="col-xs-8">
+                                       <input type="text" class="form-control" name="kodepos_pemesanan" placeholder="Kode Pos">
+                                    </div>
+                                </div>
+                                  <div class="form-group">
+                                    <label class="control-label col-xs-3" >No Hp</label>
+                                    <div class="col-xs-8">
+                                        <input type="text" class="form-control" name="nohp_pemesanan" placeholder="No Handphone">
+                                    </div>
+                                </div>
+                                  <div class="form-group">
+                                    <label class="control-label col-xs-3" >Status</label>
+                                    <div class="col-xs-8">
+                                       <input type="text" class="form-control" name="status_pemesanan" placeholder="Status ">
+                                    </div>
+                                </div>
+                                 <div class="form-group">
+                                    <label class="control-label col-xs-3" >Kurir</label>
+                                    <div class="col-xs-8">
+                                       <input type="text" class="form-control" name="kurir_pemesanan" placeholder="Status ">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Tutup</button>
+                                <button class="btn btn-success">Simpan</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
                 <!--End Advanced Tables -->
                 <!-- ============ MODAL EDIT BARANG =============== -->
                  <?php 

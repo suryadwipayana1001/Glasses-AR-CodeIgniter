@@ -20,4 +20,8 @@ class m_supplier extends CI_Model{
 		$hasil=$this->db->query("DELETE FROM tb_supplier WHERE	id_supplier='$id_supplier'");
 		return $hasil;
 	}
+	function detail_supplier($id_supplier){
+		$hasil=$this->db->query("SELECT * FROM tb_supplier WHERE id_supplier='$id_supplier'");
+		return $hasil;
+	}
 }

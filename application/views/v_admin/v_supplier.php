@@ -42,6 +42,7 @@
                                             <td><?php echo $i['nohp_supplier'];?></td>
                                             <td><?php echo $i['email_supplier'];?></td>
                                             <td style="width: 120px;">
+                                                <a href="<?=site_url('supplier/detail_supplier/'.$i['id_supplier'])?>"  class="btn btn-success btn-xs"><i class="fa fa-check-square-o"></i></a>
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"data-toggle="modal" data-target="#modal_edit<?php echo $id_supplier;?>"></i></button>
                                              <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal_hapus<?php echo $id_supplier;?>"><i class="fa fa-trash-o "></i></button> 
                                          </td>

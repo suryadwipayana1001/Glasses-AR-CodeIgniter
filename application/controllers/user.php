@@ -9,12 +9,22 @@ class user extends CI_Controller{
 	}
 
 	function index(){
-		$x['data']=$this->m_user->show_user();
-		$this->load->view("t_admin/header");
-		$this->load->view("t_admin/navbar");
-		$this->load->view("v_admin/v_user",$x);
-		$this->load->view("t_admin/footer");
+		if($this->session->logged_in == FALSE){
+			redirect('login');
+		}else{
+			if($this->session->level == 'Admin'){
+				$x['data']=$this->m_user->show_user();
+				$this->load->view("t_admin/header");
+				$this->load->view("t_admin/navbar");
+				$this->load->view("v_admin/v_user",$x);
+				$this->load->view("t_admin/footer");
+			} else {
+				redirect('c_beranda');
+			}
+		}
+		
 	}
+	
 	function simpan_user(){
 		$id_user=$this->input->post('id_user');
 		$nama_user=$this->input->post('nama_user');
@@ -34,7 +44,7 @@ class user extends CI_Controller{
 		$level_user=$this->input->post('level_user');
 		$this->m_user->edit_user($id_user,$nama_user, $email_user,$password_user,$tanggallahir_user,$level_user);
 		redirect('user');
-}
+	}
 
 	function hapus_user(){
 		$id_user=$this->input->post('id_user');
@@ -43,5 +53,15 @@ class user extends CI_Controller{
 
 
 	}
+	 public function detail_user()
+	{
+	  	$id_user =  $this->uri->segment(3);
+	 	$x['data']=$this->m_user->detail_user($id_user);
+		$this->load->view("t_admin/header");
+		$this->load->view("t_admin/navbar");
+		$this->load->view("v_admin/v_detailuser",$x);
+		$this->load->view("t_admin/footer");
+
+}
 }
 ?>

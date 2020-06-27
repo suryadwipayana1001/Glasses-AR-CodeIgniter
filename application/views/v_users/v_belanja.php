@@ -75,7 +75,9 @@
 
                         <!-- Product Image -->
                         <div class="product-img">
+                             <a href="product-details.html">
                             <img src="<?=base_url('assets/img/foto/'.$gambar=$i['gambar'])?>" style="width:455px height:565px">
+                        </a>
                         </div>
 
                         <!-- Product Description -->
@@ -84,12 +86,11 @@
                             <div class="product-meta-data">
                                 <div class="line"></div>
                                 <p class="product-price"><?php echo 'Rp '.number_format($i['harga_barang']) ;?></p>
-                                <a href="product-details.html">
+                                 <a href="<?=site_url('belanja/detail_belanja/'.$i['id_barang'])?>">
                                     <h4><?php echo $i['nama_barang'];?></h4>
                                 </a>
                                     <h5><?php echo $i['brand_barang'];?></h5>
-                                    <h6><?php echo $i['lensa_barang'];?></h6>
-                                <input type="number" name="quantity" id="<?php echo $id_barang=$i['id_barang'];?>" value="1" class="quantity form-control">
+                                <input type="number" name="quantity" id="<?php echo $i['id_barang'];?>" min ="1" value="1" max ="5" class="quantity form-control">
                                 
                             </div>
                             <!-- Ratings & Cart -->
@@ -104,6 +105,7 @@
 
                                 <div class="cart">
                                     <a href="<?=site_url('keranjang')?>" class="add_cart" data-gambar="<?=base_url('assets/img/foto/'.$gambar=$i['gambar'])?>" data-placement="left" title="Add to Cart" data-id_barang="<?php echo $id_barang=$i['id_barang']?>" data-nama_barang="<?php echo $nama_barang=$i['nama_barang']?>" data-harga_barang="<?php echo $harga_barang=$i['harga_barang']?>"><img src="<?=base_url()?>assets/img/core-img/cart.png" alt=""></a>
+                                    
                                 </div>
                             </div>
                         </div>

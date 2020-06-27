@@ -30,5 +30,9 @@ class m_user extends CI_Model{
             return false;
         }
     }
+    function detail_user($id_user){
+		$hasil=$this->db->query("SELECT * FROM tb_user WHERE id_user='$id_user'");
+		return $hasil;
+	}
 
 }

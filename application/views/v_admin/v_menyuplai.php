@@ -46,6 +46,7 @@
                                             <td><?php echo $i['nama_supplier'];?></td>
 
                                             <td style="width: 120px;">
+                                                 <a href="<?=site_url('menyuplai/detail_menyuplai/'.$i['id_menyuplai'])?>"  class="btn btn-success btn-xs"><i class="fa fa-check-square-o"></i></a>
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"data-toggle="modal" data-target="#modal_edit<?php echo $id_menyuplai;?>"></i></button>
                                              <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal_hapus<?php echo $id_menyuplai;?>"><i class="fa fa-trash-o "></i></button> 
                                          </td>

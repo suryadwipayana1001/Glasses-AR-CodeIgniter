@@ -93,6 +93,16 @@ class barang extends CI_Controller{
 
 
 	    }
+	    public function detail_barang()
+	{
+	  	$id_barang =  $this->uri->segment(3);
+	 	$x['data']=$this->m_barang->detail_barang($id_barang);
+		$this->load->view("t_admin/header");
+		$this->load->view("t_admin/navbar");
+		$this->load->view("v_admin/v_detailbarang",$x);
+		$this->load->view("t_admin/footer");
+
+}
 	}
 
 	?>

@@ -9,6 +9,7 @@
                             <h5>Daftar sekarang dan nikmati pengalaman belanja yang lebih cepat dan mudah</h5>
                         </div>
                         <br>
+                        <?php echo validation_errors(); ?>
                         <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/daftar/simpan_user'?>"enctype="multipart/form-data" >
                             <div class="row">
                                 <div class="col-md-12 mb-3">

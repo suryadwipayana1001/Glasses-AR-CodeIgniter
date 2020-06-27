@@ -13,7 +13,10 @@ class m_barang extends CI_Model{
 		$hasil=$this->db->query("SELECT * FROM tb_barang ");
 		return $hasil;
 	}
-
+	function detail_barang($id_barang){
+		$hasil=$this->db->query("SELECT * FROM tb_barang WHERE id_barang='$id_barang'");
+		return $hasil;
+	}
 	function simpan_barang($id_barang,$nama_barang,$jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang){
 		$hasil=$this->db->query("INSERT INTO tb_barang(id_barang,nama_barang,jumlah_barang,harga_barang,gambar,brand_barang,lensa_barang) VALUES('$id_barang','$nama_barang','$jumlah_barang','$harga_barang','$gambar','$brand_barang','$lensa_barang')");	
 		return $hasil;

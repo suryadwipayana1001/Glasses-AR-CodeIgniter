@@ -9,6 +9,10 @@ class m_pemesanan extends CI_Model{
 		$hasil=$this->db->query("SELECT * FROM tb_pemesanan WHERE id_pemesanan='$id_pemesanan'");
 		return $hasil;
 	}
+	function tampil_pemesanan(){
+		$hasil=$this->db->query("SELECT * FROM tb_pemesanan p inner join tb_user u on u.id_user=p.id_user");
+		return $hasil;
+	}
 
 	function hapus_pemesanan($id_pemesanan){
 		$hasil=$this->db->query("DELETE FROM tb_pemesanan WHERE	id_pemesanan='$id_pemesanan'");

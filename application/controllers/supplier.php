@@ -52,5 +52,15 @@ class supplier extends CI_Controller{
 
 
 	}
+	public function detail_supplier()
+	{
+	  	$id_supplier =  $this->uri->segment(3);
+	 	$x['data']=$this->m_supplier->detail_supplier($id_supplier);
+		$this->load->view("t_admin/header");
+		$this->load->view("t_admin/navbar");
+		$this->load->view("v_admin/v_detailsupplier",$x);
+		$this->load->view("t_admin/footer");
+
+}
 }
 ?>
