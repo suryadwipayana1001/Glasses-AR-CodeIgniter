@@ -53,7 +53,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 $.get("<?= site_url('checkout/get_kota/')?>"+id_provinsi,{},(response)=>{
                 let output ='';
                 let kota = response.rajaongkir.results
-                console.log(response)
+                // console.log(response)
 
                 kota.map((val,i)=>{
                     output+=`<option value="${val.city_id}" >${val.city_name}
@@ -71,10 +71,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             let output ='';
             let ongkir = '';
 
-            console.log(asal);
+            // console.log(asal);
 
                 $.get("<?= site_url('checkout/get_biaya/') ?>"+`${asal}/${tujuan}/${berat}/${kurir}`,{}, (response)=>{
-                    console.log(response);
+                    // console.log(response);
                 let biaya = response.rajaongkir.results
 
                 biaya.map((val,i)=>{
@@ -96,6 +96,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 var ongkir = $(this).children("option:selected").val();
                 console.log(ongkir);
                 $('#ongkir').text(ongkir);
+
+                var provinsi_tujuan = $('#provinsi_tujuan').children("option:selected").text();
+                var kabupaten_tujuan = $('#kota_tujuan').children("option:selected").text();
+
+                $('#prov_tuj').val(provinsi_tujuan);
+                $('#kab_tuj').val(kabupaten_tujuan);
             });
         }
 

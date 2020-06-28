@@ -4,12 +4,19 @@
     <!-- ##### Single Widget ##### -->
     <div class="widget catagory mb-50">
         <!-- Widget Title -->
-        <h6 class="widget-title mb-30">Kategori:</h6>
+        <h6 class="widget-title mb-30">Kategori Produk:</h6>
 
         <!--  Catagories  -->
-        <a href="#" class="btn amado-btn mb-15">Diskon</a>
         <a href="<?php echo base_url().'index.php/belanja'?>" class="btn amado-btn mb-15">Produk Terbaru</a>
     </div>
+    <div class="widget catagory mb-50">
+        <!-- Widget Title -->
+        <h6 class="widget-title mb-30">Kategori Harga:</h6>
+
+        <!--  Catagories  -->
+        <a href="#" class="btn amado-btn mb-15">Tinggi Ke Rendah</a>
+        <a href="#" class="btn amado-btn mb-15">Rendah Ke Tinggi</a>
+          </div>
 
         <div class="widget catagory mb-50">
         <!-- Widget Title -->
@@ -40,24 +47,8 @@
                     <!-- Sorting -->
                     <div class="product-sorting d-flex">
                         <div class="sort-by-date d-flex align-items-center mr-15">
-                            <p>Kategori Harga: </p>
-                            <form action="#" method="get">
-                                <select name="select" id="sortBydate">
-                                    <option value="value">Tinggi ke Rendah</option>
-                                    <option value="value">Rendah ke Tinggi</option>
-                                </select>
-                            </form>
                         </div>
                         <div class="view-product d-flex align-items-center">
-                            <p>Tampilkan</p>
-                            <form action="#" method="get">
-                                <select name="select" id="viewProduct">
-                                    <option value="value">12</option>
-                                    <option value="value">24</option>
-                                    <option value="value">48</option>
-                                    <option value="value">96</option>
-                                </select>
-                            </form>
                         </div>
                     </div>
                 </div>

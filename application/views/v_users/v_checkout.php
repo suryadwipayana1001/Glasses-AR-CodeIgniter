@@ -52,6 +52,19 @@
                             </select>
                         </div>
 
+                        <input type="hidden" name="prov_tuj" id="prov_tuj">
+                        <input type="hidden" name="kab_tuj" id="kab_tuj">
+                        <?php
+                        $i = 1;
+                            foreach ($cartItems as $cartItem) :
+                            ?>
+                            <input type="hidden" name="id_barang<?php echo $i; ?>" value="<?php echo $cartItem['id']; ?>">
+                            <input type="hidden" name="nama_barang<?php echo $i; ?>" value="<?php echo $cartItem['name']; ?>">
+                            <input type="hidden" name="harga_barang<?php echo $i; ?>" value="<?php echo $cartItem['price']; ?>">
+                            <input type="hidden" name="jumlah_barang<?php echo $i; ?>" value="<?php echo $cartItem['qty']; ?>">
+                            <input type="hidden" name="subtotal<?php echo $i; ?>" value="<?php echo $cartItem['subtotal']; ?>">
+                        <?php $i = $i+1; endforeach; ?>
+                        <input type="hidden" name="jum_bar" value="<?php echo $i-1; ?>">
                         <div class="col-md-12 mb-3">
                             <label for="service">Service</label>
                             <select name="kurir_pemesanan" onChange="update_total()" id="service" class="w-100">
