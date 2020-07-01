@@ -94,8 +94,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         function update_total() {
             $("#service").change(function(){
                 var ongkir = $(this).children("option:selected").val();
-                console.log(ongkir);
                 $('#ongkir').text(ongkir);
+                var subtotal = $('#subtotal').text();
+                var total = parseFloat(subtotal) + parseFloat(ongkir);
+                $('#total').text(total);
 
                 var provinsi_tujuan = $('#provinsi_tujuan').children("option:selected").text();
                 var kabupaten_tujuan = $('#kota_tujuan').children("option:selected").text();

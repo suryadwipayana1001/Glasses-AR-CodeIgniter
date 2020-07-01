@@ -9,7 +9,9 @@ class pemesanan extends CI_Controller{
 	}
 
 	function index(){
-		$x['data']=$this->m_pemesanan->show_pemesanan();
+		if($this->session->logged_in == TRUE){
+    	$user = $this->session->id_user; }
+		$x['data']=$this->m_pemesanan->show_pemesanan($user);
 		$this->load->view("t_admin/header");
 		$this->load->view("t_admin/navbar");
 		$this->load->view("v_admin/v_pemesanan",$x);
@@ -48,8 +50,14 @@ class pemesanan extends CI_Controller{
 	{
 	  $id_pemesanan =  $this->uri->segment(3);
 
+
 	 $x['data']=$this->m_pemesanan->detail_pemesanan($id_pemesanan);
-	
+	 $x['data1']=$this->m_pemesanan->detail_pemesan($id_pemesanan);
+	 /*foreach ($x['data']->result_array()as $i):
+               var_dump($i);
+
+           endforeach;*/
+
 	  
 		$this->load->view("t_admin/header");
 		$this->load->view("t_admin/navbar");

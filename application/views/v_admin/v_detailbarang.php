@@ -47,6 +47,11 @@
                             <th width="1%">:</th>
                             <td><?php echo $i['lensa_barang'] ?></td>
                         </tr>
+                         <tr>
+                            <th width="20%">Deskripsi</th>
+                            <th width="1%">:</th>
+                            <td><?php echo $i['deskripsi_barang'] ?></td>
+                        </tr>
                         <tr>
                             <th width="20%">Foto</th>
                             <th width="1%">:</th>

@@ -1,7 +1,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
 <body>
-  <?php $this->load->view("t_users/sidebar");?>
+  <?php $this->load->view("t_users/sidebar"); ?>
 
   <div class="cart-table-area section-padding-100">
     <div class="container-fluid">
@@ -14,6 +14,7 @@
                     </div>
                     <form id="form-checkout" class="form-horizontal" method="post" action="<?php echo base_url().'index.php/checkout/simpan_pemesanan'?>"enctype="multipart/form-data" >
                         <div class="row">
+
                         <div class="col-6 mb-3">Nama
                             <input type="text" class="form-control" name="nama_pemesanan" placeholder="Nama">
                         </div>
@@ -72,7 +73,7 @@
                             </select>
                         </div>
                         <div class="col-6 mb-3">
-                            <button class="btn amado-btn w-100">Simpan</button>
+                            <button class="btn amado-btn w-100">Proses</button>
                         </div>
                         <div class="col-6 mb-3">
                              <a href="<?=site_url('keranjang')?>" class="btn amado-btn w-100">Kembali</a>
@@ -98,10 +99,10 @@ endforeach; ?>
 </ul>
 
                 <ul class="summary-table">
-                    <li><span>Subtotal:</span> <span><?php echo $subtotal;  ?></span></li>
+                    <li><span>Subtotal:</span> <span id="subtotal"><?php echo $subtotal;  ?></span></li>
                     <div>
                     <li><span>Ongkos Kirim:</span> <span id="ongkir"></span></li>
-                    <li><span>Total:</span> <span>630000</span></li>
+                    <li><span>Total:</span> <span id="total"></span></li>
                     </div>
                 </ul>
             </div>

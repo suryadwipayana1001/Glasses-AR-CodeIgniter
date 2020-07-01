@@ -23,9 +23,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                         <?php
-                         $no=1;
-                         foreach ($data->result_array()as $i):
+                           <?php
+                           $no=1;
+                           foreach ($data->result_array()as $i):
                             ?>
                             <tr>
                                 <td><?php echo $no++?></td>
@@ -35,14 +35,46 @@
                                 <td>
                                 </td>
                                 <td><?php echo $status_pemesanan=$i['status_pemesanan'];?></td>
-                                <td><a href="<?=site_url('transaksi/detail/'.$i['id_pemesanan'])?>"  class="tulisbtn btn btn-success btn-xs"><i class="fa fa-check-square-o"></i></a></td>
-                            </tr>
-                        <?php endforeach;?>
-                    </tbody>
-                </table>
-            </div>
+                                <td><a href="<?=site_url('transaksi/detail/'.$i['id_pemesanan'])?>"  class="tulisbtn btn btn-success btn-xs"><i class="fa fa-check-square-o"></i></a>
+                                     
+                                    <!-- <form action="<?=site_url('transaksi/hapus_transaksi')?>" method="post" >
+                                        <input type="hidden" name="id_pemesanan" value="<?php echo$i['id_pemesanan']?>"> 
+                                       
+                                          <button onclick="return confirm('Apakah anda yakin menghapus data pemesanan ini?')" class="tulisbtn btn btn-danger btn-xs"><i class="fa fa-trash"></i> 
+                                      </button>
+                                  </form> -->
+                              </td>
+                              
+                          </tr>
+                      <?php endforeach;?>
+   <div class="row">
+        
         </div>
-    </div>
+                  </tbody>
+              </table>
+                  <div class="col-12">
+                <!-- Pagination -->
+                <nav aria-label="navigation">
+                <ul class="pagination justify-content-end mt-50">
+                    <?php
+                        foreach ($tot->result_array() as $jum) :
+                            $total = $jum['jum'];
+                        endforeach;
+
+                        $pages = ceil($total/$jumhal);
+
+                        $bel = current_url();
+
+                        for ($i=1; $i<=$pages ; $i++){ ?>
+                            <li class="page-item"><a class="page-link" href='<?php echo $bel; ?>?page=<?php echo $i; ?>'><?php echo $i; ?></a></li>
+                            <?php } 
+                        ?>
+                    </ul>
+                </nav>
+            </div>
+          </div>
+      </div>
+  </div>
 </div>
 </div>
 </div>

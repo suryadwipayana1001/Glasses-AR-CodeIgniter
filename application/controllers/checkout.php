@@ -9,6 +9,7 @@ class checkout extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->model('m_pemesanan');
+		$this->load->model('m_barang');
 	}
 	function index()
 	{
@@ -19,10 +20,14 @@ class checkout extends CI_Controller{
 		$this->load->view("t_users/footer1");
 	}
 	function simpan_pemesanan(){
+
+		if($this->session->logged_in == TRUE){
+    	$user = $this->session->id_user; }
+
 		$last_id = $this->m_pemesanan->last_id_pemesanan();
 		foreach ($last_id->result_array()as $i){ $last_idk = $i['id_pemesanan']; }
 		$id_pemesanan = $last_idk + 1;
-		
+		$tanggal_pemesanan=date("Y-m-d");
 		$nama_pemesanan=$this->input->post('nama_pemesanan');
 		$provinsi_pemesanan=$this->input->post('prov_tuj');
 		$kabupaten_pemesanan=$this->input->post('kab_tuj');
@@ -33,7 +38,7 @@ class checkout extends CI_Controller{
 		$kurir_pemesanan=$this->input->post('kurir_pemesanan');
 		$status_pemesanan=$this->input->post('status_pemesanan');
 		$struk_pemesanan=$this->input->post('struk_pemesanan');
-		$this->m_pemesanan->simpan_pemesanan($nama_pemesanan,$provinsi_pemesanan,$kabupaten_pemesanan,$kecamatan_pemesanan,$alamat_pemesanan,$kodepos_pemesanan,$nohp_pemesanan,$kurir_pemesanan,$status_pemesanan,$struk_pemesanan);
+		$this->m_pemesanan->simpan_pemesanan($user,$nama_pemesanan,$provinsi_pemesanan,$kabupaten_pemesanan,$kecamatan_pemesanan,$alamat_pemesanan,$kodepos_pemesanan,$nohp_pemesanan,$kurir_pemesanan,$status_pemesanan,$struk_pemesanan,$tanggal_pemesanan);
 
 		$jum_bar = $this->input->post('jum_bar');
 
@@ -49,11 +54,16 @@ class checkout extends CI_Controller{
 			$harga_dipesan=$this->input->post($tmp_harga);
 			$jumlah_dipesan=$this->input->post($tmp_jum);
 			$totalharga_dipesan=$this->input->post($tmp_sub);
-
+			
+			$stok=$this->m_barang->detail_barang($id_barang);
+			
+			foreach ($stok->result_array()as $i){ $stok1 = $i['jumlah_barang']; }
+			$sisa=$stok1-$jumlah_dipesan;
+			$this->m_barang->update_stok($id_barang,$sisa);
 			$this->m_pemesanan->simpan_dipesan($id_barang,$id_pemesanan,$nama_dipesan,$harga_dipesan,$jumlah_dipesan,$totalharga_dipesan);
 		}
 
-		redirect('checkout');
+		redirect('transaksi');
 	}
 	function simpan_dipesan(){
 		

@@ -14,95 +14,87 @@
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                 <h4>Data Pemesan</h4>
-            </div>
-            <?php
-            foreach ($data->result_array()as $i):
-                ?>
-                <div class="panel-body">
-                    <table class="table table-striped">
+             <h4>Data Pemesan</h4>
+         </div>
+         <?php
+         foreach ($data->result_array()as $i):
+           ?>
 
-                        <tr>
-                            <th width="20%">Nama</th>
-                            <th width="1%">:</th>
-                            <td><?php echo $i['nama_pemesanan'] ?></td>
-                        </tr>
-                        <tr>
-                            <th width="20%">Provinsi</th>
-                            <th width="1%">:</th>
-                            <td><?php echo $i['provinsi_pemesanan'] ?></td>
-                        </tr>
-                        <tr>
-                            <th width="20%">Kabupaten</th>
-                            <th width="1%">:</th>
-                            <td><?php echo $i['kabupaten_pemesanan']?></td>
-                        </tr>
-                        <tr>
-                            <th width="20%">Kecamatan</th>
-                            <th width="1%">:</th>
-                            <td><?php echo $i['kecamatan_pemesanan'] ?></td>
-                        </tr>
-                        <tr>
-                            <th width="20%">Alamat</th>
-                            <th width="1%">:</th>
-                            <td><?php echo $i['alamat_pemesanan'] ?></td>
-                        </tr>
-                        <tr>
-                            <th width="20%">Kode Pos</th>
-                            <th width="1%">:</th>
-                            <td><?php echo $i['kodepos_pemesanan'] ?></td>
-                        </tr>
-                    </table>
-                   <h4>Data Produk</h4>
-                    <hr>
-                     <table class="table table-striped">
-                        <tr>
-                            <th width="20%">Nama Produk</th>
-                            <th width="1%">:</th>
-                            <td><?php echo $i['nama_pemesanan'] ?></td>
-                        </tr>
-                        <tr>
-                            <th width="20%">Harga</th>
-                            <th width="1%">:</th>
-                            <td><?php echo $i['provinsi_pemesanan'] ?></td>
-                        </tr>
-                        <tr>
-                            <th width="20%">Jumlah</th>
-                            <th width="1%">:</th>
-                            <td><?php echo $i['kabupaten_pemesanan']?></td>
-                        </tr>
-                        <tr>
-                            <th width="20%">Total</th>
-                            <th width="1%">:</th>
-                            <td><?php echo $i['kecamatan_pemesanan'] ?></td>
-                        </tr>
-                        <tr>
-                            <th width="20%">Ongkos Kirim</th>
-                            <th width="1%">:</th>
-                            <td><?php echo $i['alamat_pemesanan'] ?></td>
-                        </tr>
-                        <tr>
-                            <th width="20%">Status Pengiriman</th>
-                            <th width="1%">:</th>
-                            <td><?php echo $i['kodepos_pemesanan'] ?></td>
-                        </tr>
-                         <tr>
-                            <th width="20%">Struk</th>
-                            <th width="1%">:</th>
-                            <td><?php echo $i['kodepos_pemesanan'] ?></td>
-                        </tr>
-                    </table>
-                    <!-- /.row (nested) -->
-                </div>
-            <?php endforeach;?>
-             <a href="<?=site_url('pemesanan')?>" class="">Kembali</a>
-            <!-- /.panel-body -->
-        </div>
-        <!-- /.panel -->
-    </div>
-    <!-- /.col-lg-12 -->
+           <div class="panel-body">
+            <table class="table table-striped">
 
-    <!-- /. PAGE INNER  -->
+                <tr>
+                    <th width="20%">Nama </th>
+                    <th width="1%">:</th>
+                    <td><?php echo $i['nama_pemesanan'] ?></td>
+                </tr>
+                <tr>
+                    <th width="20%">Provinsi</th>
+                    <th width="1%">:</th>
+                    <td><?php echo $i['provinsi_pemesanan'] ?></td>
+                </tr>
+                <tr>
+                    <th width="20%">Kabupaten</th>
+                    <th width="1%">:</th>
+                    <td><?php echo $i['kabupaten_pemesanan']?></td>
+                </tr>
+                <tr>
+                    <th width="20%">Kecamatan</th>
+                    <th width="1%">:</th>
+                    <td><?php echo $i['kecamatan_pemesanan'] ?></td>
+                </tr>
+                <tr>
+                    <th width="20%">Alamat</th>
+                    <th width="1%">:</th>
+                    <td><?php echo $i['alamat_pemesanan'] ?></td>
+                </tr>
+                <tr>
+                    <th width="20%">Kode Pos</th>
+                    <th width="1%">:</th>
+                    <td><?php echo $i['kodepos_pemesanan'] ?></td>
+                </tr>
+            </table>
+        <?php endforeach?>
+        <h4>Data Produk</h4>
+        <hr>
+         <table class="table table-striped">
+        <tr>
+                <th>Nama Produk</th>
+                <th>Harga</th>
+                <th>Jumlah </th>
+                <th>Total</th> 
+            </tr>
+        <?php foreach ($data1->result_array()as $i):
+
+           ?>
+          
+            
+            <tr>
+               <td><?php echo $i['nama_dipesan'] ?></td>
+               <td><?php echo $i['harga_dipesan']?></td>
+               <td><?php echo $i['jumlah_dipesan']?></td>
+               <td><?php echo $i['totalharga_dipesan']?></td>
+           </tr>
+
+       
+<?php endforeach;?>
+</table>
+       <!-- /.row (nested) -->
+   </div>
+
+  <table>
+
+
+<th width="100%"></th>
+<td><a href="<?=site_url('pemesanan')?>"  class="btn btn-danger">Kembali</a></td>
+</table>
+<!-- /.panel-body -->
+</div>
+<!-- /.panel -->
+</div>
+<!-- /.col-lg-12 -->
+
+<!-- /. PAGE INNER  -->
 </div>
 </div>
 </div>

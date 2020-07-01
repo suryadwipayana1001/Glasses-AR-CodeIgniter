@@ -8,10 +8,7 @@ class keranjang extends CI_Controller{
 function __construct(){
 		parent::__construct();
 		$this->load->model('m_barang');
-
 		$this->load->library('cart');
-
-
 	}
 	public function index()
 	{
@@ -30,6 +27,13 @@ function add_to_cart(){ //fungsi Add To Cart
 		);
 		$this->cart->insert($data);
 		$data['gambar'] = $this->input->post('gambar');
+
+		if($this->session->logged_in == TRUE){
+    		$id_user = $this->session->id_user;
+    		$cartContentString = serialize($this->cart->contents());
+			$this->m_barang->store_cart($id_user, $cartContentString);
+		}
+
 		echo $this->show_cart($data); //tampilkan cart setelah added
 	}
 

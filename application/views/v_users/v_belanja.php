@@ -81,7 +81,11 @@
                                     <h4><?php echo $i['nama_barang'];?></h4>
                                 </a>
                                     <h5><?php echo $i['brand_barang'];?></h5>
-                                <input type="number" name="quantity" id="<?php echo $i['id_barang'];?>" min ="1" value="1" max ="5" class="quantity form-control">
+                                    <?php
+                                    $jumlah_barang=$i['jumlah_barang']; 
+                                    if($jumlah_barang==0) $min=0; 
+                                    else $min=1; ?>
+                                <input type="number" name="quantity" id="<?php echo $i['id_barang'];?>" min ="<?php echo $min?>" value="<?php echo $min ?>" max ="<?php echo $i['jumlah_barang']?>" class="quantity form-control">
                                 
                             </div>
                             <!-- Ratings & Cart -->

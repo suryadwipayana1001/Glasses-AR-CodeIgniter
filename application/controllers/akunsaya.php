@@ -6,10 +6,26 @@ class akunsaya extends CI_Controller {
     function __construct(){
         parent::__construct();
         $this->load->model('m_user');
+        $this->load->model('m_barang');
     }
      
     public function index()
     {
+        if($this->session->logged_in == TRUE){
+        $id_user = $this->session->id_user; 
+        var_dump($id_user);
+
+         $carts = $this->m_barang->load_cart($id_user);
+                foreach ($carts->result_array() as $i) {
+                    $cartku=$i['cart'];
+                    $cartku=unserialize($cartku);
+                }
+            var_dump($cartku);
+            $this->cart->insert($cartku);
+        }
+
+
+
         $this->load->view("t_users/header");
         if($this->session->logged_in == FALSE){
            $this->load->view("v_users/v_akunsaya");
@@ -18,9 +34,6 @@ class akunsaya extends CI_Controller {
         }
  
         $this->load->view("t_users/footer");
-      
-      
-       
     }
  
     public function Loginakun()

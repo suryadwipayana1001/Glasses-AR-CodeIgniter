@@ -11,7 +11,14 @@ function __construct(){
 	}
 	 function index()
 	{
-		$x['data']=$this->m_pemesanan->show_pemesanan();
+		$jumhal = 5; // jumlah halaman per page
+		
+		$page = isset($_GET['page']) ? $_GET['page'] : 1;
+		$mulai = ($page>1) ? ($page * $jumhal) - $jumhal : 0;
+
+		$x['data']=$this->m_pemesanan->show_pemesanan1($mulai, $jumhal);
+		$x['tot']=$this->m_pemesanan->count_pemesanan();
+		$x['jumhal']=$jumhal;
 		$this->load->view("t_users/header");
 		$this->load->view("v_users/v_transaksi",$x);
 		$this->load->view("t_users/footer");
@@ -27,7 +34,14 @@ function __construct(){
 		$this->load->view("t_users/header");
 		$this->load->view("v_users/v_detailtransaksi",$x);
 		$this->load->view("t_users/footer");
-
 }
+ 	function hapus_transaksi(){
+
+	    	$id_pemesanan=$this->input->post('id_pemesanan');
+	    	$this->m_pemesanan->hapus_pemesanan($id_pemesanan);
+	    	redirect('transaksi');
+
+
+	    }
 }
 ?>

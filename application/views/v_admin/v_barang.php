@@ -105,6 +105,12 @@
                                     </div>
                                 </div>
                                  <div class="form-group">
+                                    <label class="control-label col-xs-3" >Deskripsi Produk</label>
+                                    <div class="col-xs-8">
+                                        <input name="deskripsi_barang" class="form-control" type="text" placeholder="Deskripsi Produk" required>
+                                    </div>
+                                </div>
+                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Foto</label>
                                     <div class="col-xs-8">
                                         <input type="file" name="filefoto" class="dropify" data-height="100" data-width="50">
@@ -130,6 +136,7 @@
                 $brand_barang=$i['brand_barang'];
                 $gambar=$i['gambar'];
                 $lensa_barang=$i['lensa_barang'];
+                $deskripsi_barang=$i['deskripsi_barang'];
                 ?>
                 <div class="modal fade" id="modal_edit<?php echo $id_barang;?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
                     <div class="modal-dialog">
@@ -183,6 +190,12 @@
                                         <label class="control-label col-xs-3" >Lensa</label>
                                         <div class="col-xs-8">
                                             <input name="lensa_barang" value="<?php echo $lensa_barang;?>" class="form-control" type="text" placeholder="Lensa" required>
+                                        </div>
+                                    </div>
+                                     <div class="form-group">
+                                        <label class="control-label col-xs-3" >Deskripsi Produk</label>
+                                        <div class="col-xs-8">
+                                            <input name="deskripsi_barang" value="<?php echo $deskripsi_barang;?>" class="form-control" type="text" placeholder="Deskripsi Produk" required>
                                         </div>
                                     </div>
                                     <div class="form-group">

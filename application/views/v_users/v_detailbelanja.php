@@ -46,7 +46,6 @@
 							<div class="product-meta-data">
 								<h2><?php echo $i['nama_barang'];?></h2>
 								<p class="product-price"><?php echo 'Rp '.number_format($i['harga_barang']) ;?></p>
-								<h5><?php echo $i['brand_barang'];?></h5>
 								<!-- Ratings & Review -->
 								<div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
 									<div class="ratings">
@@ -57,7 +56,8 @@
 										<i class="fa fa-star" aria-hidden="true"></i>
 									</div>
 									<div class="review">
-										<a href="#">Write A Review</a>
+										<?php echo $i['brand_barang'];?>
+										
 									</div>
 								</div>
 								<!-- Avaiable -->
@@ -65,7 +65,7 @@
 							</div>
 
 							<div class="short_overview my-5">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quae eveniet culpa officia quidem mollitia impedit iste asperiores nisi reprehenderit consequatur, autem, nostrum pariatur enim?</p>
+							<?php echo $tes=$i['deskripsi_barang'];?>
 							</div>
 
 							<!-- Add to Cart Form -->

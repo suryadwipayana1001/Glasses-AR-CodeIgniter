@@ -15,7 +15,7 @@
                     <?php
                            foreach ($data->result_array()as $i):
                             ?>
-                    <form id="form-checkout" class="form-horizontal" method="post" action="<?php echo base_url().'index.php/checkout/simpan_pemesanan'?>"enctype="multipart/form-data" >
+                    <form id="form-checkout" class="form-horizontal" method="post" action=""enctype="multipart/form-data" >
                         <div class="row">
 
                             <div class="col-6 mb-3">Nama

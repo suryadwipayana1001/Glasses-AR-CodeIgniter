@@ -25,6 +25,7 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
+                                        <th>Nama User</th>
                                         <th>Nama</th>
                                         <th>Alamat</th>
                                         <th>Produk</th>
@@ -41,6 +42,7 @@
                                         ?>
                                         <tr class="odd gradeX">
                                             <td><?php echo $no++?></td>
+                                            <td><?php echo $i['nama_user'];?></td>
                                             <td><?php echo $i['nama_pemesanan'];?></td>
                                             <td><?php echo $i['alamat_pemesanan'];?>, <?php echo $i['kecamatan_pemesanan'];?>, <?php echo $i['kabupaten_pemesanan'];?>,  <?php echo $i['provinsi_pemesanan'];?>, <?php echo $i['kodepos_pemesanan'];?></td>
                                             <td></td>
