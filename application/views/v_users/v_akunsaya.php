@@ -6,7 +6,7 @@
                         <div class="checkout_details_area mt-50 clearfix">
 
                             <div class="cart-title">
-                                <h5>Masuk ke akun agar dapat melakukan transaksi dan melihat pesanan anda</h4>
+                                <h5 class="alert alert-warning">Masuk ke akun agar dapat melakukan transaksi dan melihat pesanan anda</h4>
                             </div>
                             <br>
                             <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/akunsaya/loginakun'?>"enctype="multipart/form-data" >

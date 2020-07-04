@@ -2,15 +2,15 @@
 class m_pemesanan extends CI_Model{
 	
 	function show_pemesanan($user){
-		$hasil=$this->db->query("SELECT * FROM tb_pemesanan p INNER JOIN tb_user u on u.id_user=p.id_user ");
+		$hasil=$this->db->query("SELECT * FROM tb_pemesanan p INNER JOIN tb_user u on u.id_user=p.id_user INNER JOIN tb_dipesan d on d.id_pemesanan=p.id_pemesanan ");
 		return $hasil;
 	}
-	function show_pemesanan1($mulai, $halaman){
-		$hasil=$this->db->query("SELECT * FROM tb_pemesanan LIMIT $mulai, $halaman");
+	function show_pemesanan1($mulai, $halaman, $id_user){
+		$hasil=$this->db->query("SELECT * FROM tb_pemesanan WHERE id_user='$id_user' LIMIT $mulai, $halaman");
 		return $hasil;
 	}
-	function count_pemesanan(){
-		$hasil=$this->db->query("SELECT COUNT(*) as jum FROM tb_pemesanan");
+	function count_pemesanan($id_user){
+		$hasil=$this->db->query("SELECT COUNT(*) as jum FROM tb_pemesanan WHERE id_user='$id_user'");
 		return $hasil;
 	}
 	function detail_pemesanan($id_pemesanan){
@@ -26,6 +26,11 @@ class m_pemesanan extends CI_Model{
 		$hasil=$this->db->query("DELETE FROM tb_pemesanan WHERE	id_pemesanan='$id_pemesanan'");
 		return $hasil;
 	}
+	function hapus_dipesan($id_pemesanan){
+		$hasil=$this->db->query("DELETE FROM tb_dipesan WHERE	id_pemesanan='$id_pemesanan'");
+		return $hasil;
+	}
+
 	function last_id_pemesanan() {
 		$hasil=$this->db->query("SELECT id_pemesanan FROM tb_pemesanan ORDER BY id_pemesanan DESC LIMIT 1");
 		return $hasil;

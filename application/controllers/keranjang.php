@@ -9,12 +9,25 @@ function __construct(){
 		parent::__construct();
 		$this->load->model('m_barang');
 		$this->load->library('cart');
+
+		if($this->session->logged_in == TRUE){
+    		$id_user = $this->session->id_user;
+    		$cartContentString = serialize($this->cart->contents());
+
+			$cek_user = $this->m_barang->cek_user($id_user);
+			if ($cek_user->num_rows()) {
+				$this->m_barang->update_cart($id_user, $cartContentString);
+			} else $this->m_barang->simpan_cart($id_user, $cartContentString);
+		}
+
 	}
 	public function index()
 	{
 		$this->load->view("t_users/header");
+		
 		$this->load->view("v_users/v_keranjang");
 		$this->load->view("t_users/footer");
+
 
 	}
 function add_to_cart(){ //fungsi Add To Cart
@@ -27,14 +40,9 @@ function add_to_cart(){ //fungsi Add To Cart
 		);
 		$this->cart->insert($data);
 		$data['gambar'] = $this->input->post('gambar');
+		
 
-		if($this->session->logged_in == TRUE){
-    		$id_user = $this->session->id_user;
-    		$cartContentString = serialize($this->cart->contents());
-			$this->m_barang->store_cart($id_user, $cartContentString);
-		}
-
-		echo $this->show_cart($data); //tampilkan cart setelah added
+	/*	echo $this->show_cart($data); //tampilkan cart setelah added*/
 	}
 
 	function show_cart(){ //Fungsi untuk menampilkan Cart
@@ -46,6 +54,7 @@ function add_to_cart(){ //fungsi Add To Cart
 
                 <div class="cart-table clearfix keranjang ">
                     <table class="table table-responsive">
+                    
                         <thead>
                             <tr>
                                 <th>Gambar</th>
@@ -57,9 +66,23 @@ function add_to_cart(){ //fungsi Add To Cart
                             </tr>
                         </thead>
                         <tbody id="detail_cart">';
+        if($this->session->logged_in == TRUE){
+    		$id_user = $this->session->id_user;
+        	$isi_cart = $this->m_barang->tampil_cart($id_user);
+
+			foreach ($isi_cart->result_array()as $i) {
+				$cartku = $i['cart'];
+			}
+			// var_dump($cartku);
+			$cart = unserialize($cartku);
+
+    		// echo "<br><br><pre>";
+    		// print_r($dt);
+    		// echo "</pre>";
+    	} else $cart = $this->cart->contents();
 
 		$no = 0;
-		foreach ($this->cart->contents() as $items) {
+		foreach ($cart as $items) {
 			$no++;
 			$output .='
 				<tr>

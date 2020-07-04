@@ -11,17 +11,24 @@ function __construct(){
 	}
 	 function index()
 	{
-		$jumhal = 5; // jumlah halaman per page
-		
-		$page = isset($_GET['page']) ? $_GET['page'] : 1;
-		$mulai = ($page>1) ? ($page * $jumhal) - $jumhal : 0;
 
-		$x['data']=$this->m_pemesanan->show_pemesanan1($mulai, $jumhal);
-		$x['tot']=$this->m_pemesanan->count_pemesanan();
-		$x['jumhal']=$jumhal;
-		$this->load->view("t_users/header");
-		$this->load->view("v_users/v_transaksi",$x);
-		$this->load->view("t_users/footer");
+		if($this->session->logged_in == TRUE){
+    		$id_user = $this->session->id_user;
+
+			$jumhal = 5; // jumlah halaman per page
+			
+			$page = isset($_GET['page']) ? $_GET['page'] : 1;
+			$mulai = ($page>1) ? ($page * $jumhal) - $jumhal : 0;
+
+			$x['data']=$this->m_pemesanan->show_pemesanan1($mulai, $jumhal, $id_user);
+			$x['tot']=$this->m_pemesanan->count_pemesanan($id_user);
+			$x['jumhal']=$jumhal;
+			$this->load->view("t_users/header");
+			$this->load->view("v_users/v_transaksi",$x);
+			$this->load->view("t_users/footer");
+		} else {
+			redirect('c_beranda');
+		}
 
 	}
 	public function detail()

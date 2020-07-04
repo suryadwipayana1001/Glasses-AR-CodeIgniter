@@ -13,7 +13,7 @@
                         <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/daftar/simpan_user'?>"enctype="multipart/form-data" >
                             <div class="row">
                                 <div class="col-md-12 mb-3">
-                                   Nama <input type="text" class="form-control" name="nama_user" value="" placeholder="Nama" required>
+                                   Nama <input type="text" class="form-control" name="nama_user" pattern="[A-Za-z]+" title="Hanya boleh memasukkan huruf" value="" placeholder="Nama" required>
                                </div>
                                <div class="col-md-12 mb-3">
                                    Email <input type="text" class="form-control" name="email_user" value="" placeholder="Email" required>

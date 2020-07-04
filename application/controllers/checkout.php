@@ -10,14 +10,20 @@ class checkout extends CI_Controller{
 		parent::__construct();
 		$this->load->model('m_pemesanan');
 		$this->load->model('m_barang');
+		$this->load->library('cart');
 	}
 	function index()
 	{
-		$data['cartItems'] = $this->cart->contents();
+		if($this->session->logged_in == TRUE){
 
-		$this->load->view("t_users/header");
-		$this->load->view("v_users/v_checkout", $data);		
-		$this->load->view("t_users/footer1");
+			$data['cartItems'] = $this->cart->contents();
+
+			$this->load->view("t_users/header");
+			$this->load->view("v_users/v_checkout", $data);		
+			$this->load->view("t_users/footer1");
+		} else {
+			redirect('akunsaya');
+		}
 	}
 	function simpan_pemesanan(){
 
@@ -38,6 +44,7 @@ class checkout extends CI_Controller{
 		$kurir_pemesanan=$this->input->post('kurir_pemesanan');
 		$status_pemesanan=$this->input->post('status_pemesanan');
 		$struk_pemesanan=$this->input->post('struk_pemesanan');
+
 		$this->m_pemesanan->simpan_pemesanan($user,$nama_pemesanan,$provinsi_pemesanan,$kabupaten_pemesanan,$kecamatan_pemesanan,$alamat_pemesanan,$kodepos_pemesanan,$nohp_pemesanan,$kurir_pemesanan,$status_pemesanan,$struk_pemesanan,$tanggal_pemesanan);
 
 		$jum_bar = $this->input->post('jum_bar');
@@ -62,8 +69,8 @@ class checkout extends CI_Controller{
 			$this->m_barang->update_stok($id_barang,$sisa);
 			$this->m_pemesanan->simpan_dipesan($id_barang,$id_pemesanan,$nama_dipesan,$harga_dipesan,$jumlah_dipesan,$totalharga_dipesan);
 		}
-
-		redirect('transaksi');
+		$this->cart->destroy();
+		redirect('berhasil');
 	}
 	function simpan_dipesan(){
 		

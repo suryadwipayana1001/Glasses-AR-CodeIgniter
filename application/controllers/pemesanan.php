@@ -41,6 +41,7 @@ class pemesanan extends CI_Controller{
 
 	function hapus_pemesanan(){
 		$id_pemesanan=$this->input->post('id_pemesanan');
+		$this->m_pemesanan->hapus_dipesan($id_pemesanan);
 		$this->m_pemesanan->hapus_pemesanan($id_pemesanan);
 		redirect('pemesanan');
 

@@ -49,6 +49,11 @@
                 <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
             </div>
+            <?php
+                $total = 0; 
+                foreach ($this->cart->contents() as $i) {
+                    $total += $i['qty'];
+                }?>
             <nav class="amado-nav">
                 <ul>
                    <li <?=$this->uri->segment(1) == 'beranda' || $this->uri->segment(1) == '' ? 'class="active-menu"' : ''?>>
@@ -62,7 +67,7 @@
                     </a>
                    </li>
                     <li <?=$this->uri->segment(1) == 'keranjang' || $this->uri->segment(1) == '' ? 'class="active-menu"' : ''?>>
-                    <a href="<?=site_url('keranjang')?>"><img src="<?=base_url()?>assets/img/core-img/cart.png" alt="">Keranjang <span>(0)</span></a>
+                    <a href="<?=site_url('keranjang')?>"><img src="<?=base_url()?>assets/img/core-img/cart.png" alt="">Keranjang <span class="badge badge-warning">(<?php echo $total ?>)</span></a>
                    </li>
                    <li <?=$this->uri->segment(1) == 'transaksi' || $this->uri->segment(1) == '' ? 'class="active-menu"' : ''?>>
                     <a href="<?=site_url('transaksi')?>">

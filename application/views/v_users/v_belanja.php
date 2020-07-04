@@ -14,8 +14,8 @@
         <h6 class="widget-title mb-30">Kategori Harga:</h6>
 
         <!--  Catagories  -->
-        <a href="#" class="btn amado-btn mb-15">Tinggi Ke Rendah</a>
-        <a href="#" class="btn amado-btn mb-15">Rendah Ke Tinggi</a>
+        <a href="<?php echo base_url().'index.php/belanja/show_tinggi'?>" class="btn amado-btn mb-15">Tinggi Ke Rendah</a>
+        <a href="<?php echo base_url().'index.php/belanja/show_rendah'?>" class="btn amado-btn mb-15">Rendah Ke Tinggi</a>
           </div>
 
         <div class="widget catagory mb-50">
