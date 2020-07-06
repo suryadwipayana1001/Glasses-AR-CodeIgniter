@@ -69,31 +69,32 @@
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Nama</label>
                                     <div class="col-xs-8">
-                                        <input name="nama_user" class="form-control" type="text" placeholder="Nama" required>
+                                        <input name="nama_user" class="form-control" type="text" placeholder="Nama"required oninvalid="this.setCustomValidity('Data Nama tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Email</label>
                                     <div class="col-xs-8">
-                                        <input name="email_user" class="form-control" type="text" placeholder="Email" required>
+                                        <input name="email_user" class="form-control" type="text" placeholder="Email" required oninvalid="this.setCustomValidity('Data Email tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                  <div class="form-group">
                                     <label class="control-label col-xs-3" >Password</label>
                                     <div class="col-xs-8">
-                                        <input name="password_user" class="form-control" type="text" placeholder="Password" required>
+                                        <input name="password_user" class="form-control" type="text" placeholder="Password" required oninvalid="this.setCustomValidity('Data Password tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                  <div class="form-group">
                                     <label class="control-label col-xs-3" >Tanggal Lahir</label>
                                     <div class="col-xs-8">
-                                        <input name="tanggallahir_user" class="form-control" type="date" placeholder="Tanggal Lahir" required>
+                                        <input name="tanggallahir_user" class="form-control" type="date" placeholder="Tanggal Lahir" required oninvalid="this.setCustomValidity('Data Tanggal Lahir tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Level</label>
                                     <div class="col-xs-8">
-                                        <select name="level_user">
+                                        <select name="level_user" required oninvalid="this.setCustomValidity('Data Level tidak boleh kosong')" oninput="setCustomValidity('')">
+                                        <option value="">--Pilih User--</option>
                                         <option value="Admin">Admin</option>
                                         <option value="Customer">Customer</option>
                                         </select>
@@ -132,25 +133,25 @@
                                     <div class="form-group">
                                         <label class="control-label col-xs-3" >Nama</label>
                                         <div class="col-xs-8">
-                                            <input name="nama_user" value="<?php echo $nama_user;?>" class="form-control" type="text" placeholder="nama" required>
+                                            <input name="nama_user" value="<?php echo $nama_user;?>" class="form-control" type="text" placeholder="nama" required oninvalid="this.setCustomValidity('Data Nama tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-xs-3" >Email</label>
                                         <div class="col-xs-8">
-                                            <input name="email_user" value="<?php echo $email_user;?>" class="form-control" type="text" placeholder="Email" required>
+                                            <input name="email_user" value="<?php echo $email_user;?>" class="form-control" type="text" placeholder="Email" required oninvalid="this.setCustomValidity('Data Email tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-xs-3" >Password</label>
                                         <div class="col-xs-8">
-                                            <input name="password_user" value="<?php echo $password_user;?>" class="form-control" type="text" placeholder="Password" required>
+                                            <input name="password_user" value="<?php echo $password_user;?>" class="form-control" type="text" placeholder="Password" required oninvalid="this.setCustomValidity('Data Password tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-xs-3" >Tanggal Lahir</label>
                                         <div class="col-xs-8">
-                                            <input name="tanggallahir_user" value="<?php echo $tanggallahir_user;?>" class="form-control" type="date" placeholder="Tanggal Lahir" required>
+                                            <input name="tanggallahir_user" value="<?php echo $tanggallahir_user;?>" class="form-control" type="date" placeholder="Tanggal Lahir" required oninvalid="this.setCustomValidity('Data Tanggal Lahir tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                        <div class="form-group">

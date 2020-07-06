@@ -2,7 +2,7 @@
 class m_pemesanan extends CI_Model{
 	
 	function show_pemesanan($user){
-		$hasil=$this->db->query("SELECT * FROM tb_pemesanan p INNER JOIN tb_user u on u.id_user=p.id_user INNER JOIN tb_dipesan d on d.id_pemesanan=p.id_pemesanan ");
+		$hasil=$this->db->query("SELECT * FROM tb_pemesanan p INNER JOIN tb_user u on u.id_user=p.id_user");
 		return $hasil;
 	}
 	function show_pemesanan1($mulai, $halaman, $id_user){

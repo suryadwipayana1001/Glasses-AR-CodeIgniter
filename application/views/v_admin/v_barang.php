@@ -73,25 +73,26 @@
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Nama</label>
                                     <div class="col-xs-8">
-                                        <input name="nama_barang" class="form-control" type="text" placeholder="Nama" required>
+                                        <input name="nama_barang" class="form-control" type="text" placeholder="Nama"   title="Hanya boleh memasukkan huruf" required oninvalid="this.setCustomValidity('Data Nama tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Jumlah</label>
                                     <div class="col-xs-8">
-                                        <input name="jumlah_barang" class="form-control" type="text" placeholder="Jumlah" required>
+                                        <input name="jumlah_barang" class="form-control" type="number" placeholder="Jumlah" required oninvalid="this.setCustomValidity('Data Jumlah tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                  <div class="form-group">
                                     <label class="control-label col-xs-3" >Harga</label>
                                     <div class="col-xs-8">
-                                        <input name="harga_barang" class="form-control" type="text" placeholder="Harga" required>
+                                        <input name="harga_barang" class="form-control" type="number" placeholder="Harga"  required oninvalid="this.setCustomValidity('Data Harga tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Brand</label>
                                     <div class="col-xs-8">
-                                        <select name="brand_barang" class="form-control input-sm">
+                                        <select name="brand_barang" class="form-control input-sm" required oninvalid="this.setCustomValidity('Data Brand tidak boleh kosong')" oninput="setCustomValidity('')">
+                                        <option value="">--Pilih Brand--</option>
                                         <option value="Oakley">Oakley</option>
                                         <option value="Rayband">Rayband</option>
                                         <option value="Moscot">Moscot</option>
@@ -101,13 +102,13 @@
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Lensa</label>
                                     <div class="col-xs-8">
-                                        <input name="lensa_barang" class="form-control" type="text" placeholder="Lensa" required>
+                                        <input name="lensa_barang" class="form-control" type="text" placeholder="Lensa" required oninvalid="this.setCustomValidity('Data Lensa tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                  <div class="form-group">
-                                    <label class="control-label col-xs-3" >Deskripsi Produk</label>
+                                    <label class="control-label col-xs-3" >Deskripsi</label>
                                     <div class="col-xs-8">
-                                        <input name="deskripsi_barang" class="form-control" type="text" placeholder="Deskripsi Produk" required>
+                                        <input name="deskripsi_barang" class="form-control" type="text" placeholder="Deskripsi" required oninvalid="this.setCustomValidity('Data Deskripsi Produk tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                  <div class="form-group">
@@ -147,23 +148,23 @@
                             </div>
                             <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/barang/edit_barang'?>" enctype="multipart/form-data">
                                 <div class="modal-body">
-                                         <input name="id_barang" value="<?php echo $id_barang;?>" class="form-control" type="hidden"  readonly>
+                                         <input name="id_barang" value="<?php echo $id_barang;?>" class="form-control" type="hidden"  readonly >
                                     <div class="form-group">
                                         <label class="control-label col-xs-3" >Nama</label>
                                         <div class="col-xs-8">
-                                            <input name="nama_barang" value="<?php echo $nama_barang;?>" class="form-control" type="text" placeholder="nama" required>
+                                            <input name="nama_barang" value="<?php echo $nama_barang;?>" class="form-control" type="text" placeholder="nama" required oninvalid="this.setCustomValidity('Data Nama tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-xs-3" >Jumlah</label>
                                         <div class="col-xs-8">
-                                            <input name="jumlah_barang" value="<?php echo $jumlah_barang;?>" class="form-control" type="text" placeholder="jumlah" required>
+                                            <input name="jumlah_barang" value="<?php echo $jumlah_barang;?>" class="form-control" type="number" placeholder="jumlah"  required oninvalid="this.setCustomValidity('Data Jumlah tidak boleh kosong dan hanya memasukkan angka')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-xs-3" >Harga</label>
                                         <div class="col-xs-8">
-                                            <input name="harga_barang" value="<?php echo $harga_barang;?>" class="form-control" type="text" placeholder="harga" required>
+                                            <input name="harga_barang" value="<?php echo $harga_barang;?>" class="form-control" type="number" placeholder="harga" required oninvalid="this.setCustomValidity('Data Harga tidak boleh kosong dan hanya memasukkan angka')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -189,13 +190,13 @@
                                       <div class="form-group">
                                         <label class="control-label col-xs-3" >Lensa</label>
                                         <div class="col-xs-8">
-                                            <input name="lensa_barang" value="<?php echo $lensa_barang;?>" class="form-control" type="text" placeholder="Lensa" required>
+                                            <input name="lensa_barang" value="<?php echo $lensa_barang;?>" class="form-control" type="text" placeholder="Lensa" required oninvalid="this.setCustomValidity('Data Deskripsi Lensa tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                      <div class="form-group">
                                         <label class="control-label col-xs-3" >Deskripsi Produk</label>
                                         <div class="col-xs-8">
-                                            <input name="deskripsi_barang" value="<?php echo $deskripsi_barang;?>" class="form-control" type="text" placeholder="Deskripsi Produk" required>
+                                            <input name="deskripsi_barang" value="<?php echo $deskripsi_barang;?>" class="form-control" type="text" placeholder="Deskripsi Produk" required oninvalid="this.setCustomValidity('Data Deskripsi Produk tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                     <div class="form-group">

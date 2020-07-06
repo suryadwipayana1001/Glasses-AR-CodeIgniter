@@ -18,6 +18,7 @@
          </div>
          <?php
          foreach ($data->result_array()as $i):
+
            ?>
 
            <div class="panel-body">
@@ -65,10 +66,7 @@
                 <th>Total</th> 
             </tr>
         <?php foreach ($data1->result_array()as $i):
-
            ?>
-          
-            
             <tr>
                <td><?php echo $i['nama_dipesan'] ?></td>
                <td><?php echo $i['harga_dipesan']?></td>

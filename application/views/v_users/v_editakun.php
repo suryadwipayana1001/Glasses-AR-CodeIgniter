@@ -23,16 +23,16 @@
                      <form class="form-horizontal" method="post" action=""enctype="multipart/form-data" >
                         <div class="row">
                             <div class="col-md-12 mb-3">
-                             Nama <input type="text" class="form-control" name="nama_user" value="<?php echo $nama_user ?>" placeholder="Nama" required>
+                             Nama <input type="text" class="form-control" name="nama_user" value="<?php echo $nama_user ?>" placeholder="Nama"  required oninvalid="this.setCustomValidity('Nama tidak boleh kosong')" oninput="setCustomValidity('')">
                          </div>
                          <div class="col-md-12 mb-3">
-                             Email <input type="text" class="form-control" name="email_user" value="<?php echo $email_user ?>"placeholder="Email" required>
+                             Email <input type="text" class="form-control" name="email_user" value="<?php echo $email_user ?>"placeholder="Email"  required oninvalid="this.setCustomValidity('Email tidak boleh kosong')" oninput="setCustomValidity('')">
                          </div>
                          <div class="col-md-12 mb-3">
-                           Password <input type="text" class="form-control" name="email_user" value="<?php echo $password_user?>" placeholder="Email" required>
+                           Password <input type="text" class="form-control" name="email_user" value="<?php echo $password_user?>" placeholder="Password" required>
                        </div>
                      <div class="col-md-12 mb-3">
-                         Tanggal Lahir <input type="date" class="form-control" name="tanggallahir_user"  value="<?php echo $tanggallahir_user?>" required>
+                         Tanggal Lahir <input type="date" class="form-control" name="tanggallahir_user"  value="<?php echo $tanggallahir_user?>"  required oninvalid="this.setCustomValidity('Tanggal Lahir tidak boleh kosong')" oninput="setCustomValidity('')">
                      </div>
                      <div class="col-md-6 mb-3">
                         <button class="btn amado-btn w-100">Simpan</button>

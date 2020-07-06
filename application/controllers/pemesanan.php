@@ -54,6 +54,7 @@ class pemesanan extends CI_Controller{
 
 	 $x['data']=$this->m_pemesanan->detail_pemesanan($id_pemesanan);
 	 $x['data1']=$this->m_pemesanan->detail_pemesan($id_pemesanan);
+
 	 /*foreach ($x['data']->result_array()as $i):
                var_dump($i);
 

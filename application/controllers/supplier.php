@@ -47,6 +47,7 @@ class supplier extends CI_Controller{
 
 	function hapus_supplier(){
 		$id_supplier=$this->input->post('id_supplier');
+		$this->m_supplier->hapus_supplierfk($id_supplier);
 		$this->m_supplier->hapus_supplier($id_supplier);
 		redirect('supplier');
 

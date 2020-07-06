@@ -93,7 +93,8 @@ $subtotal = '';
 foreach ($cartItems as $cartItem) :
     ?>
     <li><span><?php echo $cartItem['name']; ?></span><span><?php echo $cartItem['qty']; ?></span><span><?php echo $cartItem['price']; ?></span></li>
-    <?php 
+    <?php
+    error_reporting(0); 
     $subtotal += $cartItem['subtotal'];
 endforeach; ?>
 </ul>

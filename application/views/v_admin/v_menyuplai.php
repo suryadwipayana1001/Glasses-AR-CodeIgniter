@@ -71,8 +71,8 @@
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Nama Kacamata</label>
                                     <div class="col-xs-8">
-                                       <select name="id_barang" class="form-control" required>
-                                        <option value="0">-PILIH-</option>
+                                       <select name="id_barang" class="form-control" required required oninvalid="this.setCustomValidity('Data Barang tidak boleh kosong')" oninput="setCustomValidity('')">>
+                                        <option value="">-Pilih Barang-</option>
                                          <?php foreach($barang->result() as $rows):?>
                                          <option value="<?php echo $rows->id_barang/*.'|'.$rows->nama_barang;*/ ?>"><?php echo $rows->nama_barang;?></option>
                                          <?php endforeach;?>
@@ -82,32 +82,32 @@
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Harga</label>
                                     <div class="col-xs-8">
-                                        <input name="harga_menyuplai" id="harga_menyuplai" onkeyup="sum();" class="form-control" type="text" placeholder="Harga" required>
+                                        <input name="harga_menyuplai" id="harga_menyuplai" onkeyup="sum();" class="form-control" type="number" placeholder="Harga" required oninvalid="this.setCustomValidity('Data Harga tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Jumlah</label>
                                     <div class="col-xs-8">
-                                        <input name="jumlah_menyuplai" id="jumlah_menyuplai" onkeyup="sum();" class="form-control" type="text" placeholder="Jumlah" required>
+                                        <input name="jumlah_menyuplai" id="jumlah_menyuplai" onkeyup="sum();" class="form-control" type="text" placeholder="Jumlah" required oninvalid="this.setCustomValidity('Data Jumlah tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                  <div class="form-group">
                                     <label class="control-label col-xs-3" >Total Harga</label>
                                     <div class="col-xs-8">
-                                        <input name="totalharga_menyuplai"  id="totalharga_menyuplai" class="form-control" type="text" placeholder="Total Harga" required="">
+                                        <input name="totalharga_menyuplai"  id="totalharga_menyuplai" class="form-control" type="number" placeholder="Total Harga" required>
                                     </div>
                                 </div>
                                  <div class="form-group">
-                                    <label class="control-label col-xs-3" >Tanggal</label>
+                                    <label class="control-label col-xs-3" >Tanggal Transaksi</label>
                                     <div class="col-xs-8">
-                                        <input name="tanggal_menyuplai" class="form-control" type="date" placeholder="Tanggal" required>
+                                        <input name="tanggal_menyuplai" class="form-control" type="date" placeholder="Tanggal" required oninvalid="this.setCustomValidity('Data Tanggal Transaksi tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Nama Supplier</label>
                                     <div class="col-xs-8">
-                                       <select name="id_supplier" class="form-control">
-                                        <option value="0">-PILIH-</option>
+                                       <select name="id_supplier" class="form-control" required oninvalid="this.setCustomValidity('Data Nama Supplier tidak boleh kosong')" oninput="setCustomValidity('')">>
+                                        <option value="0">-Pilih Supplier-</option>
                                          <?php foreach($supplier->result() as $rows):?>
                                          <option value="<?php echo $rows->id_supplier?>"><?php echo $rows->nama_supplier;?></option>
                                          <?php endforeach;?>
@@ -148,7 +148,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-xs-3" >Nama Kacamata</label>
                                         <div class="col-xs-8">
-                                            <select name="id_barang" class="form-control" required>
+                                            <select name="id_barang" class="form-control" required oninvalid="this.setCustomValidity('Data Kacamata tidak boleh kosong')" oninput="setCustomValidity('')">
                                             <?php foreach($barang->result() as $rows):?>
                                             <option value="<?php $z=$rows->id_barang.'|'.$rows->nama_barang; echo $z; ?>"
                                               <?php if($id_barang==$z){echo 'selected';}?>
@@ -160,25 +160,25 @@
                                     <div class="form-group">
                                         <label class="control-label col-xs-3" >Harga</label>
                                         <div class="col-xs-8">
-                                            <input name="harga_menyuplai" onkeyup=""  value="<?php echo $harga_menyuplai;?>" class="form-control harga_menyuplai2" type="text" placeholder="Harga" required>
+                                            <input name="harga_menyuplai" onkeyup=""  value="<?php echo $harga_menyuplai;?>" class="form-control harga_menyuplai2" type="number" placeholder="Harga" required oninvalid="this.setCustomValidity('Data Harga tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-xs-3" >Jumlah</label>
                                         <div class="col-xs-8">
-                                            <input name="jumlah_menyuplai" onkeyup="" value="<?php echo $jumlah_menyuplai;?>" class="form-control jumlah_menyuplai2" type="text" placeholder="Jumlah" required>
+                                            <input name="jumlah_menyuplai" onkeyup="" value="<?php echo $jumlah_menyuplai;?>" class="form-control jumlah_menyuplai2" type="text" placeholder="Jumlah"required oninvalid="this.setCustomValidity('Data Jumlah tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-xs-3" >Total Harga</label>
                                         <div class="col-xs-8">
-                                            <input name="totalharga_menyuplai"  value="<?php echo $totalharga_menyuplai;?>" class="form-control totalharga_menyuplai2" type="text" placeholder="Total Harga" readonly>
+                                            <input name="totalharga_menyuplai"  value="<?php echo $totalharga_menyuplai;?>" class="form-control totalharga_menyuplai2" type="number" placeholder="Total Harga" required >
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-xs-3" >Tanggal</label>
+                                        <label class="control-label col-xs-3" >Tanggal Transaksi</label>
                                         <div class="col-xs-8">
-                                            <input name="tanggal_menyuplai" value="<?php echo $tanggal_menyuplai;?>" class="form-control" type="date" placeholder="Tanggal" required>
+                                            <input name="tanggal_menyuplai" value="<?php echo $tanggal_menyuplai;?>" class="form-control" type="date" placeholder="Tanggal" required oninvalid="this.setCustomValidity('Data Tanggal Transaksi tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                     <div class="form-group">
