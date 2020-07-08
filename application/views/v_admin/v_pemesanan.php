@@ -24,10 +24,8 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama User</th>
                                         <th>Nama</th>
                                         <th>Alamat</th>
-                                        <th>Produk</th>
                                         <th>Struk</th>
                                         <th>Status</th>
                                         <th>Tindakan</th>
@@ -41,11 +39,9 @@
                                         ?>
                                         <tr class="odd gradeX">
                                             <td><?php echo $no++?></td>
-                                            <td><?php echo $i['nama_user'];?></td>
                                             <td><?php echo $i['nama_pemesanan'];?></td>
                                             <td><?php echo $i['alamat_pemesanan'];?>, <?php echo $i['kecamatan_pemesanan'];?>, <?php echo $i['kabupaten_pemesanan'];?>,  <?php echo $i['provinsi_pemesanan'];?>, <?php echo $i['kodepos_pemesanan'];?></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td><img src="<?=base_url('assets/img/struk/'.$i['struk_pemesanan'])?>" width=60px></td>
                                             <td><?php echo $i['status_pemesanan'];?></td>
                                             <td style="width: 120px;">
                                                 <a href="<?=site_url('pemesanan/detail_pemesanan/'.$i['id_pemesanan'])?>"  class="btn btn-success btn-xs"><i class="fa fa-check-square-o"></i></a>
@@ -59,8 +55,7 @@
                         </div>
                     </div>
                 </div>
-                  <!--End Advanced Tables -->
-             <!-- ============ MODAL ADD =============== -->
+                
                 <!--End Advanced Tables -->
                 <!-- ============ MODAL EDIT BARANG =============== -->
                  <?php 
@@ -98,6 +93,12 @@
                                         </select>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                         <label class="control-label col-xs-3" >No Resi</label>
+                                        <div class="col-xs-8">
+                                      <input name="resi_pemesanan" value="<?php echo $i['resi_pemesanan'];?>" class="form-control" type="text" required>
+                                  </div>
+                                  </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Tutup</button>

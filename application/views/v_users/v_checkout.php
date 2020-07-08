@@ -46,7 +46,7 @@
 
                         <div class="col-md-12 mb-3">
                             <label > Kurir</label>
-                            <select onChange="get_ongkir()" name="kurir" id="kurir" class="w-100">
+                            <select onChange="get_ongkir()" name="kurir_pemesanan" id="kurir" class="w-100">
                                 <option value="jne">JNE</option>
                                 <option value="pos">POS</option>
                                 <option value="tiki">TIKI</option>
@@ -64,11 +64,12 @@
                             <input type="hidden" name="harga_barang<?php echo $i; ?>" value="<?php echo $cartItem['price']; ?>">
                             <input type="hidden" name="jumlah_barang<?php echo $i; ?>" value="<?php echo $cartItem['qty']; ?>">
                             <input type="hidden" name="subtotal<?php echo $i; ?>" value="<?php echo $cartItem['subtotal']; ?>">
+
                         <?php $i = $i+1; endforeach; ?>
                         <input type="hidden" name="jum_bar" value="<?php echo $i-1; ?>">
                         <div class="col-md-12 mb-3">
                             <label for="service">Service</label>
-                            <select name="kurir_pemesanan" onChange="update_total()" id="service" class="w-100">
+                            <select name="ongkir_pemesanan" onChange="update_total()" id="service" class="w-100">
 
                             </select>
                         </div>
@@ -84,26 +85,29 @@
         </div>
         <div class="col-12 col-lg-4">
             <div class="cart-summary">
-                <h5>Cart Total</h5>
+                <h5>Total Keranjang</h5>
 
 <ul class="summary-table">
+     <li><span><h6>Nama Produk</h6></span><span><h6>Jumlah</h6></span><span><h6>Harga</h6></span><span><h6>Total Harga</h6></span></li>
 <?php 
+
 // var_dump($cartItems);
 $subtotal = '';
 foreach ($cartItems as $cartItem) :
     ?>
-    <li><span><?php echo $cartItem['name']; ?></span><span><?php echo $cartItem['qty']; ?></span><span><?php echo $cartItem['price']; ?></span></li>
+    <?php $subtotalharga=$cartItem['price']*$cartItem['qty'];   ?>
+    <li><span><?php echo $cartItem['name']; ?></span><span><?php echo $cartItem['qty']; ?></span><span><?php echo $cartItem['price']; ?></span><span><?php echo $subtotalharga?></span></li>
     <?php
     error_reporting(0); 
     $subtotal += $cartItem['subtotal'];
 endforeach; ?>
-</ul>
-
+            </ul>
+<hr>
                 <ul class="summary-table">
                     <li><span>Subtotal:</span> <span id="subtotal"><?php echo $subtotal;  ?></span></li>
                     <div>
                     <li><span>Ongkos Kirim:</span> <span id="ongkir"></span></li>
-                    <li><span>Total:</span> <span id="total"></span></li>
+                    <li><span>Total:</span> <span id="total" name=""></span></li>
                     </div>
                 </ul>
             </div>

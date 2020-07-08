@@ -27,7 +27,7 @@
         width: 16% !important;
         max-width: 16% !important;
     }
-     .transaksi th {
+    .transaksi th {
         font-size: 14px !important;
         flex: 0 0 14% !important;
         width: 14% !important;
@@ -42,17 +42,35 @@
         max-width: 14% !important;
     }
 
-#form-checkout input, #form-checkout select {
+    #form-checkout input, #form-checkout select {
 
-    padding: 12px 20px !important;
-    margin: 8px 0 !important;
-    display: inline-block !important;
-    border: none !important;
-    border-radius: 4px !important;
-    box-sizing: border-box !important;
+        padding: 12px 20px !important;
+        margin: 8px 0 !important;
+        display: inline-block !important;
+        border: none !important;
+        border-radius: 4px !important;
+        box-sizing: border-box !important;
+        background-color: #f5f7fa !important;
+        height: 50px !important;
+    }
+    .tulisbtn{
+        font-size: 12px !important;
+    }
+    .detailtransaksi th{
+       flex: 0 0 25% !important;
+       width: 25% !important;
+       max-width: 25% !important;
+       font-size: 17px !important;
+       background-color: #f5f7fa !important;
+   }
+   .detailtransaksi td{
+    flex: 0 0 25% !important;
+    width: 25% !important;
+    max-width: 25% !important;
+    font-size: 15px !important;
     background-color: #f5f7fa !important;
-    height: 50px !important;
+    color: #6b6b6b !important;
 }
-.tulisbtn{
-    font-size: 12px !important;
+.detailtransaksi tbody{
+   background-color: #f5f7fa !important;
 }

@@ -63,28 +63,29 @@ class barang extends CI_Controller{
 	    $config['encrypt_name'] = TRUE; //Enkripsi nama yang terupload
 	    
 	    $this->upload->initialize($config);
+	    $id_barang=$this->input->post('id_barang');
+        $nama_barang=$this->input->post('nama_barang');
+        $jumlah_barang=$this->input->post('jumlah_barang');
+        $harga_barang=$this->input->post('harga_barang');
+        $brand_barang=$this->input->post('brand_barang');
+        $lensa_barang=$this->input->post('lensa_barang');
+        $deskripsi_barang=$this->input->post('deskripsi_barang');
+
 	    if(!empty($_FILES['filefoto']['name']))
 	    {
 	    	if ($this->upload->do_upload('filefoto'))
 	    	{
 	    		$gbr = $this->upload->data();
 	                $gambar=$gbr['file_name']; //Mengambil file name dari gambar yang diupload
-
-	                $id_barang=$this->input->post('id_barang');
-	                $nama_barang=$this->input->post('nama_barang');
-	                $jumlah_barang=$this->input->post('jumlah_barang');
-	                $harga_barang=$this->input->post('harga_barang');
-	                $brand_barang=$this->input->post('brand_barang');
-	                $lensa_barang=$this->input->post('lensa_barang');
-	                $deskripsi_barang=$this->input->post('deskripsi_barang');
 	                $this->m_barang->edit_barang($id_barang,$nama_barang, $jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$deskripsi_barang);
 	                redirect('barang');
 	            }else{
 	            	echo "Gambar Gagal Upload. Gambar harus bertipe gif|jpg|png|jpeg|bmp";
 	            }
-
-	        }else{
-	        	echo "Gagal, gambar belum di pilih";
+        }else{     
+        	$gambar=$this->input->post('gbr');
+        	$this->m_barang->edit_barang($id_barang,$nama_barang, $jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$deskripsi_barang);
+        	redirect('barang');
 	        }
 	    }
 

@@ -16,10 +16,10 @@
                                 <th>No</th>
                                 <th>Nama</th>
                                 <th>Alamat</th>
-                                <th>Produk</th>
                                 <th>Struk</th>
                                 <th>Status</th>
-                                <th></th>
+                                <th>Tindakan</th>
+                                <th>Tindakan</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,11 +31,13 @@
                                 <td><?php echo $no++?></td>
                                 <td><?php echo $i['nama_pemesanan'];?></td>
                                 <td><?php echo $i['alamat_pemesanan'];?>, <?php echo $i['kecamatan_pemesanan'];?>, <?php echo $i['kabupaten_pemesanan'];?>, <?php echo $i['provinsi_pemesanan'];?>, <?php echo $i['kodepos_pemesanan'];?>.</td>
-                                <td></td>
-                                <td>
-                                </td>
+                               
+                                <td><img src="<?=base_url('assets/img/struk/'.$i['struk_pemesanan'])?>"></td>
                                 <td><?php echo $status_pemesanan=$i['status_pemesanan'];?></td>
-                                <td><a href="<?=site_url('transaksi/detail/'.$i['id_pemesanan'])?>"  class="tulisbtn btn btn-success btn-xs"><i class="fa fa-check-square-o"></i></a>
+                                <td><a href="<?=site_url('transaksi/tambah_struk/'.$i['id_pemesanan'])?>"  class="tulisbtn btn btn-warning btn-xs"><i class="fa fa-plus-square-o"></i>Tambah Struk</a></td>
+                                <td>
+                                  <a href="<?=site_url('transaksi/detail/'.$i['id_pemesanan'])?>"  class="tulisbtn btn btn-warning btn-xs"><i class="fa fa-check-square-o"></i>Detail Transaksi</a>
+                                </td>
                                      
                                     <!-- <form action="<?=site_url('transaksi/hapus_transaksi')?>" method="post" >
                                         <input type="hidden" name="id_pemesanan" value="<?php echo$i['id_pemesanan']?>"> 

@@ -42,14 +42,14 @@ class checkout extends CI_Controller{
 		$kodepos_pemesanan=$this->input->post('kodepos_pemesanan');
 		$nohp_pemesanan=$this->input->post('nohp_pemesanan');
 		$kurir_pemesanan=$this->input->post('kurir_pemesanan');
+		$ongkir_pemesanan=$this->input->post('ongkir_pemesanan');
 		$status_pemesanan=$this->input->post('status_pemesanan');
 		$struk_pemesanan=$this->input->post('struk_pemesanan');
-
-		$this->m_pemesanan->simpan_pemesanan($user,$nama_pemesanan,$provinsi_pemesanan,$kabupaten_pemesanan,$kecamatan_pemesanan,$alamat_pemesanan,$kodepos_pemesanan,$nohp_pemesanan,$kurir_pemesanan,$status_pemesanan,$struk_pemesanan,$tanggal_pemesanan);
-
+		
 		$jum_bar = $this->input->post('jum_bar');
-
+		$total=0;
 		for ($i=1; $i<=$jum_bar; $i++) {
+			echo "tes";
 			$tmp_id = 'id_barang'.$i;
 			$tmp_nama = 'nama_barang'.$i;
 			$tmp_harga = 'harga_barang'.$i;
@@ -61,16 +61,24 @@ class checkout extends CI_Controller{
 			$harga_dipesan=$this->input->post($tmp_harga);
 			$jumlah_dipesan=$this->input->post($tmp_jum);
 			$totalharga_dipesan=$this->input->post($tmp_sub);
-			
+			$total+=$totalharga_dipesan;
 			$stok=$this->m_barang->detail_barang($id_barang);
 			
-			foreach ($stok->result_array()as $i){ $stok1 = $i['jumlah_barang']; }
+			$t = $stok->result_array();
+			$stok1 = $t['0']['jumlah_barang'];
 			$sisa=$stok1-$jumlah_dipesan;
 			$this->m_barang->update_stok($id_barang,$sisa);
 			$this->m_pemesanan->simpan_dipesan($id_barang,$id_pemesanan,$nama_dipesan,$harga_dipesan,$jumlah_dipesan,$totalharga_dipesan);
+
+		
 		}
+		$total_pemesanan= $ongkir_pemesanan+$total;
+		$subtotal_pemesanan=$total;
+		var_dump($subtotal_pemesanan);
+		$this->m_pemesanan->simpan_pemesanan($user,$nama_pemesanan,$provinsi_pemesanan,$kabupaten_pemesanan,$kecamatan_pemesanan,$alamat_pemesanan,$kodepos_pemesanan,$nohp_pemesanan,$kurir_pemesanan,$ongkir_pemesanan,$status_pemesanan,$struk_pemesanan,$tanggal_pemesanan,$subtotal_pemesanan,$total_pemesanan);
+
 		$this->cart->destroy();
-		redirect('berhasil');
+	redirect('berhasil');
 	}
 	function simpan_dipesan(){
 		

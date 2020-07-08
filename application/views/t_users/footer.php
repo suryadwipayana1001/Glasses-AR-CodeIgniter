@@ -30,6 +30,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="<?php echo base_url('assets/js/plugins.js')?>"></script>
     <!-- Active js -->
     <script src="<?php echo base_url('assets/js/active.js')?>"></script>
+      <script type="text/javascript" src="<?php echo base_url().'assets/dropify/dropify.min.js'?>"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         $('.add_cart').click(function(){
@@ -126,6 +127,19 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
     </Script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.dropify').dropify({
+            messages: {
+                default: 'Drag atau drop untuk memilih gambar',
+                replace: 'Ganti',
+                remove:  'Hapus',
+                error:   'error'
+            }
+        });
+    });
+    
+</script>
 </body>
 
 </html>

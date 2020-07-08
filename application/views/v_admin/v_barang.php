@@ -202,8 +202,8 @@
                                     <div class="form-group">
                                      <label class="control-label col-xs-3" >Foto</label>
                                         <div class="col-xs-8">
-                                        <img src="<?=base_url('assets/img/foto/'.$gambar=$i['gambar'])?>" style="height:100px">
-                                        <input type="file" name="filefoto" class="dropify" data-height="100" data-width="50">
+                                        <input data-default-file="<?=base_url('assets/img/foto/'.$gambar=$i['gambar'])?>" type="file" name="filefoto" class="dropify" data-height="100" data-width="50">
+                                        <input type="hidden" name="gbr" value="<?php echo $gambar=$i['gambar']; ?>">
                                         </div>
                                     </div>
                                 </div>
