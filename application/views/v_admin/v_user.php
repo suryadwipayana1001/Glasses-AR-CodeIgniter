@@ -15,8 +15,6 @@
                     <div class="panel-heading">
                         <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal_add_new"><i class="glyphicon glyphicon-plus"></i>Tambah Data</button> 
                     </div>
-                    <div class="panel-heading">
-                    </div>
                     <div class="panel-body">
                         <div class="table-responsive">
 
@@ -210,4 +208,5 @@
         </div>
     </div>
 </div>
+
     

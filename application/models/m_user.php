@@ -34,5 +34,9 @@ class m_user extends CI_Model{
 		$hasil=$this->db->query("SELECT * FROM tb_user WHERE id_user='$id_user'");
 		return $hasil;
 	}
+	function edit_akun($id_user,$nama_user,$email_user,$password_user,$tanggallahir_user){
+		$hasil=$this->db->query("UPDATE tb_user SET nama_user='$nama_user',email_user ='$email_user',password_user='$password_user',tanggallahir_user='$tanggallahir_user' WHERE id_user='$id_user' ");
+		return $hasil;
+	}
 
 }

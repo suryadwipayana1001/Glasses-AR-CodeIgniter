@@ -20,8 +20,9 @@
                         $password_user = $i['password_user'];
                         $tanggallahir_user = $i['tanggallahir_user'];
                      ?>
-                     <form class="form-horizontal" method="post" action=""enctype="multipart/form-data" >
+                     <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/editakun/edit_akun'?>"enctype="multipart/form-data" >
                         <div class="row">
+                            <input type="hidden" name="id_user" class="form-control" value="<?php echo $i['id_user']?>">
                             <div class="col-md-12 mb-3">
                              Nama <input type="text" class="form-control" name="nama_user" value="<?php echo $nama_user ?>" placeholder="Nama"  required oninvalid="this.setCustomValidity('Nama tidak boleh kosong')" oninput="setCustomValidity('')">
                          </div>
@@ -29,7 +30,7 @@
                              Email <input type="text" class="form-control" name="email_user" value="<?php echo $email_user ?>"placeholder="Email"  required oninvalid="this.setCustomValidity('Email tidak boleh kosong')" oninput="setCustomValidity('')">
                          </div>
                          <div class="col-md-12 mb-3">
-                           Password <input type="text" class="form-control" name="email_user" value="<?php echo $password_user?>" placeholder="Password" required>
+                           Password <input type="text" class="form-control" name="password_user" value="<?php echo $password_user?>" placeholder="Password" required>
                        </div>
                      <div class="col-md-12 mb-3">
                          Tanggal Lahir <input type="date" class="form-control" name="tanggallahir_user"  value="<?php echo $tanggallahir_user?>"  required oninvalid="this.setCustomValidity('Tanggal Lahir tidak boleh kosong')" oninput="setCustomValidity('')">

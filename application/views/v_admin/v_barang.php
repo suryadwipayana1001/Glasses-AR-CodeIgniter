@@ -1,6 +1,6 @@
         <?php $this->load->view("t_admin/sidebar");?>
         <div id="page-wrapper" >
-         <div class="row">
+           <div class="row">
             <div class="col-md-12">
                 <h1 class="page-header">
                     Tabel barang <small></small>
@@ -34,7 +34,7 @@
                                 <tbody>
                                     <?php
                                     $no=1;
-                                  
+                                    
                                     foreach ($data->result_array()as $i):
                                         $id_barang=$i['id_barang'];
                                         ?>
@@ -46,22 +46,23 @@
                                             <td><?php echo $i['brand_barang'];?></td>
                                             <td><?php echo $i['lensa_barang'];?></td>
                                             <td><img src="<?=base_url('assets/img/foto/'.$gambar=$i['gambar'])?>" style="width:100px"></td>
-                                           
+                                            
                                             <td style="width: 120px;">
-                                                 <a href="<?=site_url('barang/detail_barang/'.$i['id_barang'])?>"  class="btn btn-success btn-xs"><i class="fa fa-check-square-o"></i></a>
-                                                <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"data-toggle="modal" data-target="#modal_edit<?php echo $id_barang;?>"></i></button>
-                                             <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal_hapus<?php echo $id_barang;?>"><i class="fa fa-trash-o "></i></button> 
-                                         </td>
-                                     </tr>
-                                 <?php endforeach;?>
-                             </tbody>
-                         </table>
-                     </div>
-                 </div>
-             </div>
-             <!--End Advanced Tables -->
-             <!-- ============ MODAL ADD =============== -->
-             <div class="modal fade" id="modal_add_new" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+                                               <a href="<?=site_url('barang/detail_barang/'.$i['id_barang'])?>"  class="btn btn-success btn-xs"><i class="fa fa-check-square-o"></i></a>
+                                               <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"data-toggle="modal" data-target="#modal_edit<?php echo $id_barang;?>"></i></button>
+                                               <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal_hapus<?php echo $id_barang;?>"><i class="fa fa-trash-o "></i></button> 
+
+                                           </td>
+                                       </tr>
+                                   <?php endforeach;?>
+                               </tbody>
+                           </table>
+                       </div>
+                   </div>
+               </div>
+               <!--End Advanced Tables -->
+               <!-- ============ MODAL ADD =============== -->
+               <div class="modal fade" id="modal_add_new" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -82,7 +83,7 @@
                                         <input name="jumlah_barang" class="form-control" type="number" placeholder="Jumlah" required oninvalid="this.setCustomValidity('Data Jumlah tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
-                                 <div class="form-group">
+                                <div class="form-group">
                                     <label class="control-label col-xs-3" >Harga</label>
                                     <div class="col-xs-8">
                                         <input name="harga_barang" class="form-control" type="number" placeholder="Harga"  required oninvalid="this.setCustomValidity('Data Harga tidak boleh kosong')" oninput="setCustomValidity('')">
@@ -92,10 +93,10 @@
                                     <label class="control-label col-xs-3" >Brand</label>
                                     <div class="col-xs-8">
                                         <select name="brand_barang" class="form-control input-sm" required oninvalid="this.setCustomValidity('Data Brand tidak boleh kosong')" oninput="setCustomValidity('')">
-                                        <option value="">--Pilih Brand--</option>
-                                        <option value="Oakley">Oakley</option>
-                                        <option value="Rayband">Rayband</option>
-                                        <option value="Moscot">Moscot</option>
+                                            <option value="">--Pilih Brand--</option>
+                                            <option value="Oakley">Oakley</option>
+                                            <option value="Rayband">Rayband</option>
+                                            <option value="Moscot">Moscot</option>
                                         </select>
                                     </div>
                                 </div>
@@ -105,13 +106,13 @@
                                         <input name="lensa_barang" class="form-control" type="text" placeholder="Lensa" required oninvalid="this.setCustomValidity('Data Lensa tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
-                                 <div class="form-group">
+                                <div class="form-group">
                                     <label class="control-label col-xs-3" >Deskripsi</label>
                                     <div class="col-xs-8">
                                         <input name="deskripsi_barang" class="form-control" type="text" placeholder="Deskripsi" required oninvalid="this.setCustomValidity('Data Deskripsi Produk tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
-                                 <div class="form-group">
+                                <div class="form-group">
                                     <label class="control-label col-xs-3" >Foto</label>
                                     <div class="col-xs-8">
                                         <input type="file" name="filefoto" class="dropify" data-height="100" data-width="50">
@@ -148,104 +149,103 @@
                             </div>
                             <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/barang/edit_barang'?>" enctype="multipart/form-data">
                                 <div class="modal-body">
-                                         <input name="id_barang" value="<?php echo $id_barang;?>" class="form-control" type="hidden"  readonly >
-                                    <div class="form-group">
-                                        <label class="control-label col-xs-3" >Nama</label>
-                                        <div class="col-xs-8">
-                                            <input name="nama_barang" value="<?php echo $nama_barang;?>" class="form-control" type="text" placeholder="nama" required oninvalid="this.setCustomValidity('Data Nama tidak boleh kosong')" oninput="setCustomValidity('')">
-                                        </div>
+                                   <input name="id_barang" value="<?php echo $id_barang;?>" class="form-control" type="hidden"  readonly >
+                                   <div class="form-group">
+                                    <label class="control-label col-xs-3" >Nama</label>
+                                    <div class="col-xs-8">
+                                        <input name="nama_barang" value="<?php echo $nama_barang;?>" class="form-control" type="text" placeholder="nama" required oninvalid="this.setCustomValidity('Data Nama tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-xs-3" >Jumlah</label>
-                                        <div class="col-xs-8">
-                                            <input name="jumlah_barang" value="<?php echo $jumlah_barang;?>" class="form-control" type="number" placeholder="jumlah"  required oninvalid="this.setCustomValidity('Data Jumlah tidak boleh kosong dan hanya memasukkan angka')" oninput="setCustomValidity('')">
-                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-xs-3" >Jumlah</label>
+                                    <div class="col-xs-8">
+                                        <input name="jumlah_barang" value="<?php echo $jumlah_barang;?>" class="form-control" type="number" placeholder="jumlah"  required oninvalid="this.setCustomValidity('Data Jumlah tidak boleh kosong dan hanya memasukkan angka')" oninput="setCustomValidity('')">
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-xs-3" >Harga</label>
-                                        <div class="col-xs-8">
-                                            <input name="harga_barang" value="<?php echo $harga_barang;?>" class="form-control" type="number" placeholder="harga" required oninvalid="this.setCustomValidity('Data Harga tidak boleh kosong dan hanya memasukkan angka')" oninput="setCustomValidity('')">
-                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-xs-3" >Harga</label>
+                                    <div class="col-xs-8">
+                                        <input name="harga_barang" value="<?php echo $harga_barang;?>" class="form-control" type="number" placeholder="harga" required oninvalid="this.setCustomValidity('Data Harga tidak boleh kosong dan hanya memasukkan angka')" oninput="setCustomValidity('')">
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-xs-3" >Brand</label>
-                                        <div class="col-xs-8">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-xs-3" >Brand</label>
+                                    <div class="col-xs-8">
                                         <select name="brand_barang" class="form-control input-sm">
-                                       <?php if($brand_barang=='Moscot'):?>
-                                        <option value="Moscot" selected>Moscot</option>
-                                        <option value="Rayband">Rayband</option>
-                                        <option value="Oakley">Oakley</option>
-                                        <?php elseif($brand_barang=='Rayband'):?>
-                                        <option value="Moscot">Moscot</option>
-                                        <option value="Rayband" selected>Rayband</option>
-                                        <option value="Oakley">Oakley</option>
-                                         <?php elseif($brand_barang=='Oakley'):?>
-                                        <option value="Moscot">Moscot</option>
-                                        <option value="Rayband">Rayband</option>
-                                        <option value="Oakley" selected>Oakley</option>
-                                         <?php endif;?>
-                                        </select>
+                                         <?php if($brand_barang=='Moscot'):?>
+                                            <option value="Moscot" selected>Moscot</option>
+                                            <option value="Rayband">Rayband</option>
+                                            <option value="Oakley">Oakley</option>
+                                            <?php elseif($brand_barang=='Rayband'):?>
+                                                <option value="Moscot">Moscot</option>
+                                                <option value="Rayband" selected>Rayband</option>
+                                                <option value="Oakley">Oakley</option>
+                                                <?php elseif($brand_barang=='Oakley'):?>
+                                                    <option value="Moscot">Moscot</option>
+                                                    <option value="Rayband">Rayband</option>
+                                                    <option value="Oakley" selected>Oakley</option>
+                                                <?php endif;?>
+                                            </select>
                                         </div>
                                     </div>
-                                      <div class="form-group">
+                                    <div class="form-group">
                                         <label class="control-label col-xs-3" >Lensa</label>
                                         <div class="col-xs-8">
                                             <input name="lensa_barang" value="<?php echo $lensa_barang;?>" class="form-control" type="text" placeholder="Lensa" required oninvalid="this.setCustomValidity('Data Deskripsi Lensa tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
-                                     <div class="form-group">
+                                    <div class="form-group">
                                         <label class="control-label col-xs-3" >Deskripsi Produk</label>
                                         <div class="col-xs-8">
                                             <input name="deskripsi_barang" value="<?php echo $deskripsi_barang;?>" class="form-control" type="text" placeholder="Deskripsi Produk" required oninvalid="this.setCustomValidity('Data Deskripsi Produk tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                     <label class="control-label col-xs-3" >Foto</label>
-                                        <div class="col-xs-8">
+                                       <label class="control-label col-xs-3" >Foto</label>
+                                       <div class="col-xs-8">
                                         <input data-default-file="<?=base_url('assets/img/foto/'.$gambar=$i['gambar'])?>" type="file" name="filefoto" class="dropify" data-height="100" data-width="50">
                                         <input type="hidden" name="gbr" value="<?php echo $gambar=$i['gambar']; ?>">
-                                        </div>
                                     </div>
                                 </div>
-                                <div class="modal-footer">
-                                    <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Tutup</button>
-                                    <button class="btn btn-success">Update</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach;?>
-            <!--END MODAL EDIT BARANG-->
-            <!-- ============ MODAL HAPUS =============== -->
-            <?php 
-            foreach($data->result_array() as $i):
-                $id_barang=$i['id_barang'];
-                $nama_barang=$i['nama_barang'];
-                ?>
-                <div class="modal fade" id="modal_hapus<?php echo $id_barang;?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                                <h3 class="modal-title" id="myModalLabel">Hapus Data barang</h3>
                             </div>
-                            <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/barang/hapus_barang'?>">
-                                <div class="modal-body">
-                                    <p>Anda yakin mau menghapus <b><?php echo $nama_barang;?></b></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <input type="hidden" name="id_barang" value="<?php echo $id_barang;?>">
-                                    <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
-                                    <button class="btn btn-danger">Hapus</button>
-                                </div>
-                            </form>
-                        </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Tutup</button>
+                                <button class="btn btn-success">Update</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            <?php endforeach;?>
-            <!--END MODAL HAPUS -->
-        </div>
+            </div>
+        <?php endforeach;?>
+        <!--END MODAL EDIT BARANG-->
+        <!-- ============ MODAL HAPUS =============== -->
+        <?php 
+        foreach($data->result_array() as $i):
+            $id_barang=$i['id_barang'];
+            $nama_barang=$i['nama_barang'];
+            ?>
+            <div class="modal fade" id="modal_hapus<?php echo $id_barang;?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                            <h3 class="modal-title" id="myModalLabel">Hapus Data barang</h3>
+                        </div>
+                        <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/barang/hapus_barang'?>">
+                            <div class="modal-body">
+                                <p>Anda yakin mau menghapus <b><?php echo $nama_barang;?></b></p>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="hidden" name="id_barang" value="<?php echo $id_barang;?>">
+                                <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
+                                <button class="btn btn-danger">Hapus</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach;?>
+        <!--END MODAL HAPUS -->
     </div>
 </div>
-    
+</div>

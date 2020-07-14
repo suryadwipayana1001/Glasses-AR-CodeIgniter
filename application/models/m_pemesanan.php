@@ -36,6 +36,7 @@ class m_pemesanan extends CI_Model{
 		$hasil=$this->db->query("SELECT id_pemesanan FROM tb_pemesanan ORDER BY id_pemesanan DESC LIMIT 1");
 		return $hasil;
 	}
+	
 	function simpan_pemesanan($user,$nama_pemesanan,$provinsi_pemesanan,$kabupaten_pemesanan,$kecamatan_pemesanan,$alamat_pemesanan,$kodepos_pemesanan,$nohp_pemesanan,$kurir_pemesanan,$ongkir_pemesanan,$status_pemesanan,$struk_pemesanan,$tanggal_pemesanan,$subtotal_pemesanan,$total_pemesanan){
 		$hasil=$this->db->query("INSERT INTO tb_pemesanan(id_user,nama_pemesanan,provinsi_pemesanan,kabupaten_pemesanan,kecamatan_pemesanan,alamat_pemesanan,kodepos_pemesanan,nohp_pemesanan,kurir_pemesanan,ongkir_pemesanan,status_pemesanan,struk_pemesanan,tanggal_pemesanan,subtotal_pemesanan,total_pemesanan) VALUES('$user','$nama_pemesanan','$provinsi_pemesanan','$kabupaten_pemesanan','$kecamatan_pemesanan','$alamat_pemesanan','$kodepos_pemesanan','$nohp_pemesanan','$kurir_pemesanan','$ongkir_pemesanan','$status_pemesanan','$struk_pemesanan','$tanggal_pemesanan','$subtotal_pemesanan','$total_pemesanan')");	
 		return $hasil;

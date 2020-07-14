@@ -45,8 +45,8 @@
                     <li>
                         <a href="#">Transaksi Customer</a>
                     </li>
-                    <li>
-                        <a href="#">Transaksi Supplier</a>
+                    <li <?=$this->uri->segment(1) == 'laporan_menyuplai' ? 'class="active-menu"' : ''?>> 
+                        <a href="<?=site_url('laporan_menyuplai')?>">Transaksi Supplier</a>
                     </li>
                 </ul>
             </li>

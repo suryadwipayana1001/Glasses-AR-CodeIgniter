@@ -1,4 +1,4 @@
-    <footer><center>All right reserved: <a href="http://sunrostravel.epizy.com/">SUNROS</a></center></footer>
+    <footer><center>All right reserved: <a href="http://sunrostravel.epizy.com/"><h1>&nbsp</a></center></footer>
 	<script src="<?php echo base_url('assets/js/jquery-1.10.2.js')?>"></script>
     <!-- Bootstrap Js -->
     <script src="<?php echo base_url('assets/js/bootstrap.min.js')?>" ></script>

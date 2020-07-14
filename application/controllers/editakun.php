@@ -20,5 +20,15 @@ class editakun extends CI_Controller {
         $this->load->view("t_users/footer");
        
     }
+    public function edit_akun(){
+
+        $id_user=$this->input->post('id_user');
+        $nama_user=$this->input->post('nama_user');
+        $email_user=$this->input->post('email_user');
+        $password_user=$this->input->post('password_user');
+        $tanggallahir_user=$this->input->post('tanggallahir_user');
+        $this->m_user->edit_akun($id_user,$nama_user,$email_user,$password_user,$tanggallahir_user);
+        redirect('editakun');
+    }
 }
 ?>

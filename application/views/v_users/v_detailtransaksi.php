@@ -11,35 +11,35 @@
 
             <div class="cart-summary">
               <h5>Detail Produk</h5>
-        <div class="cart-table clearfix">
+              <div class="cart-table clearfix">
 
-              <table class="table table-responsive detailtransaksi">
-                <thead>
-                  <tr>
-                    <th>Nama</th>
-                    <th>Harga</th>
-                    <th>Jumlah</th>
-                    <th>Total Harga</th>
-                  </tr>
-                </thead>
-                <tbody>
+                <table class="table table-responsive detailtransaksi">
+                  <thead>
+                    <tr>
+                      <th>Nama</th>
+                      <th>Harga</th>
+                      <th>Jumlah</th>
+                      <th>Total Harga</th>
+                    </tr>
+                  </thead>
+                  <tbody>
                    <?php
-       foreach ($data1->result_array()as $i):
-        $totalharga_dipesan=$i['totalharga_dipesan'];
-        ?>
-                  <tr>
-                    <td><?php echo $i['nama_dipesan']?></td>
-                    <td>Rp.<?php echo $i['harga_dipesan']?></td>
-                    <td>.<?php echo $i['jumlah_dipesan']?></td>
-                     <td>Rp.<?php echo $i['totalharga_dipesan']?></td>
-                  </tr>
+                   foreach ($data1->result_array()as $i):
+                    $totalharga_dipesan=$i['totalharga_dipesan'];
+                    ?>
+                    <tr>
+                      <td><?php echo $i['nama_dipesan']?></td>
+                      <td>Rp.<?php echo $i['harga_dipesan']?></td>
+                      <td><?php echo $i['jumlah_dipesan']?></td>
+                      <td>Rp.<?php echo $i['totalharga_dipesan']?></td>
+                    </tr>
                   <?php endforeach;?>
                 </tbody>
               </table>
             </div>
-        </div>
-        <p>
-        <h5>Detail Pemesan</h5>
+          </div>
+          <p>
+            <h5>Detail Pemesan</h5>
             <?php
             foreach ($data->result_array()as $i):
               ?>
@@ -77,7 +77,7 @@
        </div>
 
        <div class="col-12 col-lg-4">
-           <div class="cart-summary">
+         <div class="cart-summary">
           <h5>Detail Transaksi</h5>
           <ul class="summary-table">
             <?php
