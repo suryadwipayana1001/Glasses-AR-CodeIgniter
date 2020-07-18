@@ -67,7 +67,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Nama</label>
                                     <div class="col-xs-8">
-                                        <input name="nama_supplier" class="form-control" type="text" pattern="[A-Za-z]+" title="Hanya boleh memasukkan huruf" placeholder="Nama" required oninvalid="this.setCustomValidity('Nama tidak boleh kosong')" oninput="setCustomValidity('')">
+                                        <input name="nama_supplier" class="form-control" type="text" placeholder="Nama" required oninvalid="this.setCustomValidity('Nama tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                 <div class="form-group">

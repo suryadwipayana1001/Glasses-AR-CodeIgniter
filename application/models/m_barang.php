@@ -26,8 +26,8 @@ class m_barang extends CI_Model{
 		$hasil=$this->db->query("SELECT * FROM tb_barang WHERE id_barang='$id_barang'");
 		return $hasil;
 	}
-	function simpan_barang($id_barang,$nama_barang,$jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$deskripsi_barang){
-		$hasil=$this->db->query("INSERT INTO tb_barang(id_barang,nama_barang,jumlah_barang,harga_barang,gambar,brand_barang,lensa_barang,deskripsi_barang) VALUES('$id_barang','$nama_barang','$jumlah_barang','$harga_barang','$gambar','$brand_barang','$lensa_barang','$deskripsi_barang')");	
+	function simpan_barang($id_barang,$nama_barang,$jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$deskripsi_barang,$model_3d){
+		$hasil=$this->db->query("INSERT INTO tb_barang(id_barang,nama_barang,jumlah_barang,harga_barang,gambar,brand_barang,lensa_barang,deskripsi_barang,model_3d) VALUES('$id_barang','$nama_barang','$jumlah_barang','$harga_barang','$gambar','$brand_barang','$lensa_barang','$deskripsi_barang','$model_3d')");	
 		return $hasil;
 	}
 	function simpan_cart($id_user,$cart){
@@ -47,8 +47,8 @@ class m_barang extends CI_Model{
 		return $hasil;
 	}
 
-	function edit_barang($id_barang,$nama_barang,$jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$deskripsi_barang){
-		$hasil=$this->db->query("UPDATE tb_barang SET nama_barang='$nama_barang',jumlah_barang ='$jumlah_barang',harga_barang='$harga_barang',gambar='$gambar',brand_barang='$brand_barang', lensa_barang='$lensa_barang',deskripsi_barang='$deskripsi_barang' WHERE id_barang='$id_barang' ");
+	function edit_barang($id_barang,$nama_barang,$jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$deskripsi_barang,$model_3d){
+		$hasil=$this->db->query("UPDATE tb_barang SET nama_barang='$nama_barang',jumlah_barang ='$jumlah_barang',harga_barang='$harga_barang',gambar='$gambar',brand_barang='$brand_barang', lensa_barang='$lensa_barang',deskripsi_barang='$deskripsi_barang',model_3d='$model_3d' WHERE id_barang='$id_barang' ");
 		return $hasil;
 	}
 

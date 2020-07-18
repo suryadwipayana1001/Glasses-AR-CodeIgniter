@@ -66,7 +66,7 @@
 
                         <!-- Product Image -->
                         <div class="product-img">
-                             <a href="product-details.html">
+                             <a href="<?=site_url('ar'.'?code='.$i['model_3d'])?>">
                             <img src="<?=base_url('assets/img/foto/'.$gambar=$i['gambar'])?>" style="width:455px height:565px">
                         </a>
                         </div>

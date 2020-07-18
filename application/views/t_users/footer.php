@@ -140,6 +140,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     });
     
 </script>
+<script>
+            // function which are used only for this functionnal test
+            function test_resizeCanvas(){
+                const wid=document.getElementById('JeeWidget');
+                wid.style.width='1000px';
+            };
+        </script>
 </body>
 
 </html>

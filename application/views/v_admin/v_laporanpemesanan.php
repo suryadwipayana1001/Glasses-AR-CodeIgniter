@@ -3,7 +3,7 @@
    <div class="row">
     <div class="col-md-12">
         <h1 class="page-header">
-            Laporan Transaksi Supplier <small></small>
+            Laporan Transaksi Customer <small></small>
         </h1>
     </div>
 </div> 
@@ -22,8 +22,8 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama Barang</th>
-                                <th>Harga</th>
+                                <th>Nama</th>
+                                <th>Alamat</th>
                                 <th>Jumlah</th>
                                 <th>Total Harga</th>
                                 <th>Tanggal</th>
@@ -48,22 +48,9 @@
                             <?php endforeach;?>
                         </tbody>
                     </table>
-                    <table >
-                     <?php foreach ($menyuplai->result_array()as $i):
-                             ?>
-                     <tr>        
-                    <td><?php echo $i['nama_barang'];?></td>
-                    <td><?php echo $i['jumlah_menyuplai'];?></td>
-                    <tr>
-                        <?php endforeach;?>
-                    <tr>
-                     <td>Total Transaksi:</td>
-                        <td><?php echo $total?></td>
-                    <tr>
-                     
-                   
+                    
+                    Total Transaksi: <?php echo $total?>
                 </div>
-            </table>
             </div>
         </div>
     </div>

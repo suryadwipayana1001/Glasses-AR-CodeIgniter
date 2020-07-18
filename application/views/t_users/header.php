@@ -19,4 +19,17 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/dropify/dropify.min.css'?>">
     
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="<?php echo base_url('assets/release/JeelizNNCwidget.js') ?>"></script>
+        <link rel='stylesheet' href="<?php echo base_url('assets/css/JeeWidgetPublicGitBasic.css') ?>" />
 </head>
+<?php
+
+$a = $this->input->get(); 
+if (isset($a['code'])) $ar = $a['code']; else $ar = "";
+?>
+<body onload="JEEWIDGET.start({
+        sku: '<?php echo $ar; ?>',
+        searchImageMask: 'https://appstatic.jeeliz.com/jeewidget/images/target.png',
+        searchImageColor: 0xff0000,
+        onError: function(errorLabel){ alert('AN ERROR HAPPENED: ' + errorLabel); }
+    })">

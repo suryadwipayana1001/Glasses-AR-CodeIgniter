@@ -1,20 +1,18 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class laporan_menyuplai extends CI_Controller{
+class laporan_pemesanan extends CI_Controller{
 
 	function __construct(){
 		parent::__construct();
-		$this->load->model('m_menyuplai');
+		$this->load->model('m_pemesanan');
 	}
 	function index(){
 		if($this->session->logged_in == FALSE){
 			redirect('login');
 		}else{
 			if($this->session->level == 'Admin'){
-				$x['data']=$this->m_menyuplai->show_menyuplai();
-				$x['menyuplai']=$this->m_menyuplai->laporanmenyuplai();
-			
+				$x['data']=$this->m_pemesanan->show_pemesanan();
 				$this->load->view("t_admin/header");
 				$this->load->view("t_admin/navbar");
 				$this->load->view("v_admin/v_laporanmenyuplai",$x);
@@ -28,17 +26,15 @@ class laporan_menyuplai extends CI_Controller{
 
 	function laporan(){
 	$this->load->library('dompdf_gen');
-		$data['menyuplai'] = $this->m_menyuplai->show_menyuplai();
-		$this->load->view('v_laporan/pdf_menyuplai',$data);
-
+		$data['pemesanan'] = $this->m_pemesanan->show_pemesanan();
+		$this->load->view('v_laporan/pdf_pemesanan',$data);
 		$paper_size ='A4';
 		$orientation='Landscape';
 		$html=$this->output->get_output();
 		$this->dompdf->set_paper($paper_size, $orientation);
-
 		$this->dompdf->load_html($html);
 		$this->dompdf->render();
-		$this->dompdf->stream("laporan_menyuplai.pdf",array('Attachment'=>0));
+		$this->dompdf->stream("laporan_pemesanan.pdf",array('Attachment'=>0));
 	}
 }
 

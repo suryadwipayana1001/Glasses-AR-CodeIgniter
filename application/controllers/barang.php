@@ -46,7 +46,8 @@ class barang extends CI_Controller{
 	                $brand_barang=$this->input->post('brand_barang');
 	                $lensa_barang=$this->input->post('lensa_barang');
 	                $deskripsi_barang=$this->input->post('deskripsi_barang');
-	                $this->m_barang->simpan_barang($id_barang,$nama_barang,$jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$deskripsi_barang);
+	                $model_3d=$this->input->post('model_3d');
+	                $this->m_barang->simpan_barang($id_barang,$nama_barang,$jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$deskripsi_barang,$model_3d);
 	                redirect('barang');
 	            }else{
 	            	echo "Gambar Gagal Upload. Gambar harus bertipe gif|jpg|png|jpeg|bmp";
@@ -70,6 +71,7 @@ class barang extends CI_Controller{
         $brand_barang=$this->input->post('brand_barang');
         $lensa_barang=$this->input->post('lensa_barang');
         $deskripsi_barang=$this->input->post('deskripsi_barang');
+        $model_3d=$this->input->post('model_3d');
 
 	    if(!empty($_FILES['filefoto']['name']))
 	    {
@@ -77,14 +79,14 @@ class barang extends CI_Controller{
 	    	{
 	    		$gbr = $this->upload->data();
 	                $gambar=$gbr['file_name']; //Mengambil file name dari gambar yang diupload
-	                $this->m_barang->edit_barang($id_barang,$nama_barang, $jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$deskripsi_barang);
+	                $this->m_barang->edit_barang($id_barang,$nama_barang, $jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$deskripsi_barang,$model_3d);
 	                redirect('barang');
 	            }else{
 	            	echo "Gambar Gagal Upload. Gambar harus bertipe gif|jpg|png|jpeg|bmp";
 	            }
         }else{     
         	$gambar=$this->input->post('gbr');
-        	$this->m_barang->edit_barang($id_barang,$nama_barang, $jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$deskripsi_barang);
+        	$this->m_barang->edit_barang($id_barang,$nama_barang, $jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$deskripsi_barang,$model_3d);
         	redirect('barang');
 	        }
 	    }

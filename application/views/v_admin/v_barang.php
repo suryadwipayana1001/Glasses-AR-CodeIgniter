@@ -34,7 +34,6 @@
                                 <tbody>
                                     <?php
                                     $no=1;
-                                    
                                     foreach ($data->result_array()as $i):
                                         $id_barang=$i['id_barang'];
                                         ?>
@@ -45,6 +44,7 @@
                                             <td><?php echo $i['harga_barang'];?></td>
                                             <td><?php echo $i['brand_barang'];?></td>
                                             <td><?php echo $i['lensa_barang'];?></td>
+
                                             <td><img src="<?=base_url('assets/img/foto/'.$gambar=$i['gambar'])?>" style="width:100px"></td>
                                             
                                             <td style="width: 120px;">
@@ -60,6 +60,8 @@
                        </div>
                    </div>
                </div>
+              
+                                          
                <!--End Advanced Tables -->
                <!-- ============ MODAL ADD =============== -->
                <div class="modal fade" id="modal_add_new" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
@@ -118,6 +120,19 @@
                                         <input type="file" name="filefoto" class="dropify" data-height="100" data-width="50">
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label class="control-label col-xs-3" >Model 3D</label>
+                                    <div class="col-xs-8">
+                                        <select name="model_3d" class="form-control input-sm" >
+                                            <option value="">--Pilih Model 3D--</option>
+                                            <option value="rayban_andy_havane_orange_flash">rayban_andy_havane_orange_flash</option>
+                                            <option value="rayban_caravan_or_vert_flash">rayban_caravan_or_vert_flash</option>
+                                            <option value="rayban_wayfarer_havane_vert">rayban_wayfarer_havane_vert</option>
+                                            <option value="rayban_round_gun_vert">rayban_round_gun_vert</option>
+                                            <option value="rayban_erika_noir_grisDegrade">rayban_erika_noir_grisDegrade</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Tutup</button>
@@ -139,6 +154,7 @@
                 $gambar=$i['gambar'];
                 $lensa_barang=$i['lensa_barang'];
                 $deskripsi_barang=$i['deskripsi_barang'];
+                $model_3d=$i['model_3d'];
                 ?>
                 <div class="modal fade" id="modal_edit<?php echo $id_barang;?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
                     <div class="modal-dialog">
@@ -205,6 +221,44 @@
                                        <div class="col-xs-8">
                                         <input data-default-file="<?=base_url('assets/img/foto/'.$gambar=$i['gambar'])?>" type="file" name="filefoto" class="dropify" data-height="100" data-width="50">
                                         <input type="hidden" name="gbr" value="<?php echo $gambar=$i['gambar']; ?>">
+                                    </div>
+                                </div>
+                                 <div class="form-group">
+                                    <label class="control-label col-xs-3" >Model 3D</label>
+                                    <div class="col-xs-8">
+                                        <select name="model_3d" class="form-control input-sm" >
+                                            <?php if($model_3d=='rayban_andy_havane_orange_flash'):?>
+                                            <option value="rayban_andy_havane_orange_flash" selected>rayban_andy_havane_orange_flash</option>
+                                            <option value="rayban_caravan_or_vert_flash">rayban_caravan_or_vert_flash</option>
+                                            <option value="rayban_wayfarer_havane_vert">rayban_wayfarer_havane_vert</option>
+                                            <option value="rayban_round_gun_vert">rayban_round_gun_vert</option>
+                                            <option value="rayban_erika_noir_grisDegrade">rayban_erika_noir_grisDegrade</option>
+                                             <?php elseif($model_3d=='rayban_caravan_or_vert_flash'):?>
+                                            <option value="rayban_andy_havane_orange_flash">rayban_andy_havane_orange_flash</option>
+                                            <option value="rayban_caravan_or_vert_flash" selected >rayban_caravan_or_vert_flash</option>
+                                            <option value="rayban_wayfarer_havane_vert">rayban_wayfarer_havane_vert</option>
+                                            <option value="rayban_round_gun_vert">rayban_round_gun_vert</option>
+                                            <option value="rayban_erika_noir_grisDegrade">rayban_erika_noir_grisDegrade</option>
+                                             <?php elseif($model_3d=='rayban_wayfarer_havane_vert'):?>
+                                            <option value="rayban_andy_havane_orange_flash">rayban_andy_havane_orange_flash</option>
+                                            <option value="rayban_caravan_or_vert_flash" >rayban_caravan_or_vert_flash</option>
+                                            <option value="rayban_wayfarer_havane_vert" selected>rayban_wayfarer_havane_vert</option>
+                                            <option value="rayban_round_gun_vert">rayban_round_gun_vert</option>
+                                            <option value="rayban_erika_noir_grisDegrade">rayban_erika_noir_grisDegrade</option>
+                                            <?php elseif($model_3d=='rayban_round_gun_vert'):?>
+                                            <option value="rayban_andy_havane_orange_flash">rayban_andy_havane_orange_flash</option>
+                                            <option value="rayban_caravan_or_vert_flash" >rayban_caravan_or_vert_flash</option>
+                                            <option value="rayban_wayfarer_havane_vert">rayban_wayfarer_havane_vert</option>
+                                            <option value="rayban_round_gun_vert" >rayban_round_gun_vert</option>
+                                            <option value="rayban_erika_noir_grisDegrade">rayban_erika_noir_grisDegrade</option>
+                                            <?php elseif($model_3d=='rayban_round_gun_vert'):?>
+                                            <option value="rayban_andy_havane_orange_flash">rayban_andy_havane_orange_flash</option>
+                                            <option value="rayban_caravan_or_vert_flash" >rayban_caravan_or_vert_flash</option>
+                                            <option value="rayban_wayfarer_havane_vert">rayban_wayfarer_havane_vert</option>
+                                            <option value="rayban_round_gun_vert"  selected >rayban_round_gun_vert</option>
+                                            <option value="rayban_erika_noir_grisDegrade"  selected >rayban_erika_noir_grisDegrade</option>
+                                               <?php endif;?>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
