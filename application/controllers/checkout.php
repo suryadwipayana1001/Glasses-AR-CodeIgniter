@@ -9,6 +9,7 @@ class checkout extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->model('m_pemesanan');
+		$this->load->model('m_dipesan');
 		$this->load->model('m_barang');
 		$this->load->library('cart');
 	}
@@ -68,7 +69,7 @@ class checkout extends CI_Controller{
 			$stok1 = $t['0']['jumlah_barang'];
 			$sisa=$stok1-$jumlah_dipesan;
 			$this->m_barang->update_stok($id_barang,$sisa);
-			$this->m_pemesanan->simpan_dipesan($id_barang,$id_pemesanan,$nama_dipesan,$harga_dipesan,$jumlah_dipesan,$totalharga_dipesan);
+			$this->m_dipesan->simpan_dipesan($id_barang,$id_pemesanan,$nama_dipesan,$harga_dipesan,$jumlah_dipesan,$totalharga_dipesan);
 
 		
 		}
@@ -80,10 +81,6 @@ class checkout extends CI_Controller{
 		$this->cart->destroy();
 	redirect('berhasil');
 	}
-	function simpan_dipesan(){
-		
-	}
-
 	public function get_provinsi()
 	{
 		$provinces = $this->rajaongkir->province();

@@ -7,17 +7,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class keranjang extends CI_Controller{
 function __construct(){
 		parent::__construct();
-		$this->load->model('m_barang');
+		$this->load->model('m_keranjang');
+		// $this->load->model('m_barang');
 		$this->load->library('cart');
 
 		if($this->session->logged_in == TRUE){
     		$id_user = $this->session->id_user;
     		$cartContentString = serialize($this->cart->contents());
 
-			$cek_user = $this->m_barang->cek_user($id_user);
+			$cek_user = $this->m_keranjang->cek_user($id_user);
 			if ($cek_user->num_rows()) {
-				$this->m_barang->update_cart($id_user, $cartContentString);
-			} else $this->m_barang->simpan_cart($id_user, $cartContentString);
+				$this->m_keranjang->update_cart($id_user, $cartContentString);
+			} else $this->m_keranjang->simpan_cart($id_user, $cartContentString);
 		}
 
 	}
@@ -68,7 +69,7 @@ function add_to_cart(){ //fungsi Add To Cart
                         <tbody id="detail_cart">';
         if($this->session->logged_in == TRUE){
     		$id_user = $this->session->id_user;
-        	$isi_cart = $this->m_barang->tampil_cart($id_user);
+        	$isi_cart = $this->m_keranjang->tampil_cart($id_user);
 
 			foreach ($isi_cart->result_array()as $i) {
 				$cartku = $i['cart'];

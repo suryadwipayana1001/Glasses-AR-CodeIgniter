@@ -19,14 +19,28 @@
                                    Email <input type="text" class="form-control" name="email_user" value="" placeholder="Email" required>
                                </div>
                                <div class="col-md-12 mb-3">
-                                   Password <input type="text" class="form-control" id="password" value="" placeholder="Password" required>
+                                   Password <input type="text" class="form-control" name="password_userz" value="" placeholder="Password" required>
                                </div>
+
                                <!--  <div class="col-md-12 mb-3">
                                    Repassword <input type="text" class="form-control" id="repassword" name="Repassword" value="" placeholder="Masukan kembali Password" required>
                                </div> -->
                                <div class="col-md-12 mb-3">
                                    Tanggal Lahir <input type="date" class="form-control" name="tanggallahir_user"  required>
                                </div>
+                                <div class="col-md-12 mb-3">
+                                   Alamat<input type="text" class="form-control" name="alamat_user" placeholder="Alamat" required>
+                               </div>
+                                 <div class="col-md-12 mb-3">
+                                   No Hp<input type="text" class="form-control" name="nohp_user" placeholder="No Handphone" required>
+                               </div>
+                                  <div class="col-md-12 mb-3">
+                            <label > Jenis Kelamin</label>
+                            <select name="jeniskelamin_user" class="w-100">
+                                <option value="Laki-Laki">Laki-Laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                        </div>
                                <input type="hidden" class="form-control" name="level_user" value="Customer" required>
                                <div class="col-md-6 mb-3">
                                 <button class="btn amado-btn w-100" onClick="validate();">Simpan</button>

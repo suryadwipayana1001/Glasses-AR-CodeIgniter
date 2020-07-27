@@ -13,12 +13,16 @@ class m_user extends CI_Model{
 		$hasil=$this->db->query("DELETE FROM tb_user WHERE	id_user='$id_user'");
 		return $hasil;
 	}
-	function simpan_user($id_user,$nama_user,$email_user,$password_user,$tanggallahir_user,$level_user){
-		$hasil=$this->db->query("INSERT INTO tb_user(id_user,nama_user,email_user,password_user,tanggallahir_user,level_user) VALUES('$id_user','$nama_user','$email_user','$password_user','$tanggallahir_user','$level_user')");	
+	function simpan_user($id_user,$nama_user,$email_user,$password_user,$tanggallahir_user,$alamat_user,$nohp_user,$jeniskelamin_user,$level_user){
+		$hasil=$this->db->query("INSERT INTO tb_user(id_user,nama_user,email_user,password_user,tanggallahir_user,alamat_user,nohp_user,jeniskelamin_user,level_user) VALUES('$id_user','$nama_user','$email_user','$password_user','$tanggallahir_user','$alamat_user','$nohp_user','$jeniskelamin_user','$level_user')");	
 			return $hasil;
 	}
-	function edit_user($id_user,$nama_user,$email_user,$password_user,$tanggallahir_user,$level_user){
-		$hasil=$this->db->query("UPDATE tb_user SET nama_user='$nama_user',email_user ='$email_user',password_user='$password_user',tanggallahir_user='$tanggallahir_user',level_user='$level_user' WHERE id_user='$id_user' ");
+	function edit_user($id_user,$nama_user,$email_user,$password_user,$tanggallahir_user,$alamat_user,$nohp_user,$jeniskelamin_user,$level_user){
+		$hasil=$this->db->query("UPDATE tb_user SET nama_user='$nama_user',email_user ='$email_user',password_user='$password_user',tanggallahir_user='$tanggallahir_user',alamat_user='$alamat_user',nohp_user='$nohp_user',jeniskelamin_user='$jeniskelamin_user',level_user='$level_user' WHERE id_user='$id_user' ");
+		return $hasil;
+	}
+	function edit_user1($id_user,$nama_user,$email_user,$password_user,$tanggallahir_user,$alamat_user,$nohp_user,$jeniskelamin_user){
+		$hasil=$this->db->query("UPDATE tb_user SET nama_user='$nama_user',email_user ='$email_user',password_user='$password_user',tanggallahir_user='$tanggallahir_user',alamat_user='$alamat_user',nohp_user='$nohp_user',jeniskelamin_user='$jeniskelamin_user' WHERE id_user='$id_user' ");
 		return $hasil;
 	}
 
@@ -39,4 +43,8 @@ class m_user extends CI_Model{
 		return $hasil;
 	}
 
+	function laporan_customer(){
+	$hasil=$this->db->query("SELECT * FROM tb_user WHERE level_user='customer'");
+	return $hasil;
+}
 }

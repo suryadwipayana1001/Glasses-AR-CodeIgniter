@@ -19,6 +19,9 @@
                         $email_user = $i['email_user'];
                         $password_user = $i['password_user'];
                         $tanggallahir_user = $i['tanggallahir_user'];
+                        $alamat_user = $i['alamat_user'];
+                        $nohp_user = $i['nohp_user'];
+                        $jeniskelamin_user =$i['jeniskelamin_user'];
                      ?>
                      <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/editakun/edit_akun'?>"enctype="multipart/form-data" >
                         <div class="row">
@@ -35,6 +38,24 @@
                      <div class="col-md-12 mb-3">
                          Tanggal Lahir <input type="date" class="form-control" name="tanggallahir_user"  value="<?php echo $tanggallahir_user?>"  required oninvalid="this.setCustomValidity('Tanggal Lahir tidak boleh kosong')" oninput="setCustomValidity('')">
                      </div>
+                      <div class="col-md-12 mb-3">
+                           Alamat <input type="text" class="form-control" name="alamat_user" value="<?php echo $alamat_user?>" placeholder="Alamat" required>
+                       </div>
+                        <div class="col-md-12 mb-3">
+                           No Handphone <input type="text" class="form-control" name="nohp_user" value="<?php echo $nohp_user?>" placeholder="No Handphone" required>
+                       </div>
+                         <div class="col-md-12 mb-3">
+                            <label > Jenis Kelamin</label>
+                            <select name="jeniskelamin_user" class="w-100">
+                               <?php if($jeniskelamin_user=='Laki-Laki'):?>
+                                <option value="Laki-Laki" selected>Laki-Laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                                <?php elseif($jeniskelamin_user=='Perempuan'):?>
+                                <option value="Laki-Laki" >Laki-Laki</option>
+                                <option value="Perempuan" selected>Perempuan</option>
+                                 <?php endif;?>
+                            </select>
+                        </div>
                      <div class="col-md-6 mb-3">
                         <button class="btn amado-btn w-100">Simpan</button>
                     </div>

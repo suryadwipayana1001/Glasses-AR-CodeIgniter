@@ -22,8 +22,11 @@ function simpan_user(){
 		$email_user=$this->input->post('email_user');
 		$password_user=$this->input->post('password_user');
 		$tanggallahir_user=$this->input->post('tanggallahir_user');
+		$alamat_user=$this->input->post('alamat_user');
+		$nohp_user=$this->input->post('nohp_user');
+		$jeniskelamin_user=$this->input->post('jeniskelamin_user');
 		$level_user=$this->input->post('level_user');
-			$this->m_user->simpan_user($id_user,$nama_user,$email_user,$password_user,$tanggallahir_user,$level_user);
+			$this->m_user->simpan_user($id_user,$nama_user,$email_user,$password_user,$tanggallahir_user,$alamat_user,$nohp_user,$jeniskelamin_user,$level_user);
 		redirect('daftar');
 	
 		$this->load->view("t_users/header");

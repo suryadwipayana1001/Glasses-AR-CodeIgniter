@@ -8,6 +8,7 @@ class transaksi extends CI_Controller{
 function __construct(){
 		parent::__construct();
 		$this->load->model('m_pemesanan');
+		$this->load->model('m_dipesan');
 		$this->load->library('upload');
 	}
 	 function index()
@@ -36,7 +37,7 @@ function __construct(){
 	{
 	  $id_pemesanan =  $this->uri->segment(3);
 	  $x['data']=$this->m_pemesanan->detail_pemesanan($id_pemesanan);
- 	 $x['data1']=$this->m_pemesanan->detail_pemesan($id_pemesanan);		  
+ 	 $x['data1']=$this->m_dipesan->detail_pemesan($id_pemesanan);		  
 		$this->load->view("t_users/header");
 		$this->load->view("v_users/v_detailtransaksi",$x);
 		$this->load->view("t_users/footer");

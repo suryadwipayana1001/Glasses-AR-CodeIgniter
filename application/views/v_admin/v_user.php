@@ -26,6 +26,9 @@
                                         <th>Email</th>
                                         <th>Password</th>
                                         <th>Tanggal Lahir</th>
+                                        <th>Alamat</th>
+                                        <th>No Hp</th>
+                                        <th>Jenis Kelamin</th>
                                         <th>Level</th>
                                         <th>Tindakan</th>
                                     </tr>
@@ -42,6 +45,9 @@
                                             <td><?php echo $i['email_user'];?></td>
                                             <td><?php echo $i['password_user'];?></td>
                                             <td><?php echo $i['tanggallahir_user'];?></td>
+                                            <td><?php echo $i['alamat_user'];?></td>
+                                            <td><?php echo $i['nohp_user'];?></td>
+                                            <td><?php echo $i['jeniskelamin_user'];?></td>
                                             <td><?php echo $i['level_user'];?></td>
                                             <td style="width: 120px;">
                                                 <a href="<?=site_url('user/detail_user/'.$i['id_user'])?>"  class="btn btn-success btn-xs"><i class="fa fa-check-square-o"></i></a>
@@ -88,10 +94,32 @@
                                         <input name="tanggallahir_user" class="form-control" type="date" placeholder="Tanggal Lahir" required oninvalid="this.setCustomValidity('Data Tanggal Lahir tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
+                                 <div class="form-group">
+                                    <label class="control-label col-xs-3" >Alamat</label>
+                                    <div class="col-xs-8">
+                                        <input name="alamat_user" class="form-control" type="text" placeholder="Alamat" required oninvalid="this.setCustomValidity('Data Alamat tidak boleh kosong')" oninput="setCustomValidity('')">
+                                    </div>
+                                </div>
+                                 <div class="form-group">
+                                    <label class="control-label col-xs-3" >No Handphone</label>
+                                    <div class="col-xs-8">
+                                        <input name="nohp_user" class="form-control" type="text" placeholder="No Handphone" required oninvalid="this.setCustomValidity('Data No Handphone tidak boleh kosong')" oninput="setCustomValidity('')">
+                                    </div>
+                                </div>
+                                  <div class="form-group">
+                                    <label class="control-label col-xs-3" >Jenis Kelamin</label>
+                                    <div class="col-xs-8">
+                                        <select name="jeniskelamin_user"  class="form-control input-sm"  required oninvalid="this.setCustomValidity('Data Jenis Kelamin tidak boleh kosong')" oninput="setCustomValidity('')">
+                                        <option value="">--Pilih Jenis Kelamin--</option>
+                                        <option value="Laki-Laki">Laki-Laki</option>
+                                        <option value="Perempuan">Perempuan</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Level</label>
                                     <div class="col-xs-8">
-                                        <select name="level_user" required oninvalid="this.setCustomValidity('Data Level tidak boleh kosong')" oninput="setCustomValidity('')">
+                                        <select name="level_user" class="form-control input-sm"  required oninvalid="this.setCustomValidity('Data Level tidak boleh kosong')" oninput="setCustomValidity('')">
                                         <option value="">--Pilih User--</option>
                                         <option value="Admin">Admin</option>
                                         <option value="Customer">Customer</option>
@@ -116,6 +144,9 @@
                 $email_user=$i['email_user'];
                 $password_user=$i['password_user'];
                 $tanggallahir_user=$i['tanggallahir_user'];
+                $alamat_user=$i['alamat_user'];
+                $nohp_user=$i['nohp_user'];
+                $jeniskelamin_user=$i['jeniskelamin_user'];
                 $level_user=$i['level_user'];
                 ?>
                 <div class="modal fade" id="modal_edit<?php echo $id_user;?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
@@ -152,10 +183,36 @@
                                             <input name="tanggallahir_user" value="<?php echo $tanggallahir_user;?>" class="form-control" type="date" placeholder="Tanggal Lahir" required oninvalid="this.setCustomValidity('Data Tanggal Lahir tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3" >Alamat</label>
+                                        <div class="col-xs-8">
+                                            <input name="alamat_user" value="<?php echo $alamat_user;?>" class="form-control" type="text" placeholder="Alamat" required oninvalid="this.setCustomValidity('Data Alamat tidak boleh kosong')" oninput="setCustomValidity('')">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3" >No Handphone</label>
+                                        <div class="col-xs-8">
+                                            <input name="nohp_user" value="<?php echo $nohp_user;?>" class="form-control" type="text" placeholder="No Handphone" required oninvalid="this.setCustomValidity('Data No Handphone tidak boleh kosong')" oninput="setCustomValidity('')">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3" >Jenis Kelamin</label>
+                                        <div class="col-xs-8">
+                                        <select name="jeniskelamin_user" class="form-control input-sm">
+                                       <?php if($jeniskelamin_user=='Laki-Laki'):?>
+                                        <option value="Laki-Laki" selected>Laki-Laki</option>
+                                        <option value="Perempuan">Perempuan</option>
+                                        <?php elseif($jeniskelamin_user=='Perempuan'):?>
+                                        <option value="Laki-Laki">Laki-Laki</option>
+                                        <option value="Perempuan" selected>Perempuan</option>
+                                         <?php endif;?>
+                                        </select>
+                                        </div>
+                                    </div>
                                        <div class="form-group">
                                         <label class="control-label col-xs-3" >level</label>
                                         <div class="col-xs-8">
-                                        <select name="level_user">
+                                        <select name="level_user" class="form-control input-sm">
                                        <?php if($level_user=='Admin'):?>
                                         <option value="Admin" selected>Admin</option>
                                         <option value="Customer">Customer</option>

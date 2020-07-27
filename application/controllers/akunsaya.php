@@ -6,7 +6,7 @@ class akunsaya extends CI_Controller {
     function __construct(){
         parent::__construct();
         $this->load->model('m_user');
-        $this->load->model('m_barang');
+        $this->load->model('m_keranjang');
     }
      
     public function index()
@@ -15,7 +15,7 @@ class akunsaya extends CI_Controller {
         $id_user = $this->session->id_user; 
         var_dump($id_user);
 
-         $carts = $this->m_barang->load_cart($id_user);
+         $carts = $this->m_keranjang->cek_user($id_user);
                 foreach ($carts->result_array() as $i) {
                     $cartku=$i['cart'];
                     $cartku=unserialize($cartku);
