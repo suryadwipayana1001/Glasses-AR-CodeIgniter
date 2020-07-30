@@ -31,11 +31,6 @@
                         <th width="1%">:</th>
                         <td><?php echo $i['nama_user'] ?></td>
                     </tr>
-                    <tr>
-                        <th width="20%">Tanggal Lahir</th>
-                        <th width="1%">:</th>
-                        <td><?php echo $i['tanggallahir_user']?></td>
-                    </tr>
                 </table>
             <?php endforeach?>
             <table class="table table-striped">

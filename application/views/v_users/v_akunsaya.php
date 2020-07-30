@@ -22,7 +22,7 @@
                                          <button class="btn amado-btn w-100">Masuk</button>
                                     </div>
                                     <div class="col-6 mb-3">                                                                  
-                                        <a href="<?=site_url('daftar')?>" class="btn amado-btn w-100">Daftar</a>
+                                        <a href="<?=site_url('akunsaya/daftar')?>" class="btn amado-btn w-100">Daftar</a>
                                     </div>
                                 </div>
                             </form>

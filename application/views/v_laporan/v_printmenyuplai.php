@@ -1,39 +1,5 @@
-  <?php $this->load->view("t_admin/sidebar");?>
-  <div id="page-wrapper" >
-   <div class="row">
-    <div class="col-md-12">
-      <h1 class="page-header">
-        Laporan Transaksi Supplier <small></small>
-      </h1>
-    </div>
-  </div> 
-  <!-- /. ROW  -->
-  <div class="row">
-    <div class="col-md-12">
-      <!-- Advanced Tables -->
-      <div class="panel panel-default">
-        <div class="panel-heading">
-        </div>
-        <div class="panel-body">
-          <div class="table-responsive">
-           <form method="POST" action="<?php echo base_url('index.php/laporan_menyuplai/index')?>">
-            <div class="form-group">
-              <label>Dari Tanggal</label>
-              <input type="date" name="dari" class="form-control">
-              <?php echo form_error('dari','<span class="text-small text-danger">','</span>')?>
-            </div>
-            <div class="form-group">
-              <label>Sampai Tanggal</label>
-              <input type="date" name="sampai" class="form-control">
-              <?php echo form_error('sampai','<span class="text-small text-danger">','</span>')?>
-            </div>
-            <button type="submit" class="btn  btn-sm btn-primary">Tampilkan Data</button>
-          </form>
-          <br>
- <div class="btn-group">
-        <a class="btn btn-sm btn-primary" target="_blank" href="<?php echo base_url().'index.php/laporan_menyuplai/print_laporan' ?>"><i class="glyphicon glyphicon-file"></i> Print</a>
-      </div>
-      <hr>
+  <h3 style="text-align : center">Laporan Transaksi Customer</h3>
+<br>
           <table class="table table-striped table-bordered table-hover" id="">
             <thead>
               <tr>
@@ -68,14 +34,11 @@
           </table>
 
           <table class="table table-striped table-bordered table-hover" id="">
-            <thead>
-              <tbody>
             <tr>
               <th>No</th>
               <th>Nama Supplier</th>
               <th>Jumlah Barang</th>
             </tr>
-             </thead>
             <?php
             $no=1; 
             foreach ($data1->result_array()as $i):
@@ -86,7 +49,6 @@
               <td><?php echo $i['jumlah_menyuplai'];?></td>
               <tr>
               <?php endforeach;?>
-              </tbody>
             </table>  
 
             <table class="table table-striped table-bordered table-hover" id="">
@@ -118,12 +80,6 @@
                 <td><?php echo $total?></td>
               </tr>
             </table>
-
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+ <script type="text/javascript">
+            window.print();
+          </script>

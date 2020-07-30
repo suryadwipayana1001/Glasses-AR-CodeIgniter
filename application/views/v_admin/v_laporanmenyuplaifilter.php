@@ -30,8 +30,9 @@
             <button type="submit" class="btn  btn-sm btn-primary">Tampilkan Data</button>
           </form>
           <br>
- <div class="btn-group">
-        <a class="btn btn-sm btn-primary" target="_blank" href="<?php echo base_url().'index.php/laporan_menyuplai/print_laporan' ?>"><i class="glyphicon glyphicon-file"></i> Print</a>
+  <div class="btn-group">
+        <a class="btn btn-sm btn-primary" target="_blank" href="<?php echo base_url().'index.php/laporan_menyuplai/print_laporanfilter/?dari='.set_value('dari'). '&sampai='.set_value('sampai') ?>"><i class="glyphicon glyphicon-file"></i> Print</a>
+
       </div>
       <hr>
           <table class="table table-striped table-bordered table-hover" id="">
@@ -66,16 +67,12 @@
               <?php endforeach;?>
             </tbody>
           </table>
-
-          <table class="table table-striped table-bordered table-hover" id="">
-            <thead>
-              <tbody>
+             <table class="table table-striped table-bordered table-hover" id="">
             <tr>
               <th>No</th>
               <th>Nama Supplier</th>
               <th>Jumlah Barang</th>
             </tr>
-             </thead>
             <?php
             $no=1; 
             foreach ($data1->result_array()as $i):
@@ -86,7 +83,6 @@
               <td><?php echo $i['jumlah_menyuplai'];?></td>
               <tr>
               <?php endforeach;?>
-              </tbody>
             </table>  
 
             <table class="table table-striped table-bordered table-hover" id="">
@@ -118,7 +114,7 @@
                 <td><?php echo $total?></td>
               </tr>
             </table>
-
+        
 
           </div>
 

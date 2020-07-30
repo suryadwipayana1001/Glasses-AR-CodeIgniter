@@ -10,7 +10,7 @@
                         </div>
                         <br>
                         <?php echo validation_errors(); ?>
-                        <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/daftar/simpan_user'?>"enctype="multipart/form-data" >
+                        <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/akunsaya/simpan_user'?>"enctype="multipart/form-data" >
                             <div class="row">
                                 <div class="col-md-12 mb-3">
                                    Nama <input type="text" class="form-control" name="nama_user" value="" placeholder="Nama" required>

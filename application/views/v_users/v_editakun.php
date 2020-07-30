@@ -23,7 +23,7 @@
                         $nohp_user = $i['nohp_user'];
                         $jeniskelamin_user =$i['jeniskelamin_user'];
                      ?>
-                     <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/editakun/edit_akun'?>"enctype="multipart/form-data" >
+                     <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/akunsaya/edit_akun'?>"enctype="multipart/form-data" >
                         <div class="row">
                             <input type="hidden" name="id_user" class="form-control" value="<?php echo $i['id_user']?>">
                             <div class="col-md-12 mb-3">

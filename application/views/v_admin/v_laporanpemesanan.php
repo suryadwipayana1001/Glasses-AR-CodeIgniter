@@ -13,7 +13,6 @@
       <!-- Advanced Tables -->
       <div class="panel panel-default">
         <div class="panel-heading">
-         <a href="<?php echo base_url().'index.php/laporan_menyuplai/laporan'?>"  class="btn btn-sm btn-primary" ><i class="glyphicon glyphicon-file"></i>Export to PDF</a> 
        </div>
        <div class="panel-body">
         <div class="table-responsive">
@@ -30,8 +29,11 @@
             </div>
             <button type="submit" class="btn  btn-sm btn-primary">Tampilkan Data</button>
           </form>
-
-
+          <br>
+ <div class="btn-group">
+        <a class="btn btn-sm btn-primary" target="_blank" href="<?php echo base_url().'index.php/laporan_pemesanan/print_laporan' ?>"><i class="glyphicon glyphicon-file"></i> Print</a>
+      </div>
+      <hr>
           <table class="table table-striped table-bordered table-hover" id="">
             <thead>
               <tr>
@@ -50,8 +52,6 @@
             </thead>
             <tbody>
               <?php $no=1;
-              $total=0;
-              $totaljumlah=0;
               foreach ($data->result_array()as $i):
                 ?>
                 <tr class="odd gradeX">
@@ -70,13 +70,60 @@
               <?php endforeach;?>
             </tbody>
           </table>
+          <table class="table table-striped table-bordered table-hover" id="">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Email</th>
+                <th>Jumlah Barang</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php $no=1;
+              foreach ($data1->result_array()as $i):
+                ?>
+                <tr class="odd gradeX">
+                  <td><?php echo $no++?></td>
+                  <td><?php echo $i['email_user'];?></td>
+                  <td><?php echo $i['jumlah_dipesan'];?></td>
+                </tr>
+              <?php endforeach;?>
+            </tbody>
+          </table>
 
-
-
-
-
-
-
+          <table class="table table-striped table-bordered table-hover" id="">
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Barang</th>
+                                <th>Jumlah Barang</th>
+                                <th>Total Harga</th>
+                            </tr>
+                            <?php 
+                            $no=1; 
+                            $total=0;
+                            $totaljumlah=0;
+                            foreach ($data2->result_array()as $i):
+                              $total+=$i['totalharga_dipesan'];
+                              $totaljumlah+=$i['jumlah_dipesan'];
+                               ?>
+                               <tr>
+                               <td><?php echo $no++?></td>        
+                                <td><?php echo $i['nama_barang'];?></td>
+                                <td><?php echo $i['jumlah_dipesan'];?></td>
+                                <td><?php echo $i['totalharga_dipesan'];?></td>
+                                <tr>
+                                <?php endforeach;?>
+                            </table>  
+                            <tr>
+                                <table class="table table-striped table-bordered table-hover">
+                                   <th>Total Jumlah barang:</th>
+                                   <th>Total Harga Barang</th>
+                               </tr>
+                               <tr>
+                                <td><?php echo $totaljumlah?></td>
+                                <td><?php echo $total?></td>
+                            </tr>
+                        </table>
         </div>
 
       </div>

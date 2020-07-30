@@ -42,6 +42,16 @@
                             <th width="1%">:</th>
                             <td><?php echo $i['tanggallahir_user'] ?></td>
                         </tr>
+                         <tr>
+                            <th width="20%">Alamat</th>
+                            <th width="1%">:</th>
+                            <td><?php echo $i['alamat_user'] ?></td>
+                        </tr>
+                         <tr>
+                            <th width="20%">No Handphone</th>
+                            <th width="1%">:</th>
+                            <td><?php echo $i['nohp_user'] ?></td>
+                        </tr>
                         <tr>
                             <th width="20%">Level</th>
                             <th width="1%">:</th>

@@ -19,7 +19,6 @@
                                 <th>Struk</th>
                                 <th>Status</th>
                                 <th>Tindakan</th>
-                                <th>Tindakan</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,9 +33,11 @@
                                
                                 <td><img src="<?=base_url('assets/img/struk/'.$i['struk_pemesanan'])?>"></td>
                                 <td><?php echo $status_pemesanan=$i['status_pemesanan'];?></td>
-                                <td><a href="<?=site_url('transaksi/tambah_struk/'.$i['id_pemesanan'])?>"  class="tulisbtn btn btn-warning btn-xs"><i class="fa fa-plus-square-o"></i>Tambah Struk</a></td>
                                 <td>
-                                  <a href="<?=site_url('transaksi/detail/'.$i['id_pemesanan'])?>"  class="tulisbtn btn btn-warning btn-xs"><i class="fa fa-check-square-o"></i>Detail Transaksi</a>
+                                 <a href="<?=site_url('transaksi/tambah_struk/'.$i['id_pemesanan'])?>"  class="tulisbtn btn btn-warning btn-xs"><i class="fa fa-file-o "></i>Tambah Struk</a> <div class="mt-2"></div>
+                                  <a href="<?=site_url('transaksi/detail/'.$i['id_pemesanan'])?>"  class="tulisbtn btn btn-warning btn-xs"><i class="fa fa-check-square-o"></i>Detail Transaksi</a><div class="mt-2">  </div>
+                                   <a href="<?=site_url('transaksi/invoice/'.$i['id_pemesanan'])?>"  target="_blank"  class="tulisbtn btn btn-warning btn-xs"><i class="fa fa-file-text-o"></i>Cetak  Invoice</a>
+                               
                                 </td>
                                      
                                     <!-- <form action="<?=site_url('transaksi/hapus_transaksi')?>" method="post" >

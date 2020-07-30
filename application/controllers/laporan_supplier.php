@@ -24,17 +24,18 @@ class laporan_supplier extends CI_Controller{
 		
 	}
 
-	function laporan(){
-	$this->load->library('dompdf_gen');
-		$data['pemesanan'] = $this->m_pemesanan->show_pemesanan();
-		$this->load->view('v_laporan/pdf_pemesanan',$data);
-		$paper_size ='A4';
-		$orientation='Landscape';
-		$html=$this->output->get_output();
-		$this->dompdf->set_paper($paper_size, $orientation);
-		$this->dompdf->load_html($html);
-		$this->dompdf->render();
-		$this->dompdf->stream("laporan_pemesanan.pdf",array('Attachment'=>0));
+function print_laporan(){
+		if($this->session->logged_in == FALSE){
+			redirect('login');
+		}else{
+			if($this->session->level == 'Admin'){
+				$x['data']=$this->m_supplier->show_supplier();
+				$this->load->view("t_admin/header");
+				$this->load->view("v_laporan/v_printsupplier",$x);
+			} else {
+				redirect('c_beranda');
+			}
+		}
 	}
 }
 

@@ -67,7 +67,7 @@
                   <div class="col-6 mb-3">No Hp
                     <input type="text" class="form-control" name="nama_pemesanan" value="<?php echo $i['nohp_pemesanan']?>" readonly>
                   </div>
-                  <div class="col-12 mb3">
+                  <div class="col-12 mb-3">
                    <a href="<?=site_url('transaksi')?>" class="btn amado-btn w-100">Kembali</a>
                  </div>
                </div>

@@ -18,60 +18,52 @@
                         </div>
                           <?php
                         foreach($data_user->result_array() as $i):
-                        $nama_user = $i['nama_user'];
-                        $email_user = $i['email_user'];
-                        $password_user = $i['password_user'];
-                        $tanggallahir_user = $i['tanggallahir_user'];
                      ?>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                   
-                                     
-                                    <form role="form">
-                                        <div class="form-group">
-                                            <label>Nama</label>
-                                            <input class="form-control" value="<?php echo $nama_user ?>" placeholder="Nama" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Email</label>
-                                            <input class="form-control" value="<?php echo $email_user ?>"placeholder="Email">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Password</label>
-                                            <input class="form-control" value="<?php echo $password_user?>">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Tanggal Lahir</label>
-                                            <input class="form-control" value="<?php echo $tanggallahir_user?>">
-                                        </div>
-                                       
-                                       
-                                    </form>
-                                </div>
-                                 <div class="col-lg-6">
-                                    <form role="form">
-                                        <div class="form-group">
-                                            <label>No Hp</label>
-                                            <input class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Jenis Kelamin</label>
-                                            <input class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Alamat</label>
-                                            <input class="form-control">
-                                        </div>
-                                    </form>
-                                  
-                                </div>
-                                <!-- /.col-lg-6 (nested) -->
-                           
-                                <!-- /.col-lg-6 (nested) -->
-                            </div>
-                            <!-- /.row (nested) -->
-                        </div>
+                         <div class="panel-body">
+                    <table class="table table-striped">
+
+                        <tr>
+                            <th width="20%">Nama</th>
+                            <th width="1%">:</th>
+                            <td><?php echo $i['nama_user'] ?></td>
+                        </tr>
+                        <tr>
+                            <th width="20%">Email</th>
+                            <th width="1%">:</th>
+                            <td><?php echo $i['email_user'] ?></td>
+                        </tr>
+                        <tr>
+                            <th width="20%">Password</th>
+                            <th width="1%">:</th>
+                            <td><?php echo $i['password_user']?></td>
+                        </tr>
+                        <tr>
+                            <th width="20%">Tanggal Lahir</th>
+                            <th width="1%">:</th>
+                            <td><?php echo $i['tanggallahir_user'] ?></td>
+                        </tr>
+                         <tr>
+                            <th width="20%">Alamat</th>
+                            <th width="1%">:</th>
+                            <td><?php echo $i['alamat_user'] ?></td>
+                        </tr>
+                         <tr>
+                            <th width="20%">No Handphone</th>
+                            <th width="1%">:</th>
+                            <td><?php echo $i['nohp_user'] ?></td>
+                        </tr>
+                        <tr>
+                            <th width="20%">Level</th>
+                            <th width="1%">:</th>
+                            <td><?php echo $i['level_user'] ?></td>
+                        </tr>
+                    </table>
+                    <table>
+                        <th width="100%"></th>
+                             <td><a href="<?=site_url('beranda')?>"  class="btn btn-danger">Kembali</a></td>
+                    </table>
+                    <!-- /.row (nested) -->
+                </div>
                         <?php endforeach;?>
                         <!-- /.panel-body -->
                     </div>

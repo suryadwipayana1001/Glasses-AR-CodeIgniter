@@ -19,6 +19,8 @@ class laporan_pemesanan extends CI_Controller{
 		}else{
 			if($this->session->level == 'Admin'){
 				$x['data']=$this->m_dipesan->laporan_dipesan();
+				$x['data1']=$this->m_dipesan->laporan_dipesan1();
+				$x['data2']=$this->m_dipesan->laporan_dipesan2();
 				$this->load->view("t_admin/header");
 				$this->load->view("t_admin/navbar");
 				$this->load->view("v_admin/v_laporanpemesanan",$x);
@@ -32,8 +34,10 @@ class laporan_pemesanan extends CI_Controller{
 			redirect('login');
 		}else{
 			if($this->session->level == 'Admin'){
-				$a['data']=$this->m_dipesan->laporan_dipesan1($dari,$sampai);
-			/*	var_dump($a);
+				$a['data']=$this->m_dipesan->laporan_dipesanfilter($dari,$sampai);
+				$a['data1']=$this->m_dipesan->laporan_dipesanfilter1($dari,$sampai);
+				$a['data2']=$this->m_dipesan->laporan_dipesanfilter2($dari,$sampai);
+			/*	var_dump($d);
 				die();*/
 				$this->load->view("t_admin/header");
 				$this->load->view("t_admin/navbar");
@@ -44,25 +48,32 @@ class laporan_pemesanan extends CI_Controller{
 			}
 		}
 		}
-
 		
 	}
 	public function _rules(){
 		$this->form_validation->set_rules('dari','Dari Tanggal','required');
 		$this->form_validation->set_rules('sampai','Sampai Tanggal','required');
 }
-	function laporan(){
-	$this->load->library('dompdf_gen');
-		$data['pemesanan'] = $this->m_pemesanan->show_pemesanan();
-		$this->load->view('v_laporan/pdf_pemesanan',$data);
-		$paper_size ='A4';
-		$orientation='Landscape';
-		$html=$this->output->get_output();
-		$this->dompdf->set_paper($paper_size, $orientation);
-		$this->dompdf->load_html($html);
-		$this->dompdf->render();
-		$this->dompdf->stream("laporan_pemesanan.pdf",array('Attachment'=>0));
-	}
+
+public function print_laporan(){
+ 	$x['title'] ="Print Laporan Transaksi";
+ 	$a['data']=$this->m_dipesan->laporan_dipesan();
+ 	$a['data1']=$this->m_dipesan->laporan_dipesan1();
+ 	$a['data2']=$this->m_dipesan->laporan_dipesan2();
+ 	$this->load->view("t_admin/header",$x);
+	$this->load->view("v_laporan/v_printpemesanan",$a);
+ }
+ public function print_laporanfilter(){
+ 	$dari = $this->input->get('dari');
+ 	$sampai = $this->input->get('sampai');
+ 	$x['title'] ="Print Laporan Transaksi";
+ 	$a['data']=$this->m_dipesan->laporan_dipesanfilter($dari,$sampai);
+ 	$a['data1']=$this->m_dipesan->laporan_dipesanfilter1($dari,$sampai);
+ 	$a['data2']=$this->m_dipesan->laporan_dipesanfilter2($dari,$sampai);
+ 	$this->load->view("t_admin/header",$x);
+	$this->load->view("v_laporan/v_printpemesananfilter",$a);
+ }
+ 
 }
 
 ?>

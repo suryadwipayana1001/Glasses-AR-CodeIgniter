@@ -1,41 +1,17 @@
-  <?php $this->load->view("t_admin/sidebar");?>
-  <div id="page-wrapper" >
-   <div class="row">
-    <div class="col-md-12">
-      <h1 class="page-header">
-        Laporan Transaksi Customer <small></small>
-      </h1>
-    </div>
-  </div> 
-  <!-- /. ROW  -->
-  <div class="row">
-    <div class="col-md-12">
-      <!-- Advanced Tables -->
-      <div class="panel panel-default">
-        <div class="panel-heading"> 
-       </div>
-       <div class="panel-body">
-        <div class="table-responsive">
-          <form method="POST" action="<?php echo base_url('index.php/laporan_pemesanan/index')?>">
-            <div class="form-group">
-              <label>Dari Tanggal</label>
-              <input type="date" name="dari" class="form-control">
-              <?php echo form_error('dari','<span class="text-small text-danger">','</span>')?>
-            </div>
-            <div class="form-group">
-              <label>Sampai Tanggal</label>
-              <input type="date" name="sampai" class="form-control">
-               <?php echo form_error('sampai','<span class="text-small text-danger">','</span>')?>
-            </div>
-            <button type="submit" class="btn  btn-sm btn-primary">Tampilkan Data</button>
-          </form>
-          <br>
-   <div class="btn-group">
-        <a class="btn btn-sm btn-primary" target="_blank" href="<?php echo base_url().'index.php/laporan_pemesanan/print_laporanfilter/?dari='.set_value('dari'). '&sampai='.set_value('sampai') ?>"><i class="glyphicon glyphicon-file"></i> Print</a>
-
-      </div>
-      <hr>
-          <table class="table table-striped table-bordered table-hover" id="">
+<h3 style="text-align : center">Laporan Transaksi Customer</h3>
+<table>
+	<tr>
+		<td>Dari Tanggal</td>
+		<td>:</td>
+		<td><?php echo date('d-M-Y',strtotime($_GET['dari']));?></td>
+	</tr>
+	<tr>
+		<td>Sampai Tanggal</td>
+		<td>:</td>
+		<td><?php echo date('d-M-Y',strtotime($_GET['sampai']));?></td>
+	</tr>
+</table>
+<table class="table table-striped table-bordered table-hover" id="">
             <thead>
               <tr>
                 <th>No</th>
@@ -73,7 +49,7 @@
               <?php endforeach;?>
             </tbody>
           </table>
-          <table class="table table-striped table-bordered table-hover" id="">
+<table class="table table-striped table-bordered table-hover" id="">
             <thead>
               <tr>
                 <th>No</th>
@@ -93,7 +69,7 @@
               <?php endforeach;?>
             </tbody>
           </table>
-                    <table class="table table-striped table-bordered table-hover" id="">
+          <table class="table table-striped table-bordered table-hover" id="">
                             <tr>
                                 <th>No</th>
                                 <th>Nama Barang</th>
@@ -122,13 +98,10 @@
                                    <th>Total Harga Barang</th>
                                </tr>
                                <tr>
-                                <td><?php echo $totaljumlah?></td>
-                                <td><?php echo $total?></td>
+                                <th><?php echo $totaljumlah?></th>
+                                <th><?php echo $total?></th>
                             </tr>
                         </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+          <script type="text/javascript">
+          	window.print();
+          </script>
