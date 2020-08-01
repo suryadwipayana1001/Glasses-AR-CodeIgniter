@@ -23,6 +23,11 @@ class pemesanan extends CI_Controller{
 		$status_pemesanan=$this->input->post('status_pemesanan');
 		$resi_pemesanan=$this->input->post('resi_pemesanan');
 		$this->m_pemesanan->edit_pemesanan($id_pemesanan,$status_pemesanan,$resi_pemesanan);
+		$this->session->set_flashdata('message','<div class="alert alert-info alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			Data Berhasil Dirubah
+			</div>
+			');
 		redirect('pemesanan');
 	}
 
@@ -30,9 +35,12 @@ class pemesanan extends CI_Controller{
 		$id_pemesanan=$this->input->post('id_pemesanan');
 		$this->m_dipesan->hapus_dipesan($id_pemesanan);
 		$this->m_pemesanan->hapus_pemesanan($id_pemesanan);
+		$this->session->set_flashdata('message','<div class="alert alert-danger alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			Data Berhasil Dihapus
+			</div>
+			');
 		redirect('pemesanan');
-
-
 	}
 	public function detail_pemesanan()
 	{

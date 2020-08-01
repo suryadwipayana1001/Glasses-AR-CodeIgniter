@@ -13,6 +13,7 @@
                 <!-- Advanced Tables -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
+                         <?php echo $this->session->flashdata('message');?>
                         <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal_add_new"><i class="glyphicon glyphicon-plus"></i>Tambah Data</button> 
                     </div>
                     <div class="panel-body">

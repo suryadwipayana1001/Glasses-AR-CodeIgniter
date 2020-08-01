@@ -13,6 +13,7 @@
                 <!-- Advanced Tables -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
+                         <?php echo $this->session->flashdata('message');?>
                         <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal_add_new"><i class="glyphicon glyphicon-plus"></i>Tambah Data</button> 
                     </div>
                     <div class="panel-body">
@@ -99,6 +100,8 @@
                                             <option value="Oakley">Oakley</option>
                                             <option value="Rayband">Rayband</option>
                                             <option value="Moscot">Moscot</option>
+                                            <option value="Moscot">Carrera</option>
+                                            <option value="Moscot">Club Master</option>
                                         </select>
                                     </div>
                                 </div>
@@ -196,10 +199,26 @@
                                                 <option value="Moscot">Moscot</option>
                                                 <option value="Rayband" selected>Rayband</option>
                                                 <option value="Oakley">Oakley</option>
-                                                <?php elseif($brand_barang=='Oakley'):?>
-                                                    <option value="Moscot">Moscot</option>
-                                                    <option value="Rayband">Rayband</option>
-                                                    <option value="Oakley" selected>Oakley</option>
+                                                <option value="Carrera">Carrera</option>
+                                                <option value="Club Master">Club Master</option>
+                                            <?php elseif($brand_barang=='Oakley'):?>
+                                                <option value="Moscot">Moscot</option>
+                                                <option value="Rayband">Rayband</option>
+                                                <option value="Oakley" selected>Oakley</option>
+                                                <option value="Carrera">Carrera</option>
+                                                <option value="Club Master">Club Master</option>
+                                            <?php elseif($brand_barang=='Carrera'):?>
+                                                <option value="Moscot">Moscot</option>
+                                                <option value="Rayband">Rayband</option>
+                                                <option value="Oakley">Oakley</option>
+                                                <option value="Carrera" selected>Carrera</option>
+                                                <option value="Club Master">Club Master</option>
+                                                <?php elseif($brand_barang=='Club Master'):?>
+                                                <option value="Moscot">Moscot</option>
+                                                <option value="Rayband">Rayband</option>
+                                                <option value="Oakley">Oakley</option>
+                                                <option value="Carrera">Carrera</option>
+                                                <option value="Club Master" selected>Club Master</option>
                                                 <?php endif;?>
                                             </select>
                                         </div>

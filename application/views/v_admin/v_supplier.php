@@ -13,7 +13,8 @@
                 <!-- Advanced Tables -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal_add_new"><i class="glyphicon glyphicon-plus"></i>Tambah Data</button> 
+                         <?php echo $this->session->flashdata('message');?>
+                        <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal_add_new"><i class="glyphicon glyphicon-plus"></i>Tambah Data</button>
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -77,9 +78,9 @@
                                     </div>
                                 </div>
                                  <div class="form-group">
-                                    <label class="control-label col-xs-3" >No Hp</label>
+                                    <label class="control-label col-xs-3" >No Handphone</label>
                                     <div class="col-xs-8">
-                                        <input name="nohp_supplier" class="form-control" type="text" placeholder="No Hp" required oninvalid="this.setCustomValidity('Data No Hp tidak boleh kosong')" oninput="setCustomValidity('')">
+                                        <input name="nohp_supplier" class="form-control" type="text" placeholder="No Handphone" required oninvalid="this.setCustomValidity('Data No Hp tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                  <div class="form-group">
@@ -97,6 +98,7 @@
                     </div>
                 </div>
             </div>
+
             <!--END MODAL ADD-->
             <!-- ============ MODAL EDIT BARANG =============== -->
             <?php 

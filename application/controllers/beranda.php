@@ -23,5 +23,12 @@ class beranda extends CI_Controller{
         }
 		
 	}
+	public function c_beranda()
+	{
+		$this->load->view("t_users/header");
+		$this->load->view("v_users/v_beranda");		
+		$this->load->view("t_users/footer");
+
+	}
 }
 ?>

@@ -48,6 +48,11 @@ class barang extends CI_Controller{
 	                $deskripsi_barang=$this->input->post('deskripsi_barang');
 	                $model_3d=$this->input->post('model_3d');
 	                $this->m_barang->simpan_barang($id_barang,$nama_barang,$jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$deskripsi_barang,$model_3d);
+	                $this->session->set_flashdata('message','<div class="alert alert-success alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			Data Berhasil Ditambahkan
+			</div>
+			');
 	                redirect('barang');
 	            }else{
 	            	echo "Gambar Gagal Upload. Gambar harus bertipe gif|jpg|png|jpeg|bmp";
@@ -87,6 +92,11 @@ class barang extends CI_Controller{
         }else{     
         	$gambar=$this->input->post('gbr');
         	$this->m_barang->edit_barang($id_barang,$nama_barang, $jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$deskripsi_barang,$model_3d);
+        	$this->session->set_flashdata('message','<div class="alert alert-info alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			Data Berhasil Dirubah
+			</div>
+			');
         	redirect('barang');
 	        }
 	    }
@@ -94,6 +104,11 @@ class barang extends CI_Controller{
 	    function hapus_barang(){
 	    	$id_barang=$this->input->post('id_barang');
 	    	$this->m_barang->hapus_barang($id_barang);
+	    	$this->session->set_flashdata('message','<div class="alert alert-danger alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			Data Berhasil Dihapus
+			</div>
+			');
 	    	redirect('barang');
 
 

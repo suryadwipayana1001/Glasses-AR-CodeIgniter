@@ -42,13 +42,13 @@
             <li>
                 <a href="#"><i class="fa fa-book"></i>Laporan<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li <?=$this->uri->segment(1) == 'barang' ? 'class="active-menu"' : ''?>> 
+                    <li <?=$this->uri->segment(1) == 'laporan_barang' ? 'class="active-menu"' : ''?>> 
                         <a href="<?=site_url('laporan_barang')?>">Barang</a>
                     </li>
-                     <li <?=$this->uri->segment(1) == 'supplier' ? 'class="active-menu"' : ''?>> 
+                     <li <?=$this->uri->segment(1) == 'laporan_supplier' ? 'class="active-menu"' : ''?>> 
                         <a href="<?=site_url('laporan_supplier')?>">Supplier</a>
                     </li>
-                    <li <?=$this->uri->segment(1) == 'customer' ? 'class="active-menu"' : ''?>> 
+                    <li <?=$this->uri->segment(1) == 'laporan_customer' ? 'class="active-menu"' : ''?>> 
                         <a href="<?=site_url('laporan_customer')?>">Customer</a>
                     </li>
                     <li <?=$this->uri->segment(1) == 'laporan_menyuplai' ? 'class="active-menu"' : ''?>> 

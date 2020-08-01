@@ -36,6 +36,11 @@ class menyuplai extends CI_Controller{
 		$totalharga_menyuplai=$this->input->post('totalharga_menyuplai');
 		$tanggal_menyuplai=$this->input->post('tanggal_menyuplai');
 		$this->m_menyuplai->simpan_menyuplai($id_menyuplai,$id_barang,$id_supplier,$harga_menyuplai,$jumlah_menyuplai,$totalharga_menyuplai,$tanggal_menyuplai);
+		$this->session->set_flashdata('message','<div class="alert alert-success alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			Data Berhasil Ditambahkan
+			</div>
+			');
 		redirect('menyuplai');
 	}
 	function edit_menyuplai(){
@@ -47,12 +52,22 @@ class menyuplai extends CI_Controller{
 		$totalharga_menyuplai=$this->input->post('totalharga_menyuplai');
 		$tanggal_menyuplai=$this->input->post('tanggal_menyuplai');
 		$this->m_menyuplai->edit_menyuplai($id_menyuplai,$id_barang,$id_supplier,$harga_menyuplai, $jumlah_menyuplai,$totalharga_menyuplai,$tanggal_menyuplai);
+		$this->session->set_flashdata('message','<div class="alert alert-info alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			Data Berhasil Dirubah
+			</div>
+			');
 		redirect('menyuplai');
 	}
 
 	function hapus_menyuplai(){
 		$id_menyuplai=$this->input->post('id_menyuplai');
 		$this->m_menyuplai->hapus_menyuplai($id_menyuplai);
+		$this->session->set_flashdata('message','<div class="alert alert-danger alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			Data Berhasil Dihapus
+			</div>
+			');
 		redirect('menyuplai');
 
 	}

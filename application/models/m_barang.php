@@ -38,12 +38,29 @@ class m_barang extends CI_Model{
 		$hasil=$this->db->query("INSERT INTO tb_barang(judul,gambar) VALUES ('$judul','$gambar')");
 		return $hasil;
 	}*/
+	function show_produkterbaru(){
+
+		$hasil=$this->db->query("SELECT * FROM tb_barang order by id_barang desc");
+		return $hasil;
+	}
 	function show_moscot(){
 		$hasil=$this->db->query("SELECT * FROM tb_barang WHERE brand_barang = 'moscot'");
 		return $hasil;
 	}
 	function show_rayband(){
 		$hasil=$this->db->query("SELECT * FROM tb_barang WHERE brand_barang = 'rayband'");
+		return $hasil;
+	}
+	function show_oakley(){
+		$hasil=$this->db->query("SELECT * FROM tb_barang WHERE brand_barang = 'oakley'");
+		return $hasil;
+	}
+	function show_carrera(){
+		$hasil=$this->db->query("SELECT * FROM tb_barang WHERE brand_barang = 'carrera'");
+		return $hasil;
+	}
+	function show_clubmaster(){
+		$hasil=$this->db->query("SELECT * FROM tb_barang WHERE brand_barang = 'clubmaster'");
 		return $hasil;
 	}
 	function show_tinggi(){

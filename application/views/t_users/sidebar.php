@@ -57,7 +57,7 @@
             <nav class="amado-nav">
                 <ul>
                    <li <?=$this->uri->segment(1) == 'beranda' || $this->uri->segment(1) == '' ? 'class="active-menu"' : ''?>>
-                    <a href="<?=site_url('c_beranda')?>">
+                    <a href="<?=site_url('beranda/c_beranda')?>">
                         <i class="fa home"></i> <span>Beranda</span>
                     </a>
                    </li>

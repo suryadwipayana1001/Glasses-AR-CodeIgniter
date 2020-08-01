@@ -13,8 +13,7 @@
                 <!-- Advanced Tables -->
                 <div class="panel panel-default">
                      <div class="panel-heading">
-                        <div class="panel-heading">
-                    </div>
+                         <?php echo $this->session->flashdata('message');?>
                     </div>
                   
                     <div class="panel-body">
@@ -26,6 +25,7 @@
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Alamat</th>
+                                        <th>Tanggal Pemesanan</th>
                                         <th>Struk</th>
                                         <th>Status</th>
                                         <th>Tindakan</th>
@@ -41,6 +41,7 @@
                                             <td><?php echo $no++?></td>
                                             <td><?php echo $i['nama_pemesanan'];?></td>
                                             <td><?php echo $i['alamat_pemesanan'];?>, <?php echo $i['kecamatan_pemesanan'];?>, <?php echo $i['kabupaten_pemesanan'];?>,  <?php echo $i['provinsi_pemesanan'];?>, <?php echo $i['kodepos_pemesanan'];?></td>
+                                            <td><?php echo $i['tanggal_pemesanan']?></td>
                                             <td><img src="<?=base_url('assets/img/struk/'.$i['struk_pemesanan'])?>" width=60px></td>
                                             <td><?php echo $i['status_pemesanan'];?></td>
                                             <td style="width: 120px;">
