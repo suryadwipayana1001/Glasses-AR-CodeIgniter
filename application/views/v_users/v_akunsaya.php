@@ -6,6 +6,7 @@
                         <div class="checkout_details_area mt-50 clearfix">
 
                             <div class="cart-title">
+                                <?php echo $this->session->flashdata('message');?>
                                 <h5 class="alert alert-warning">Masuk ke akun agar dapat melakukan transaksi dan melihat pesanan anda</h4>
                             </div>
                             <br>

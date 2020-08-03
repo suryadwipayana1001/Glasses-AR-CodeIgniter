@@ -68,7 +68,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Nama</label>
                                     <div class="col-xs-8">
-                                        <input name="nama_supplier" class="form-control" type="text" placeholder="Nama" required oninvalid="this.setCustomValidity('Nama tidak boleh kosong')" oninput="setCustomValidity('')">
+                                        <input name="nama_supplier" class="form-control" type="text" placeholder="Nama"required oninvalid="this.setCustomValidity('Nama tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -80,13 +80,13 @@
                                  <div class="form-group">
                                     <label class="control-label col-xs-3" >No Handphone</label>
                                     <div class="col-xs-8">
-                                        <input name="nohp_supplier" class="form-control" type="text" placeholder="No Handphone" required oninvalid="this.setCustomValidity('Data No Hp tidak boleh kosong')" oninput="setCustomValidity('')">
+                                        <input name="nohp_supplier" class="form-control" type="number" placeholder="No Handphone" required oninvalid="this.setCustomValidity('Data No Hp tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                  <div class="form-group">
                                     <label class="control-label col-xs-3" >Email</label>
                                     <div class="col-xs-8">
-                                        <input name="email_supplier" class="form-control" type="text" placeholder="Email" required oninvalid="this.setCustomValidity('Data Email tidak boleh kosong')" oninput="setCustomValidity('')">
+                                        <input name="email_supplier" class="form-control" type="email" placeholder="Email" required oninvalid="this.setCustomValidity('Masukan Alamat Email Dengan Benar atau Data Email tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                             </div>
@@ -132,15 +132,15 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-xs-3" >No Hp</label>
+                                        <label class="control-label col-xs-3" >No Handphone</label>
                                         <div class="col-xs-8">
-                                            <input name="nohp_supplier" value="<?php echo $nohp_supplier;?>" class="form-control" type="text" placeholder="No Hp" required oninvalid="this.setCustomValidity('Data No Hp tidak boleh kosong')" oninput="setCustomValidity('')">
+                                            <input name="nohp_supplier" value="<?php echo $nohp_supplier;?>" class="form-control" type="number" placeholder="No Hp" required oninvalid="this.setCustomValidity('Data No Hp tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-xs-3" >Email</label>
                                         <div class="col-xs-8">
-                                            <input name="email_supplier" value="<?php echo $email_supplier;?>" class="form-control" type="text" placeholder="Email" required oninvalid="this.setCustomValidity('Data Email tidak boleh kosong')" oninput="setCustomValidity('')">
+                                            <input name="email_supplier" value="<?php echo $email_supplier;?>" class="form-control" type="Email" placeholder="Email" required oninvalid="this.setCustomValidity('Masukan Alamat Email Dengan Benar atau Data Email tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                 </div>

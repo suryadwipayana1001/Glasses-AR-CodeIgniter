@@ -56,12 +56,20 @@ class laporan_pemesanan extends CI_Controller{
 }
 
 public function print_laporan(){
+	if($this->session->logged_in == FALSE){
+			redirect('login');
+		}else{
+			if($this->session->level == 'Admin'){
  	$x['title'] ="Print Laporan Transaksi";
  	$a['data']=$this->m_dipesan->laporan_dipesan();
  	$a['data1']=$this->m_dipesan->laporan_dipesan1();
  	$a['data2']=$this->m_dipesan->laporan_dipesan2();
  	$this->load->view("t_admin/header",$x);
 	$this->load->view("v_laporan/v_printpemesanan",$a);
+	} else {
+				redirect('c_beranda');
+			}
+		}
  }
  public function print_laporanfilter(){
  	$dari = $this->input->get('dari');

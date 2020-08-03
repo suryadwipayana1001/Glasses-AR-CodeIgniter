@@ -12,22 +12,26 @@
 
             <div class="outter-form-login">
                 <form  method="post" action="<?php echo base_url('index.php/login/Login'); ?>">
+ <?php echo $this->session->flashdata('message');?>
                     <h3 class="text-center title-login"> <h4 style="font-weight: bold; color:white">Login <em class="glyphicon glyphicon-user"></em></h4></h3>
+
                     <div class="form-group">
-                        <input type="text" class="form-control" name="email_user" placeholder="Username">
+                        <input type="text" class="form-control" name="email_user" placeholder="Email" required oninvalid="this.setCustomValidity('Email tidak boleh kosong')" oninput="setCustomValidity('')">>
                     </div>
 
                     <div class="form-group">
-                        <input type="password" class="form-control" name="password_user" placeholder="Password">
+                        <input type="password" class="form-control" name="password_user" placeholder="Password" required oninvalid="this.setCustomValidity('Password tidak boleh kosong')" oninput="setCustomValidity('')">>
                     </div>
 
                     <input type="submit" class="btn btn-block btn-custom-green" value="LOGIN" />
-
-                    <div class="text-center forget">
-                        <p>Forgot Password ?</p>
-                    </div>
                 </form>
             </div>
         </div>
+
     </body>
     </html>
+   <script src="<?php echo base_url('assets/js/jquery-1.10.2.js')?>"></script>
+    <!-- Bootstrap Js -->
+    <script src="<?php echo base_url('assets/js/bootstrap.min.js')?>" ></script>
+    <!-- Metis Menu Js -->
+   

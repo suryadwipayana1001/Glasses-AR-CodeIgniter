@@ -16,16 +16,20 @@ class checkout extends CI_Controller{
 	function index()
 	{
 		if($this->session->logged_in == TRUE){
-
+			$k=$_GET['k'];
+			if($k =='kos') redirect('keranjang'); 
 			$data['cartItems'] = $this->cart->contents();
 
 			$this->load->view("t_users/header");
 			$this->load->view("v_users/v_checkout", $data);		
 			$this->load->view("t_users/footer1");
+
 		} else {
 			redirect('akunsaya');
 		}
 	}
+	
+
 	function simpan_pemesanan(){
 
 		if($this->session->logged_in == TRUE){

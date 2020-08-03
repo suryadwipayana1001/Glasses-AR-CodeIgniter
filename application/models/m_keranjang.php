@@ -20,4 +20,11 @@ class m_keranjang extends CI_Model{
 		$hasil=$this->db->query("SELECT * FROM tb_cart WHERE id_user='$id_user'");
 		return $hasil;
 	}
+	function cek_stok($id_barang){
+		$hasil=$this->db->query("SELECT id_barang,jumlah_barang FROM  tb_barang WHERE id_barang='$id_barang'");
+		
+		return $hasil;
+		
+	}
+
 }

@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <!-- /. ROW  -->
-
+ <?php echo $this->session->flashdata('message');?>
                 <div class="row">
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         <img src="<?=base_url()?>assets/img/bg-img/beranda3.jpg" width="100%" alt="">

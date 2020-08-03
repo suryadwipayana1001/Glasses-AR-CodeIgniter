@@ -72,13 +72,13 @@
                                     <div class="form-group">
                                         <label class="control-label col-xs-3" >Email</label>
                                         <div class="col-xs-8">
-                                            <input name="email_user" class="form-control" type="text" placeholder="Email" required oninvalid="this.setCustomValidity('Data Email tidak boleh kosong')" oninput="setCustomValidity('')">
+                                            <input name="email_user" class="form-control" type="email" placeholder="Email" required oninvalid="this.setCustomValidity('Masukan Alamat Email Dengan Benar atau Data Email tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-xs-3" >Password</label>
                                         <div class="col-xs-8">
-                                            <input name="password_user" class="form-control" type="text" placeholder="Password" required oninvalid="this.setCustomValidity('Data Password tidak boleh kosong')" oninput="setCustomValidity('')">
+                                            <input name="password_user" class="form-control" type="password" placeholder="Password" required oninvalid="this.setCustomValidity('Data Password tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -96,7 +96,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-xs-3" >No Handphone</label>
                                         <div class="col-xs-8">
-                                            <input name="nohp_user" class="form-control" type="text" placeholder="No Handphone" required oninvalid="this.setCustomValidity('Data No Handphone tidak boleh kosong')" oninput="setCustomValidity('')">
+                                            <input name="nohp_user" class="form-control" type="number" placeholder="No Handphone" required oninvalid="this.setCustomValidity('Data No Handphone tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -161,13 +161,13 @@
                                         <div class="form-group">
                                             <label class="control-label col-xs-3" >Email</label>
                                             <div class="col-xs-8">
-                                                <input name="email_user" value="<?php echo $email_user;?>" class="form-control" type="text" placeholder="Email" required oninvalid="this.setCustomValidity('Data Email tidak boleh kosong')" oninput="setCustomValidity('')">
+                                                <input name="email_user" value="<?php echo $email_user;?>" class="form-control" type="email" placeholder="Email" required oninvalid="this.setCustomValidity('Masukan Alamat Email Dengan Benar atau Data Email tidak boleh kosong')" oninput="setCustomValidity('')">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-xs-3" >Password</label>
                                             <div class="col-xs-8">
-                                                <input name="password_user" value="<?php echo $password_user;?>" class="form-control" type="text" placeholder="Password" required oninvalid="this.setCustomValidity('Data Password tidak boleh kosong')" oninput="setCustomValidity('')">
+                                                <input name="password_user" value="<?php echo $password_user;?>" class="form-control" type="password" placeholder="Password" required oninvalid="this.setCustomValidity('Data Password tidak boleh kosong')" oninput="setCustomValidity('')">
                                             </div>
                                         </div>
                                         <div class="form-group">

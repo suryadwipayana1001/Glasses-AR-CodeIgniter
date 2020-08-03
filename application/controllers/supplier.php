@@ -20,7 +20,7 @@ class supplier extends CI_Controller{
 				$this->load->view("v_admin/v_supplier",$x);
 				$this->load->view("t_admin/footer");
 			} else {
-				redirect('c_beranda');
+				redirect('beranda/c_beranda');
 			}
 		}
 		

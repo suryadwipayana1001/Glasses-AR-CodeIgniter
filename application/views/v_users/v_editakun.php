@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-12 col-lg-8">
                     <div class="checkout_details_area mt-50 clearfix">
-
                         <div class="cart-title">
+                             <?php echo $this->session->flashdata('message');?>
                          <h4>Wellcome <?php echo $this->session->nama; ?></h4>
                          
                      </div>
@@ -33,7 +33,7 @@
                              Email <input type="text" class="form-control" name="email_user" value="<?php echo $email_user ?>"placeholder="Email"  required oninvalid="this.setCustomValidity('Email tidak boleh kosong')" oninput="setCustomValidity('')">
                          </div>
                          <div class="col-md-12 mb-3">
-                           Password <input type="text" class="form-control" name="password_user" value="<?php echo $password_user?>" placeholder="Password" required>
+                           Password <input type="password" class="form-control" name="password_user" value="<?php echo $password_user?>" placeholder="Password" required>
                        </div>
                      <div class="col-md-12 mb-3">
                          Tanggal Lahir <input type="date" class="form-control" name="tanggallahir_user"  value="<?php echo $tanggallahir_user?>"  required oninvalid="this.setCustomValidity('Tanggal Lahir tidak boleh kosong')" oninput="setCustomValidity('')">

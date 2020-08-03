@@ -18,7 +18,7 @@ class laporan_supplier extends CI_Controller{
 				$this->load->view("v_admin/v_laporansupplier",$x);
 				$this->load->view("t_admin/footer");
 			} else {
-				redirect('c_beranda');
+				redirect('laporan/c_beranda');
 			}
 		}
 		
@@ -33,7 +33,7 @@ function print_laporan(){
 				$this->load->view("t_admin/header");
 				$this->load->view("v_laporan/v_printsupplier",$x);
 			} else {
-				redirect('c_beranda');
+				redirect('laporan/c_beranda');
 			}
 		}
 	}

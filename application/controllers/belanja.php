@@ -34,6 +34,7 @@ function __construct(){
 		$this->load->view("t_users/footer");
 
 	}
+
 	function produk_terbaru(){
 	$jumhal = 6; // jumlah halaman per page
 		

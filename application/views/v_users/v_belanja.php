@@ -67,7 +67,6 @@
                 </div>
             </div>
         </div>
-
         <div class="row">
             <?php
             $no=1;
@@ -98,7 +97,7 @@
                             $jumlah_barang=$i['jumlah_barang']; 
                             if($jumlah_barang==0) $min=0; 
                             else $min=1; ?>
-                            <input type="number" name="quantity" id="<?php echo $i['id_barang'];?>" min ="<?php echo $min?>" value="<?php echo $min ?>" max ="<?php echo $i['jumlah_barang']?>" class="quantity form-control">
+                            <input type="number"  name="quantity" id="<?php echo $i['id_barang'];?>" min ="<?php echo $min?>" value="<?php echo $min ?>" max ="<?php echo $i['jumlah_barang']?>" class="quantity form-control">
 
                         </div>
                         <!-- Ratings & Cart -->
@@ -113,7 +112,6 @@
 
                             <div class="cart">
                                 <a href="<?=site_url('keranjang')?>" class="add_cart" data-gambar="<?=base_url('assets/img/foto/'.$gambar=$i['gambar'])?>" data-placement="left" title="Add to Cart" data-id_barang="<?php echo $id_barang=$i['id_barang']?>" data-nama_barang="<?php echo $nama_barang=$i['nama_barang']?>" data-harga_barang="<?php echo $harga_barang=$i['harga_barang']?>"><img src="<?=base_url()?>assets/img/core-img/cart.png" alt=""></a>
-
                             </div>
                         </div>
                     </div>

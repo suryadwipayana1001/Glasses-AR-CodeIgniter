@@ -26,7 +26,7 @@ class laporan_menyuplai extends CI_Controller{
 				$this->load->view("v_admin/v_laporanmenyuplai",$x);
 				$this->load->view("t_admin/footer");
 			} else {
-				redirect('c_beranda');
+				redirect('beranda/c_beranda');
 			}
 		}
 		}else{
@@ -44,7 +44,7 @@ class laporan_menyuplai extends CI_Controller{
 				$this->load->view("v_admin/v_laporanmenyuplaifilter",$a);
 				$this->load->view("t_admin/footer");
 			} else {
-				redirect('c_beranda');
+				redirect('beranda/c_beranda');
 			}
 		}
 		}

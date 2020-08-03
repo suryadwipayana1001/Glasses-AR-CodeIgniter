@@ -7,6 +7,7 @@
 
                         <div class="cart-title">
                             <h5>Daftar sekarang dan nikmati pengalaman belanja yang lebih cepat dan mudah</h5>
+                            <?php echo $this->session->flashdata('message');?>
                         </div>
                         <br>
                         <?php echo validation_errors(); ?>
@@ -19,7 +20,7 @@
                                    Email <input type="text" class="form-control" name="email_user" value="" placeholder="Email" required>
                                </div>
                                <div class="col-md-12 mb-3">
-                                   Password <input type="text" class="form-control" name="password_userz" value="" placeholder="Password" required>
+                                   Password <input type="password" class="form-control" name="password_userz" value="" placeholder="Password" required>
                                </div>
 
                                <!--  <div class="col-md-12 mb-3">

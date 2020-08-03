@@ -34,6 +34,10 @@ class m_barang extends CI_Model{
 		$hasil=$this->db->query("DELETE FROM tb_barang WHERE	id_barang='$id_barang'");
 		return $hasil;
 	}
+	function cek_barang($nama_barang){
+	$hasil=$this->db->query("SELECT * FROM tb_barang WHERE nama_barang='$nama_barang'");
+	return $hasil;
+	}
 	/*function simpan_upload($judul,$gambar){
 		$hasil=$this->db->query("INSERT INTO tb_barang(judul,gambar) VALUES ('$judul','$gambar')");
 		return $hasil;
@@ -60,7 +64,7 @@ class m_barang extends CI_Model{
 		return $hasil;
 	}
 	function show_clubmaster(){
-		$hasil=$this->db->query("SELECT * FROM tb_barang WHERE brand_barang = 'clubmaster'");
+		$hasil=$this->db->query("SELECT * FROM tb_barang WHERE brand_barang = 'club master'");
 		return $hasil;
 	}
 	function show_tinggi(){

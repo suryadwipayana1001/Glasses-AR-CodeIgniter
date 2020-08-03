@@ -13,8 +13,14 @@ class login extends CI_Controller {
     	$this->load->view("t_admin/header");
        
         if($this->session->logged_in == FALSE){
+
             $this->load->view("v_admin/v_login");
         }else{
+            $this->session->set_flashdata('message','<div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            Login Sukses
+            </div>
+            ');
             redirect('beranda');
         }
  
@@ -44,6 +50,11 @@ class login extends CI_Controller {
         }else{
             $session = array('gagal' => 1);
             $this->session->set_userdata($session);
+              $this->session->set_flashdata('message','<div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            Masukan Email dan Password dengan Benar
+            </div>
+            ');
             redirect('login');
         }
     }

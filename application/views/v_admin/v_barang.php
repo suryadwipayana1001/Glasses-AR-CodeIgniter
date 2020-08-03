@@ -100,8 +100,8 @@
                                             <option value="Oakley">Oakley</option>
                                             <option value="Rayband">Rayband</option>
                                             <option value="Moscot">Moscot</option>
-                                            <option value="Moscot">Carrera</option>
-                                            <option value="Moscot">Club Master</option>
+                                            <option value="Carrera">Carrera</option>
+                                            <option value="Club Master">Club Master</option>
                                         </select>
                                     </div>
                                 </div>
@@ -120,7 +120,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Foto</label>
                                     <div class="col-xs-8">
-                                        <input type="file" name="filefoto" class="dropify" data-height="100" data-width="50">
+                                        <input type="file" name="filefoto" class="dropify" data-height="100" data-width="50" required oninvalid="this.setCustomValidity('Data Foto tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -195,6 +195,8 @@
                                             <option value="Moscot" selected>Moscot</option>
                                             <option value="Rayband">Rayband</option>
                                             <option value="Oakley">Oakley</option>
+                                             <option value="Carrera">Carrera</option>
+                                                <option value="Club Master">Club Master</option>
                                             <?php elseif($brand_barang=='Rayband'):?>
                                                 <option value="Moscot">Moscot</option>
                                                 <option value="Rayband" selected>Rayband</option>

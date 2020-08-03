@@ -46,7 +46,39 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 get_ongkir();   
             });
 
+            get_kota_awal();
+            get_ongkir_awal();
+
+            $("#service").change(function(){
+                var ongkir = $(this).children("option:selected").val();
+                $('#ongkir').text(ongkir);
+                var subtotal = $('#subtotal').text();
+                var total = parseFloat(subtotal) + parseFloat(ongkir);
+                $('#total').text(total);
+
+                var provinsi_tujuan = $('#provinsi_tujuan').children("option:selected").text();
+                var kabupaten_tujuan = $('#kota_tujuan').children("option:selected").text();
+
+                $('#prov_tuj').val(provinsi_tujuan);
+                $('#kab_tuj').val(kabupaten_tujuan);
+            });
+
         });
+
+        function get_kota_awal(){
+                var id_provinsi = "1";
+                $.get("<?= site_url('checkout/get_kota/')?>"+id_provinsi,{},(response)=>{
+                let output ='';
+                let kota = response.rajaongkir.results
+                // console.log(response)
+
+                kota.map((val,i)=>{
+                    output+=`<option value="${val.city_id}" >${val.city_name}
+                    </option>`
+                })
+                $(`#kota_tujuan`).html(output)
+            })
+        }
 
         function get_kota(type){
                 let id_provinsi = $(`#provinsi_${type}`).val();
@@ -59,19 +91,22 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                     output+=`<option value="${val.city_id}" >${val.city_name}
                     </option>`
                 })
-                $(`#kota_${type}`).html(output)
+                $(`#kota_${type}`).html(output).trigger('change');
             })
         }
 
-        function get_ongkir(){
+        function get_ongkir_awal(){
             let berat = $('#berat').val();
             let asal = $('#kota_asal').val();
-            let tujuan = $('#kota_tujuan').val();
+            let tujuan = "17";
             let kurir = $('#kurir').val();
             let output ='';
             let ongkir = '';
 
-            // console.log(asal);
+            console.log(asal);
+            console.log(tujuan);
+            console.log(berat);
+            console.log(kurir);
 
                 $.get("<?= site_url('checkout/get_biaya/') ?>"+`${asal}/${tujuan}/${berat}/${kurir}`,{}, (response)=>{
                     // console.log(response);
@@ -86,9 +121,42 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                     }
                 })
                 
-                $('#service').html(output)
+                $('#service').html(output).trigger('change');
                 
                 })
+
+        }
+
+        function get_ongkir(){
+            let berat = $('#berat').val();
+            let asal = $('#kota_asal').val();
+            let tujuan = $('#kota_tujuan').val();
+            let kurir = $('#kurir').val();
+            let output ='';
+            let ongkir = '';
+
+            console.log(asal);
+            console.log(tujuan);
+            console.log(berat);
+            console.log(kurir);
+
+                $.get("<?= site_url('checkout/get_biaya/') ?>"+`${asal}/${tujuan}/${berat}/${kurir}`,{}, (response)=>{
+                    // console.log(response);
+                let biaya = response.rajaongkir.results
+
+                biaya.map((val,i)=>{
+                    for (var i = 0; i < val.costs.length; i++) {
+                        let jenis_layanan= val.costs[i].service
+                        val.costs[i].cost.map((val,i)=>{
+                            output += `<option value="${val.value}">${jenis_layanan} -Rp.${val.value} ${val.etd} Hari </option>`
+                        })
+                    }
+                })
+                
+                $('#service').html(output).trigger('change');
+                
+                })
+
         }
 
         function update_total() {
