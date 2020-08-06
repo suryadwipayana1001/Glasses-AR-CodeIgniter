@@ -24,7 +24,7 @@
           </div>
           <div class="btn-group">
              
-        <a class="btn btn-sm btn-primary" target="_blank" href="<?php echo base_url().'index.php/laporan_barang/print_laporan' ?>"><i class="glyphicon glyphicon-file"></i> Print</a>
+        <a class="btn btn-sm btn-primary" target="_blank" href="<?php echo base_url().'index.php/laporan_barang/print_laporanfilter/?keywoard='.set_value('keywoard') ?>"><i class="glyphicon glyphicon-file"></i> Print</a>
         <hr>
       </div>
         

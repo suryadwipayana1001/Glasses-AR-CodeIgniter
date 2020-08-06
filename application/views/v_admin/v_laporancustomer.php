@@ -16,6 +16,12 @@
        </div>
        <div class="panel-body">
         <div class="table-responsive">
+           <div class="navbar-form navbar-right">
+            <?php echo form_open('laporan_customer/search')?>
+                        Search : <input type="text" name="keywoard" class="form-control" placeholder="Kata Kunci">
+                        <button type="submit" class="btn btn-primary">Pencarian</button>
+                        <?php echo form_close()?>
+          </div>
 <div class="btn-group">
         <a class="btn btn-sm btn-primary" target="_blank" href="<?php echo base_url().'index.php/laporan_customer/print_laporan' ?>"><i class="glyphicon glyphicon-file"></i> Print</a>
         <hr>

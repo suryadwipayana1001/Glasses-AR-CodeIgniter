@@ -49,31 +49,33 @@
 								<!-- Ratings & Review -->
 								<div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
 									<div class="ratings">
-										<i class="fa fa-star" aria-hidden="true"></i>
-										<i class="fa fa-star" aria-hidden="true"></i>
-										<i class="fa fa-star" aria-hidden="true"></i>
-										<i class="fa fa-star" aria-hidden="true"></i>
-										<i class="fa fa-star" aria-hidden="true"></i>
+
+									<h5>
+										<p>Brand : <?php echo $i['brand_barang'];?></p>
+										<p>Lensa : <?php echo $i['lensa_barang'];?></p>
+										<p>Frame : <?php echo $i['frame_barang'];?></p>
+										<p><a href="<?=site_url('ar'.'?code='.$i['model_3d'])?>" class="btn btn-xs amado-btn">Coba AR</a></p>
+										<p>Deskripsi : <?php echo $i['deskripsi_barang'];?>
+									</h5>
+
+
 									</div>
-									<div class="review">
-										<?php echo $i['brand_barang'];?>
-										
-									</div>
+									
 								</div>
-								<!-- Avaiable -->
-								<p class="avaibility"><i class="fa fa-circle"></i> In Stock</p>
+								
 							</div>
 
-							<div class="short_overview my-5">
-							<?php echo $tes=$i['deskripsi_barang'];?>
-							</div>
+							
 
 							<!-- Add to Cart Form -->
+							 <?php
+                        $jumlah_barang=$i['jumlah_barang']; 
+                        if($jumlah_barang==0) $min=0; 
+                        else $min=1; ?>
 							<form class="cart clearfix" method="post">
 								<div class="cart-btn d-flex mb-50">
-									<p>Qty</p>
 									<div class="quantity">
-										<input type="number" name="quantity" id="<?php echo $i['id_barang'];?>" min ="1" value="1" max ="5" class="quantity form-control">
+										<input type="number" name="quantity" id="<?php echo $i['id_barang'];?>" min ="<?php echo $min?>" value="<?php echo $min ?>" max ="<?php echo $jumlah_barang ?>"class="quantity form-control">
 									</div>
 								</div>
 								<div class="mb-15">

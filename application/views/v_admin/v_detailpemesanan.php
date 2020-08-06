@@ -84,9 +84,9 @@
              ?>
              <tr>
                  <td><?php echo $i['nama_dipesan'] ?></td>
-                 <td><?php echo $i['harga_dipesan']?></td>
+                 <td><?php echo 'Rp.'.number_format ($i['harga_dipesan'])?></td>
                  <td><?php echo $i['jumlah_dipesan']?></td>
-                 <td><?php echo $i['totalharga_dipesan']?></td>
+                 <td><?php echo 'Rp.'.number_format ($i['totalharga_dipesan'])?></td>
              </tr>
          <?php endforeach;?>
      </table>
@@ -97,7 +97,7 @@
            <tr>
             <th width="20%">Sub Total</th>
             <th width="1%">:</th>
-            <td><?php echo $i['subtotal_pemesanan'] ?></td>
+            <td><?php echo 'Rp.'.number_format ($i['subtotal_pemesanan']) ?></td>
         </tr>
         <tr>
             <th width="20%">Kurir</th>
@@ -107,12 +107,12 @@
         <tr>
             <th width="20%">Ongkos Kirim</th>
             <th width="1%">:</th>
-            <td><?php echo $i['ongkir_pemesanan'] ?></td>
+            <td><?php echo 'Rp.'.number_format($i['ongkir_pemesanan']) ?></td>
         </tr>
         <tr>
             <th width="20%">Total</th>
             <th width="1%">:</th>
-            <td><?php echo $i['total_pemesanan'] ?></td>
+            <td><?php echo 'Rp.'.number_format($i['total_pemesanan']) ?></td>
             <tr>
                 <th width="20%">Status</th>
                 <th width="1%">:</th>

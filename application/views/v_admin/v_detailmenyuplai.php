@@ -30,7 +30,7 @@
                         <tr>
                             <th width="20%">Harga</th>
                             <th width="1%">:</th>
-                            <td><?php echo $i['harga_menyuplai'] ?></td>
+                            <td><?php echo 'Rp ' .number_format ($i['harga_menyuplai']) ?></td>
                         </tr>
                         <tr>
                             <th width="20%">Jumlah</th>
@@ -40,7 +40,7 @@
                         <tr>
                             <th width="20%">Total</th>
                             <th width="1%">:</th>
-                            <td><?php echo $i['totalharga_menyuplai'] ?></td>
+                            <td><?php echo 'Rp ' .number_format ($i['totalharga_menyuplai']) ?></td>
                         </tr>
                         <tr>
                             <th width="20%">Tanggak</th>

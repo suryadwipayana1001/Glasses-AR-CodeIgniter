@@ -40,9 +40,9 @@
                                         <tr class="odd gradeX">
                                             <td><?php echo $no++?></td>
                                             <td><?php echo $i['nama_barang'];?></td>
-                                            <td><?php echo $i['harga_menyuplai'];?></td>
+                                            <td><?php echo 'Rp ' .number_format ($i['harga_menyuplai']);?></td>
                                             <td><?php echo $i['jumlah_menyuplai'];?></td>
-                                            <td><?php echo $i['totalharga_menyuplai'];?></td>
+                                            <td><?php echo 'Rp ' .number_format ($i['totalharga_menyuplai']);?></td>
                                             <td><?php echo $i['tanggal_menyuplai'];?></td>
                                             <td><?php echo $i['nama_supplier'];?></td>
 
@@ -209,7 +209,7 @@
             <?php 
             foreach($data->result_array() as $i):
                 $id_menyuplai=$i['id_menyuplai'];
-                $harga_menyuplai=$i['harga_menyuplai'];
+                $namabarang=$i['nama_barang'];
                 ?>
                 <div class="modal fade" id="modal_hapus<?php echo $id_menyuplai;?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
                     <div class="modal-dialog">
@@ -220,7 +220,7 @@
                             </div>
                             <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/menyuplai/hapus_menyuplai'?>">
                                 <div class="modal-body">
-                                    <p>Anda yakin mau menghapus <b><?php echo $harga_menyuplai;?></b></p>
+                                    <p>Anda yakin mau menghapus <b><?php echo $namabarang;?></b></p>
                                 </div>
                                 <div class="modal-footer">
                                     <input type="hidden" name="id_menyuplai" value="<?php echo $id_menyuplai;?>">

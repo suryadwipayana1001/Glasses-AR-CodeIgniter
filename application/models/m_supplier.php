@@ -28,4 +28,8 @@ class m_supplier extends CI_Model{
 		$hasil=$this->db->query("SELECT * FROM tb_supplier WHERE id_supplier='$id_supplier'");
 		return $hasil;
 	}
+	function search($keywoard){
+		$hasil=$this->db->query("SELECT * FROM tb_supplier WHERE nama_supplier LIKE '$keywoard'");
+		return $hasil;
+	}
 }

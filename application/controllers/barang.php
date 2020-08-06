@@ -45,6 +45,7 @@ class barang extends CI_Controller{
 	                $harga_barang=$this->input->post('harga_barang');
 	                $brand_barang=$this->input->post('brand_barang');
 	                $lensa_barang=$this->input->post('lensa_barang');
+	                $frame_barang=$this->input->post('frame_barang');
 	                $deskripsi_barang=$this->input->post('deskripsi_barang');
 	                $model_3d=$this->input->post('model_3d');
 	                $cek_barang=$this->m_barang->cek_barang($nama_barang);
@@ -57,7 +58,7 @@ class barang extends CI_Controller{
 	                		');
 	                	redirect('barang');
 	                }else{
-	                	$this->m_barang->simpan_barang($id_barang,$nama_barang,$jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$deskripsi_barang,$model_3d);
+	                	$this->m_barang->simpan_barang($id_barang,$nama_barang,$jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$frame_barang,$deskripsi_barang,$model_3d);
 	                $this->session->set_flashdata('message','<div class="alert alert-success alert-dismissible" role="alert">
 	                	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	                	Data Berhasil Ditambahkan
@@ -91,6 +92,7 @@ class barang extends CI_Controller{
 	    $harga_barang=$this->input->post('harga_barang');
 	    $brand_barang=$this->input->post('brand_barang');
 	    $lensa_barang=$this->input->post('lensa_barang');
+	    $frame_barang=$this->input->post('frame_barang');
 	    $deskripsi_barang=$this->input->post('deskripsi_barang');
 	    $model_3d=$this->input->post('model_3d');
 
@@ -100,14 +102,14 @@ class barang extends CI_Controller{
 	    	{
 	    		$gbr = $this->upload->data();
 	                $gambar=$gbr['file_name']; //Mengambil file name dari gambar yang diupload
-	                $this->m_barang->edit_barang($id_barang,$nama_barang, $jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$deskripsi_barang,$model_3d);
+	                $this->m_barang->edit_barang($id_barang,$nama_barang, $jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$frame_barang,$deskripsi_barang,$model_3d);
 	                redirect('barang');
 	            }else{
 	            	echo "Gambar Gagal Upload. Gambar harus bertipe gif|jpg|png|jpeg|bmp";
 	            }
 	        }else{     
 	        	$gambar=$this->input->post('gbr');
-	        	$this->m_barang->edit_barang($id_barang,$nama_barang, $jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$deskripsi_barang,$model_3d);
+	        	$this->m_barang->edit_barang($id_barang,$nama_barang, $jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$frame_barang,$deskripsi_barang,$model_3d);
 	        	$this->session->set_flashdata('message','<div class="alert alert-info alert-dismissible" role="alert">
 	        		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	        		Data Berhasil Dirubah
@@ -139,6 +141,8 @@ class barang extends CI_Controller{
 	    	$this->load->view("t_admin/footer");
 
 	    }
+	 
+	    
 	}
 
 	?>

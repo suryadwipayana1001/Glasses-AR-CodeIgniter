@@ -17,6 +17,7 @@
         <div class="panel-body">
           <div class="table-responsive">
            <form method="POST" action="<?php echo base_url('index.php/laporan_menyuplai/index')?>">
+             <div class="navbar-form navbar-right">
             <div class="form-group">
               <label>Dari Tanggal</label>
               <input type="date" name="dari" class="form-control">
@@ -28,6 +29,7 @@
               <?php echo form_error('sampai','<span class="text-small text-danger">','</span>')?>
             </div>
             <button type="submit" class="btn  btn-sm btn-primary">Tampilkan Data</button>
+          </div>
           </form>
           <br>
   <div class="btn-group">

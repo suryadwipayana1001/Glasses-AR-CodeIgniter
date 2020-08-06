@@ -82,14 +82,22 @@
                                         <option value="Menunggu Konfirmasi" selected>Menunggu Konfirmasi</option>
                                         <option value="Sedang di Proses">Sedang di Proses</option>
                                         <option value="Sedang Dalam Perjalanan">Sedang Dalam Perjalanan</option>
+                                         <option value="Selesai">Selesai</option>
                                         <?php elseif($status_pemesanan=='Sedang di Proses'):?>
                                         <option value="Menunggu Konfirmasi">Menunggu Konfirmasi</option>
                                         <option value="Sedang di Proses" selected>Sedang di Proses</option>
                                         <option value="Sedang Dalam Perjalanan">Sedang Dalam Perjalanan</option>
+                                         <option value="Selesai">Selesai</option>
                                          <?php elseif($status_pemesanan=='Sedang Dalam Perjalanan'):?>
                                         <option value="Menunggu Konfirmasi">Menunggu Konfirmasi</option>
                                         <option value="Sedang di Proses">Sedang di Proses</option>
                                         <option value="Sedang Dalam Perjalanan" selected>Sedang Dalam Perjalanan</option>
+                                        <option value="Selesai">Selesai</option>
+                                         <?php elseif($status_pemesanan=='Selesai'):?>
+                                        <option value="Menunggu Konfirmasi">Menunggu Konfirmasi</option>
+                                        <option value="Sedang di Proses">Sedang di Proses</option>
+                                        <option value="Sedang Dalam Perjalanan" >Sedang Dalam Perjalanan</option>
+                                        <option value="Selesai" selected>Selesai</option>
                                          <?php endif;?>
                                         </select>
                                         </div>
@@ -97,7 +105,7 @@
                                     <div class="form-group">
                                          <label class="control-label col-xs-3" >No Resi</label>
                                         <div class="col-xs-8">
-                                      <input name="resi_pemesanan" value="<?php echo $i['resi_pemesanan'];?>" class="form-control" type="text" required>
+                                      <input name="resi_pemesanan" value="<?php echo $i['resi_pemesanan'];?>" class="form-control" type="text">
                                   </div>
                                   </div>
                                 </div>

@@ -5,11 +5,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * 
  */
 class belanja extends CI_Controller{
-function __construct(){
+	function __construct(){
 		parent::__construct();
 		$this->load->model('m_barang');
 	}
-	 function index()
+	function index()
 	{
 
 		$jumhal = 6; // jumlah halaman per page
@@ -27,8 +27,8 @@ function __construct(){
 	}
 	public function detail_belanja()
 	{
-	  	$id_barang =  $this->uri->segment(3);
-	 	$x['data']=$this->m_barang->detail_barang($id_barang);
+		$id_barang =  $this->uri->segment(3);
+		$x['data']=$this->m_barang->detail_barang($id_barang);
 		$this->load->view("t_users/header");
 		$this->load->view("v_users/v_detailbelanja",$x);
 		$this->load->view("t_users/footer");
@@ -37,84 +37,18 @@ function __construct(){
 
 	function produk_terbaru(){
 	$jumhal = 6; // jumlah halaman per page
-		
-		$page = isset($_GET['page']) ? $_GET['page'] : 1;
-		$mulai = ($page>1) ? ($page * $jumhal) - $jumhal : 0;
-		$x['data']=$this->m_barang->show_produkterbaru($mulai, $jumhal);
-		$x['tot']=$this->m_barang->count_barang();
-		$x['jumhal']=$jumhal;
-		$this->load->view("t_users/header");
-		$this->load->view("v_users/v_belanja",$x);
-		$this->load->view("t_users/footer");
-	}
 
-	function show_moscot(){
-	$jumhal = 6; // jumlah halaman per page
-		
-		$page = isset($_GET['page']) ? $_GET['page'] : 1;
-		$mulai = ($page>1) ? ($page * $jumhal) - $jumhal : 0;
+	$page = isset($_GET['page']) ? $_GET['page'] : 1;
+	$mulai = ($page>1) ? ($page * $jumhal) - $jumhal : 0;
+	$x['data']=$this->m_barang->show_produkterbaru($mulai, $jumhal);
+	$x['tot']=$this->m_barang->count_barang();
+	$x['jumhal']=$jumhal;
+	$this->load->view("t_users/header");
+	$this->load->view("v_users/v_belanja",$x);
+	$this->load->view("t_users/footer");
+}
 
-		$x['data']=$this->m_barang->show_moscot($mulai, $jumhal);
-		$x['tot']=$this->m_barang->count_barang();
-		$x['jumhal']=$jumhal;
-		$this->load->view("t_users/header");
-		$this->load->view("v_users/v_belanja",$x);
-		$this->load->view("t_users/footer");
-	}
-
-	function show_rayband(){
-	$jumhal = 6; // jumlah halaman per page
-		
-		$page = isset($_GET['page']) ? $_GET['page'] : 1;
-		$mulai = ($page>1) ? ($page * $jumhal) - $jumhal : 0;
-
-		$x['data']=$this->m_barang->show_rayband($mulai, $jumhal);
-		$x['tot']=$this->m_barang->count_barang();
-		$x['jumhal']=$jumhal;
-		$this->load->view("t_users/header");
-		$this->load->view("v_users/v_belanja",$x);
-		$this->load->view("t_users/footer");
-	}
-	function show_oakley(){
-	$jumhal = 6; // jumlah halaman per page
-		
-		$page = isset($_GET['page']) ? $_GET['page'] : 1;
-		$mulai = ($page>1) ? ($page * $jumhal) - $jumhal : 0;
-
-		$x['data']=$this->m_barang->show_oakley($mulai, $jumhal);
-		$x['tot']=$this->m_barang->count_barang();
-		$x['jumhal']=$jumhal;
-		$this->load->view("t_users/header");
-		$this->load->view("v_users/v_belanja",$x);
-		$this->load->view("t_users/footer");
-	}
-	function show_carrera(){
-	$jumhal = 6; // jumlah halaman per page
-		
-		$page = isset($_GET['page']) ? $_GET['page'] : 1;
-		$mulai = ($page>1) ? ($page * $jumhal) - $jumhal : 0;
-
-		$x['data']=$this->m_barang->show_carrera($mulai, $jumhal);
-		$x['tot']=$this->m_barang->count_barang();
-		$x['jumhal']=$jumhal;
-		$this->load->view("t_users/header");
-		$this->load->view("v_users/v_belanja",$x);
-		$this->load->view("t_users/footer");
-	}
-	function show_clubmaster(){
-	$jumhal = 6; // jumlah halaman per page
-		
-		$page = isset($_GET['page']) ? $_GET['page'] : 1;
-		$mulai = ($page>1) ? ($page * $jumhal) - $jumhal : 0;
-
-		$x['data']=$this->m_barang->show_clubmaster($mulai, $jumhal);
-		$x['tot']=$this->m_barang->count_barang();
-		$x['jumhal']=$jumhal;
-		$this->load->view("t_users/header");
-		$this->load->view("v_users/v_belanja",$x);
-		$this->load->view("t_users/footer");
-	}
-	function show_tinggi(){
+function show_tinggi(){
 		$jumhal = 6; // jumlah halaman per page
 		
 		$page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -134,6 +68,19 @@ function __construct(){
 		$mulai = ($page>1) ? ($page * $jumhal) - $jumhal : 0;
 
 		$x['data']=$this->m_barang->show_rendah();
+		$x['tot']=$this->m_barang->count_barang();
+		$x['jumhal']=$jumhal;
+		$this->load->view("t_users/header");
+		$this->load->view("v_users/v_belanja",$x);
+		$this->load->view("t_users/footer");
+	}
+	function search(){
+		$jumhal = 6; // jumlah halaman per page
+		
+		$page = isset($_GET['page']) ? $_GET['page'] : 1;
+		$mulai = ($page>1) ? ($page * $jumhal) - $jumhal : 0;
+		$keywoard = $this->input->post('keywoard');
+		$x['data']=$this->m_barang->search($keywoard);
 		$x['tot']=$this->m_barang->count_barang();
 		$x['jumhal']=$jumhal;
 		$this->load->view("t_users/header");

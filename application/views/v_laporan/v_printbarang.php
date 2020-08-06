@@ -19,7 +19,7 @@
                   <td><?php echo $no++?></td>
                   <td><?php echo $i['nama_barang'];?></td>
                   <td><?php echo $i['jumlah_barang'];?></td>
-                  <td><?php echo $i['harga_barang'];?></td>
+                  <td><?php echo 'Rp.'.number_format($i['harga_barang']);?></td>
                   <td><?php echo $i['brand_barang'];?></td>
                   <td><?php echo $i['lensa_barang'];?></td>
                 </tr>

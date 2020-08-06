@@ -43,19 +43,19 @@
                 <a href="#"><i class="fa fa-book"></i>Laporan<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li <?=$this->uri->segment(1) == 'laporan_barang' ? 'class="active-menu"' : ''?>> 
-                        <a href="<?=site_url('laporan_barang')?>">Barang</a>
+                        <a href="<?=site_url('laporan_barang')?>">Laporan Barang</a>
                     </li>
                      <li <?=$this->uri->segment(1) == 'laporan_supplier' ? 'class="active-menu"' : ''?>> 
-                        <a href="<?=site_url('laporan_supplier')?>">Supplier</a>
+                        <a href="<?=site_url('laporan_supplier')?>">Laporan Supplier</a>
                     </li>
                     <li <?=$this->uri->segment(1) == 'laporan_customer' ? 'class="active-menu"' : ''?>> 
-                        <a href="<?=site_url('laporan_customer')?>">Customer</a>
+                        <a href="<?=site_url('laporan_customer')?>">Laporan Customer</a>
                     </li>
                     <li <?=$this->uri->segment(1) == 'laporan_menyuplai' ? 'class="active-menu"' : ''?>> 
-                        <a href="<?=site_url('laporan_menyuplai')?>">Transaksi Supplier</a>
+                        <a href="<?=site_url('laporan_menyuplai')?>">Laporan Transaksi Supplier</a>
                     </li>
                     <li <?=$this->uri->segment(1) == 'laporan_pemesanan' ? 'class="active-menu"' : ''?>> 
-                        <a href="<?=site_url('laporan_pemesanan')?>">Transaksi Customer</a>
+                        <a href="<?=site_url('laporan_pemesanan')?>">Laporan Transaksi Customer</a>
                     </li>
                 </ul>
             </li>

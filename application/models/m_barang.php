@@ -1,10 +1,5 @@
 <?php
 class m_barang extends CI_Model{
-	/*function load_cart($id_user) {
-		$hasil=$this->db->query("SELECT * FROM tb_cart WHERE id_user='$id_user'");
-		return $hasil;	
-	}*/
-	
 	function show_barang($mulai, $halaman){
 		$hasil=$this->db->query("SELECT * FROM tb_barang LIMIT $mulai, $halaman");
 		return $hasil;
@@ -21,15 +16,14 @@ class m_barang extends CI_Model{
 		$hasil=$this->db->query("SELECT * FROM tb_barang WHERE id_barang='$id_barang'");
 		return $hasil;
 	}
-	function simpan_barang($id_barang,$nama_barang,$jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$deskripsi_barang,$model_3d){
-		$hasil=$this->db->query("INSERT INTO tb_barang(id_barang,nama_barang,jumlah_barang,harga_barang,gambar,brand_barang,lensa_barang,deskripsi_barang,model_3d) VALUES('$id_barang','$nama_barang','$jumlah_barang','$harga_barang','$gambar','$brand_barang','$lensa_barang','$deskripsi_barang','$model_3d')");	
+	function simpan_barang($id_barang,$nama_barang,$jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$frame_barang,$deskripsi_barang,$model_3d){
+		$hasil=$this->db->query("INSERT INTO tb_barang(id_barang,nama_barang,jumlah_barang,harga_barang,gambar,brand_barang,lensa_barang,frame_barang,deskripsi_barang,model_3d) VALUES('$id_barang','$nama_barang','$jumlah_barang','$harga_barang','$gambar','$brand_barang','$lensa_barang','$frame_barang','$deskripsi_barang','$model_3d')");	
 		return $hasil;
 	}
-	function edit_barang($id_barang,$nama_barang,$jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$deskripsi_barang,$model_3d){
-		$hasil=$this->db->query("UPDATE tb_barang SET nama_barang='$nama_barang',jumlah_barang ='$jumlah_barang',harga_barang='$harga_barang',gambar='$gambar',brand_barang='$brand_barang', lensa_barang='$lensa_barang',deskripsi_barang='$deskripsi_barang',model_3d='$model_3d' WHERE id_barang='$id_barang' ");
+	function edit_barang($id_barang,$nama_barang,$jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$frame_barang,$deskripsi_barang,$model_3d){
+		$hasil=$this->db->query("UPDATE tb_barang SET nama_barang='$nama_barang',jumlah_barang ='$jumlah_barang',harga_barang='$harga_barang',gambar='$gambar',brand_barang='$brand_barang', lensa_barang='$lensa_barang', frame_barang='$frame_barang',deskripsi_barang='$deskripsi_barang',model_3d='$model_3d' WHERE id_barang='$id_barang' ");
 		return $hasil;
 	}
-
 	function hapus_barang($id_barang){
 		$hasil=$this->db->query("DELETE FROM tb_barang WHERE	id_barang='$id_barang'");
 		return $hasil;
@@ -38,33 +32,14 @@ class m_barang extends CI_Model{
 	$hasil=$this->db->query("SELECT * FROM tb_barang WHERE nama_barang='$nama_barang'");
 	return $hasil;
 	}
-	/*function simpan_upload($judul,$gambar){
-		$hasil=$this->db->query("INSERT INTO tb_barang(judul,gambar) VALUES ('$judul','$gambar')");
+
+	function search($keywoard){
+		$hasil=$this->db->query("SELECT * FROM tb_barang WHERE nama_barang LIKE '$keywoard' OR harga_barang LIKE '$keywoard' OR brand_barang LIKE '$keywoard' OR lensa_barang LIKE '$keywoard' OR frame_barang LIKE '$keywoard' ");
 		return $hasil;
-	}*/
+	}
 	function show_produkterbaru(){
 
 		$hasil=$this->db->query("SELECT * FROM tb_barang order by id_barang desc");
-		return $hasil;
-	}
-	function show_moscot(){
-		$hasil=$this->db->query("SELECT * FROM tb_barang WHERE brand_barang = 'moscot'");
-		return $hasil;
-	}
-	function show_rayband(){
-		$hasil=$this->db->query("SELECT * FROM tb_barang WHERE brand_barang = 'rayband'");
-		return $hasil;
-	}
-	function show_oakley(){
-		$hasil=$this->db->query("SELECT * FROM tb_barang WHERE brand_barang = 'oakley'");
-		return $hasil;
-	}
-	function show_carrera(){
-		$hasil=$this->db->query("SELECT * FROM tb_barang WHERE brand_barang = 'carrera'");
-		return $hasil;
-	}
-	function show_clubmaster(){
-		$hasil=$this->db->query("SELECT * FROM tb_barang WHERE brand_barang = 'club master'");
 		return $hasil;
 	}
 	function show_tinggi(){
@@ -79,5 +54,6 @@ class m_barang extends CI_Model{
 		$hasil=$this->db->query("UPDATE tb_barang set jumlah_barang='$jumlah_barang' WHERE id_barang='$id_barang'");
 		return $hasil;
 	}
+
 
 }

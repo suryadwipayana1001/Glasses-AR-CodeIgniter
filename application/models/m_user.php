@@ -52,4 +52,8 @@ class m_user extends CI_Model{
 	$hasil=$this->db->query("SELECT * FROM tb_user WHERE level_user='customer'");
 	return $hasil;
 }
+	function search($keywoard){
+		$hasil=$this->db->query("SELECT * FROM tb_user WHERE nama_user LIKE '$keywoard' OR email_user LIKE '$keywoard' ");
+		return $hasil;
+	}
 }

@@ -26,8 +26,6 @@
                                         <th>Nama</th>
                                         <th>Jumlah</th>
                                         <th>Harga</th>
-                                        <th>Brand</th>
-                                        <th>Lensa</th>
                                         <th>Foto</th>
                                         <th>Tindakan</th>
                                     </tr>
@@ -42,10 +40,7 @@
                                             <td><?php echo $no++?></td>
                                             <td><?php echo $i['nama_barang'];?></td>
                                             <td><?php echo $i['jumlah_barang'];?></td>
-                                            <td><?php echo $i['harga_barang'];?></td>
-                                            <td><?php echo $i['brand_barang'];?></td>
-                                            <td><?php echo $i['lensa_barang'];?></td>
-
+                                            <td><?php echo 'Rp ' .number_format ($i['harga_barang']);?></td>
                                             <td><img src="<?=base_url('assets/img/foto/'.$gambar=$i['gambar'])?>" style="width:100px"></td>
                                             
                                             <td style="width: 120px;">
@@ -95,20 +90,19 @@
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Brand</label>
                                     <div class="col-xs-8">
-                                        <select name="brand_barang" class="form-control input-sm" required oninvalid="this.setCustomValidity('Data Brand tidak boleh kosong')" oninput="setCustomValidity('')">
-                                            <option value="">--Pilih Brand--</option>
-                                            <option value="Oakley">Oakley</option>
-                                            <option value="Rayband">Rayband</option>
-                                            <option value="Moscot">Moscot</option>
-                                            <option value="Carrera">Carrera</option>
-                                            <option value="Club Master">Club Master</option>
-                                        </select>
+                                        <input name="brand_barang"  class="form-control" type="text" placeholder="Brand" required oninvalid="this.setCustomValidity('Data Brand tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Lensa</label>
                                     <div class="col-xs-8">
                                         <input name="lensa_barang" class="form-control" type="text" placeholder="Lensa" required oninvalid="this.setCustomValidity('Data Lensa tidak boleh kosong')" oninput="setCustomValidity('')">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-xs-3" >Frame</label>
+                                    <div class="col-xs-8">
+                                        <input name="frame_barang" class="form-control" type="text" placeholder="Frame" required oninvalid="this.setCustomValidity('Data Frame tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -156,6 +150,7 @@
                 $brand_barang=$i['brand_barang'];
                 $gambar=$i['gambar'];
                 $lensa_barang=$i['lensa_barang'];
+                $frame_barang=$i['frame_barang'];
                 $deskripsi_barang=$i['deskripsi_barang'];
                 $model_3d=$i['model_3d'];
                 ?>
@@ -178,7 +173,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Jumlah</label>
                                     <div class="col-xs-8">
-                                        <input name="jumlah_barang" value="<?php echo $jumlah_barang;?>" class="form-control" type="number" placeholder="jumlah"  required oninvalid="this.setCustomValidity('Data Jumlah tidak boleh kosong dan hanya memasukkan angka')" oninput="setCustomValidity('')">
+                                        <input name="jumlah_barang" value="<?php echo $jumlah_barang;?>" class="form-control" type="number" placeholder="jumlah"  required oninvalid="this.setCustomValidity('Data Jumlah tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -190,45 +185,19 @@
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" >Brand</label>
                                     <div class="col-xs-8">
-                                        <select name="brand_barang" class="form-control input-sm">
-                                         <?php if($brand_barang=='Moscot'):?>
-                                            <option value="Moscot" selected>Moscot</option>
-                                            <option value="Rayband">Rayband</option>
-                                            <option value="Oakley">Oakley</option>
-                                             <option value="Carrera">Carrera</option>
-                                                <option value="Club Master">Club Master</option>
-                                            <?php elseif($brand_barang=='Rayband'):?>
-                                                <option value="Moscot">Moscot</option>
-                                                <option value="Rayband" selected>Rayband</option>
-                                                <option value="Oakley">Oakley</option>
-                                                <option value="Carrera">Carrera</option>
-                                                <option value="Club Master">Club Master</option>
-                                            <?php elseif($brand_barang=='Oakley'):?>
-                                                <option value="Moscot">Moscot</option>
-                                                <option value="Rayband">Rayband</option>
-                                                <option value="Oakley" selected>Oakley</option>
-                                                <option value="Carrera">Carrera</option>
-                                                <option value="Club Master">Club Master</option>
-                                            <?php elseif($brand_barang=='Carrera'):?>
-                                                <option value="Moscot">Moscot</option>
-                                                <option value="Rayband">Rayband</option>
-                                                <option value="Oakley">Oakley</option>
-                                                <option value="Carrera" selected>Carrera</option>
-                                                <option value="Club Master">Club Master</option>
-                                                <?php elseif($brand_barang=='Club Master'):?>
-                                                <option value="Moscot">Moscot</option>
-                                                <option value="Rayband">Rayband</option>
-                                                <option value="Oakley">Oakley</option>
-                                                <option value="Carrera">Carrera</option>
-                                                <option value="Club Master" selected>Club Master</option>
-                                                <?php endif;?>
-                                            </select>
+                                       <input name="brand_barang" value="<?php echo $brand_barang;?>" class="form-control" type="text" placeholder="Brand" required oninvalid="this.setCustomValidity('Data Brand tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-xs-3" >Lensa</label>
                                         <div class="col-xs-8">
                                             <input name="lensa_barang" value="<?php echo $lensa_barang;?>" class="form-control" type="text" placeholder="Lensa" required oninvalid="this.setCustomValidity('Data Deskripsi Lensa tidak boleh kosong')" oninput="setCustomValidity('')">
+                                        </div>
+                                    </div>
+                                       <div class="form-group">
+                                        <label class="control-label col-xs-3" >Frame</label>
+                                        <div class="col-xs-8">
+                                            <input name="frame_barang" value="<?php echo $frame_barang;?>" class="form-control" type="text" placeholder="Frame" required oninvalid="this.setCustomValidity('Data Deskripsi Frame tidak boleh kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                     <div class="form-group">

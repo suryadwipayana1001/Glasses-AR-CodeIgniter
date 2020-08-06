@@ -1,4 +1,4 @@
-<?php 
+<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class laporan_supplier extends CI_Controller{
@@ -18,13 +18,20 @@ class laporan_supplier extends CI_Controller{
 				$this->load->view("v_admin/v_laporansupplier",$x);
 				$this->load->view("t_admin/footer");
 			} else {
-				redirect('laporan/c_beranda');
+				redirect('beranda/c_beranda');
 			}
 		}
 		
 	}
-
-function print_laporan(){
+	function search(){
+		$keywoard = $this->input->post('keywoard');
+		$x['data']=$this->m_supplier->search($keywoard);
+		$this->load->view("t_admin/header");
+		$this->load->view("t_admin/navbar");
+		$this->load->view("v_admin/v_laporansupplierfilter",$x);
+		$this->load->view("t_admin/footer");
+	}
+	function print_laporan(){
 		if($this->session->logged_in == FALSE){
 			redirect('login');
 		}else{
@@ -33,10 +40,23 @@ function print_laporan(){
 				$this->load->view("t_admin/header");
 				$this->load->view("v_laporan/v_printsupplier",$x);
 			} else {
-				redirect('laporan/c_beranda');
+				redirect('beranda/c_beranda');
+			}
+		}
+	}
+	function print_laporanfilter(){
+		if($this->session->logged_in == FALSE){
+			redirect('login');
+		}else{
+			if($this->session->level == 'Admin'){
+				$keywoard = $this->input->get('keywoard');
+				$x['data']=$this->m_supplier->search($keywoard);
+				$this->load->view("t_admin/header");
+				$this->load->view("v_laporan/v_printsupplier",$x);
+			} else {
+				redirect('beranda/c_beranda');
 			}
 		}
 	}
 }
-
 ?>

@@ -30,7 +30,7 @@
                         <tr>
                             <th width="20%">Harga</th>
                             <th width="1%">:</th>
-                            <td><?php echo $i['harga_barang'] ?></td>
+                            <td><?php echo 'Rp ' .number_format ($i['harga_barang']) ?></td>
                         </tr>
                         <tr>
                             <th width="20%">Jumlah</th>
@@ -47,10 +47,20 @@
                             <th width="1%">:</th>
                             <td><?php echo $i['lensa_barang'] ?></td>
                         </tr>
+                        <tr>
+                            <th width="20%">Frame</th>
+                            <th width="1%">:</th>
+                            <td><?php echo $i['frame_barang'] ?></td>
+                        </tr>
                          <tr>
                             <th width="20%">Deskripsi</th>
                             <th width="1%">:</th>
                             <td><?php echo $i['deskripsi_barang'] ?></td>
+                        </tr>
+                          <tr>
+                            <th width="20%">Model 3d</th>
+                            <th width="1%">:</th>
+                            <td><?php echo $i['model_3d'] ?></td>
                         </tr>
                         <tr>
                             <th width="20%">Foto</th>
