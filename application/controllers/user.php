@@ -36,8 +36,7 @@ class user extends CI_Controller{
 		$jeniskelamin_user=$this->input->post('jeniskelamin_user');
 		$level_user=$this->input->post('level_user');
 		$cek_user=$this->m_user->cek_user($email_user);
-		$cek_email = $cek_user->num_rows();
-		if ($cek_email>0){
+		if ($cek_user>0){
 			$this->session->set_flashdata('message','<div class="alert alert-danger alert-dismissible" role="alert">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			Data Email Sudah Terdaftar
@@ -64,6 +63,15 @@ class user extends CI_Controller{
 		$nohp_user=$this->input->post('nohp_user');
 		$jeniskelamin_user=$this->input->post('jeniskelamin_user');
 		$level_user=$this->input->post('level_user');
+		$cek_user=$this->m_user->cek_user($email_user);
+		if ($cek_user>0){
+			$this->session->set_flashdata('message','<div class="alert alert-danger alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			Data Email Sudah Terdaftar
+			</div>
+			');
+			redirect('user');
+		}else{
 		$this->m_user->edit_user($id_user,$nama_user, $email_user,$password_user,$tanggallahir_user,$alamat_user,$nohp_user,$jeniskelamin_user,$level_user);
 		$this->session->set_flashdata('message','<div class="alert alert-info alert-dismissible" role="alert">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -72,7 +80,7 @@ class user extends CI_Controller{
 			');
 		redirect('user');
 	}
-
+}
 	function hapus_user(){
 		$id_user=$this->input->post('id_user');
 		$this->m_user->hapus_user($id_user);

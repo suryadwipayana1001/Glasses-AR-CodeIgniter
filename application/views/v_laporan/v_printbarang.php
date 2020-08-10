@@ -1,6 +1,10 @@
-         <h3 style="text-align : center">Laporan Barang</h3>
+         <h3 style="text-align: center">JK Store Bali</h3>
+         <h5 style="text-align: center"> JL Dewata no 9 Sidakarya Denpasar</h5>
+         <h5 style="text-align: center">Telp.+621246588229</h5>
          <br>
-          <table class="table table-striped table-bordered table-hover" id="">
+         <h3 style="text-align : center">Laporan Barang</h3>
+         <p>
+           <table class="table table-striped table-bordered table-hover" id="">
             <thead>
               <tr>
                 <th>No</th>
@@ -27,6 +31,6 @@
             </tbody>
           </table>
 
- <script type="text/javascript">
+          <script type="text/javascript">
             window.print();
           </script>

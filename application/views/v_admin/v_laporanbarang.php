@@ -18,7 +18,7 @@
         <div class="table-responsive">
           <div class="navbar-form navbar-right">
             <?php echo form_open('laporan_barang/search')?>
-                        Search : <input type="text" name="keywoard" class="form-control" placeholder="Kata Kunci">
+                        Search : <input type="text" name="keywoard" class="form-control" placeholder="Kata Kunci" required oninvalid="this.setCustomValidity('Kata Kunci tidak boleh kosong')" oninput="setCustomValidity('')">
                         <button type="submit" class="btn btn-primary">Pencarian</button>
                         <?php echo form_close()?>
           </div>

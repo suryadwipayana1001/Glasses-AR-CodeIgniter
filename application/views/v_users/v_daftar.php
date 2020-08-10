@@ -14,30 +14,31 @@
                         <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/akunsaya/simpan_user'?>"enctype="multipart/form-data" >
                             <div class="row">
                                 <div class="col-md-12 mb-3">
-                                   Nama <input type="text" class="form-control" name="nama_user" value="" placeholder="Nama" required>
+                                   Nama <input type="text" class="form-control" name="nama_user" value="" placeholder="Nama" required oninvalid="this.setCustomValidity('Nama tidak boleh kosong')" oninput="setCustomValidity('')">
                                </div>
                                <div class="col-md-12 mb-3">
-                                   Email <input type="text" class="form-control" name="email_user" value="" placeholder="Email" required>
+                                   Email <input type="email" class="form-control" name="email_user" value="" placeholder="Email" required oninvalid="this.setCustomValidity('Masukan Alamat Email dengan benar atau Email tidak boleh kosong')" oninput="setCustomValidity('')">
                                </div>
                                <div class="col-md-12 mb-3">
-                                   Password <input type="password" class="form-control" name="password_userz" value="" placeholder="Password" required>
+                                   Password <input type="password" class="form-control" name="password_userz" value="" placeholder="Password" required oninvalid="this.setCustomValidity('Password tidak boleh kosong')" oninput="setCustomValidity('')">
                                </div>
 
                                <!--  <div class="col-md-12 mb-3">
                                    Repassword <input type="text" class="form-control" id="repassword" name="Repassword" value="" placeholder="Masukan kembali Password" required>
                                </div> -->
                                <div class="col-md-12 mb-3">
-                                   Tanggal Lahir <input type="date" class="form-control" name="tanggallahir_user"  required>
+                                   Tanggal Lahir <input type="date" class="form-control" name="tanggallahir_user"  required oninvalid="this.setCustomValidity('Tanggal Lahir tidak boleh kosong')" oninput="setCustomValidity('')">
                                </div>
                                 <div class="col-md-12 mb-3">
-                                   Alamat<input type="text" class="form-control" name="alamat_user" placeholder="Alamat" required>
+                                   Alamat<input type="text" class="form-control" name="alamat_user" placeholder="Alamat" required oninvalid="this.setCustomValidity('Alamat tidak boleh kosong')" oninput="setCustomValidity('')">
                                </div>
                                  <div class="col-md-12 mb-3">
-                                   No Hp<input type="text" class="form-control" name="nohp_user" placeholder="No Handphone" required>
+                                   No Handphone<input type="text" class="form-control" name="nohp_user" placeholder="No Handphone" required oninvalid="this.setCustomValidity('No Handphone tidak boleh kosong')" oninput="setCustomValidity('')">
                                </div>
                                   <div class="col-md-12 mb-3">
                             <label > Jenis Kelamin</label>
-                            <select name="jeniskelamin_user" class="w-100">
+                            <select name="jeniskelamin_user" class="w-100" required oninvalid="this.setCustomValidity('Jenis Kelamin tidak boleh kosong')" oninput="setCustomValidity('')">
+                                <option value="">-Pilih Jenis Kelamin-</option>
                                 <option value="Laki-Laki">Laki-Laki</option>
                                 <option value="Perempuan">Perempuan</option>
                             </select>

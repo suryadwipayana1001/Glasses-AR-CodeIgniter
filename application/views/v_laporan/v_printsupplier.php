@@ -1,4 +1,9 @@
-<h3 style="text-align : center">Laporan Data Supplier</h3>
+         <h3 style="text-align: center">JK Store Bali</h3>
+         <h5 style="text-align: center"> JL Dewata no 9 Sidakarya Denpasar</h5>
+         <h5 style="text-align: center">Telp.+621246588229</h5>
+         <br>
+         <h3 style="text-align : center">Laporan Supplier</h3>
+         <p>
 <br>
           <table class="table table-striped table-bordered table-hover" id="">
             <thead>

@@ -16,7 +16,7 @@
                         <div class="row">
 
                         <div class="col-6 mb-3">Nama
-                            <input type="text" class="form-control" name="nama_pemesanan" placeholder="Nama">
+                            <input type="text" class="form-control" name="nama_pemesanan" placeholder="Nama" required oninvalid="this.setCustomValidity('Data Nama tidak boleh kosong')" oninput="setCustomValidity('')">
                         </div>
                         <div class="col-md-6 mb-3">Provinsi
                             <select onchange="get_kota('tujuan')" name="provinsi_pemesanan" id="provinsi_tujuan" class="w-100 provinsi">
@@ -26,20 +26,20 @@
                             <input type="text" value="447" id="kota_asal">
                         </div>
                         <div class="col-md-6 mb-3">Kabupaten
-                            <select onChange="get_ongkir()" name="kabupaten_pemesanan" id="kota_tujuan"  class="w-100">
+                            <select onChange="get_ongkir()" name="kabupaten_pemesanan" id="kota_tujuan"  class="w-100" >
                             </select>
                         </div>
                         <div class="col-6 mb-3">Kecamatan
-                            <input type="text" class="form-control" name="kecamatan_pemesanan" placeholder="Kecamatan">
+                            <input type="text" class="form-control" name="kecamatan_pemesanan" placeholder="Kecamatan" required oninvalid="this.setCustomValidity('Data Kecamatan tidak boleh kosong')" oninput="setCustomValidity('')">
                         </div>
                         <div class="col-12 mb-3">Alamat
-                            <input type="text" class="form-control" name="alamat_pemesanan" placeholder="Alamat">
+                            <input type="text" class="form-control" name="alamat_pemesanan" placeholder="Alamat" required oninvalid="this.setCustomValidity('Data Alamat tidak boleh kosong')" oninput="setCustomValidity('')">
                         </div>
                         <div class="col-6 mb-3">Kode Pos
-                            <input type="text" class="form-control" name="kodepos_pemesanan" placeholder="Kode Pos">
+                            <input type="text" class="form-control" name="kodepos_pemesanan" placeholder="Kode Pos" required oninvalid="this.setCustomValidity('Data Kode Pos tidak boleh kosong')" oninput="setCustomValidity('')">
                         </div>
-                        <div class="col-6 mb-3">No Hp
-                            <input type="text" class="form-control" name="nohp_pemesanan" placeholder="No Handphone">
+                        <div class="col-6 mb-3">No Handphone
+                            <input type="number" class="form-control" name="nohp_pemesanan" placeholder="No Handphone" required oninvalid="this.setCustomValidity('Data No Handphone tidak boleh kosong')" oninput="setCustomValidity('')">
                         </div>
                             <input type="hidden" class="form-control" name="status_pemesanan" value="Menunggu Konfirmasi">
                             <input type="hidden" value="1" name="berat" id="berat" class="w-100"> 

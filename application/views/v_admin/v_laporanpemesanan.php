@@ -20,12 +20,12 @@
              <div class="navbar-form navbar-right">
             <div class="form-group">
               <label>Dari Tanggal</label>
-              <input type="date" name="dari" class="form-control">
+              <input type="date" name="dari" class="form-control" required oninvalid="this.setCustomValidity('Dari Tanggal tidak boleh kosong')" oninput="setCustomValidity('')">
               <?php echo form_error('dari','<span class="text-small text-danger">','</span>')?>
             </div>
             <div class="form-group">
               <label>Sampai Tanggal</label>
-              <input type="date" name="sampai" class="form-control">
+              <input type="date" name="sampai" class="form-control" required oninvalid="this.setCustomValidity('Sampai Tanggal tidak boleh kosong')" oninput="setCustomValidity('')">
                <?php echo form_error('sampai','<span class="text-small text-danger">','</span>')?>
             </div>
             <button type="submit" class="btn  btn-sm btn-primary">Tampilkan Data</button>
@@ -48,7 +48,7 @@
                 <th>Alamat</th>
                 <th>Kurir</th>
                 <th>Ongkos Kirim</th>
-                <th>Total</th>
+                <th>Total Pembayaran</th>
                 <th>Tanggal Pemesanan</th>
               </tr>
             </thead>
@@ -60,13 +60,13 @@
                   <td><?php echo $no++?></td>
                   <td><?php echo $i['email_user'];?></td>
                   <td><?php echo $i['nama_dipesan'];?></td>
-                  <td><?php echo $i['harga_dipesan'];?></td>
+                  <td><?php echo 'Rp.'.number_format($i['harga_dipesan']);?></td>
                   <td><?php echo $i['jumlah_dipesan'];?></td>
-                  <td><?php echo $i['totalharga_dipesan'];?></td>
+                  <td><?php echo 'Rp.'.number_format($i['totalharga_dipesan']);?></td>
                   <td><?php echo $i['alamat_pemesanan'] ; ?><?php echo $i['kecamatan_pemesanan'] ?>,<?php echo $i['kabupaten_pemesanan']?>,<?php echo $i['provinsi_pemesanan'] ?>,</td>
                   <td><?php echo $i['kurir_pemesanan']?></td>
-                  <td><?php echo $i['ongkir_pemesanan']?></td>
-                  <td><?php echo $i['total_pemesanan']?></td>
+                  <td><?php echo 'Rp.'.number_format($i['ongkir_pemesanan'])?></td>
+                  <td><?php echo 'Rp.'.number_format($i['total_pemesanan'])?></td>
                   <td><?php echo $i['tanggal_pemesanan'];?></td>
                 </tr>
               <?php endforeach;?>
@@ -98,7 +98,7 @@
                                 <th>No</th>
                                 <th>Nama Barang</th>
                                 <th>Jumlah Barang</th>
-                                <th>Total Harga</th>
+                                <th>Total Harga Barang</th>
                             </tr>
                             <?php 
                             $no=1; 
@@ -112,18 +112,18 @@
                                <td><?php echo $no++?></td>        
                                 <td><?php echo $i['nama_barang'];?></td>
                                 <td><?php echo $i['jumlah_dipesan'];?></td>
-                                <td><?php echo $i['totalharga_dipesan'];?></td>
+                                <td><?php echo 'Rp.'.number_format($i['totalharga_dipesan']);?></td>
                                 <tr>
                                 <?php endforeach;?>
                             </table>  
                             <tr>
                                 <table class="table table-striped table-bordered table-hover">
-                                   <th>Total Jumlah barang:</th>
+                                   <th>Total Jumlah Barang</th>
                                    <th>Total Harga Barang</th>
                                </tr>
                                <tr>
                                 <td><?php echo $totaljumlah?></td>
-                                <td><?php echo $total?></td>
+                                <td><?php echo 'Rp.'.number_format($total)?></td>
                             </tr>
                         </table>
         </div>

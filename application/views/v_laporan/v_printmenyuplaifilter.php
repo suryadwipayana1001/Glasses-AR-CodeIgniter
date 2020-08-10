@@ -1,4 +1,9 @@
-  <h3 style="text-align : center">Laporan Transaksi Customer</h3>
+           <h3 style="text-align: center">JK Store Bali</h3>
+         <h5 style="text-align: center"> JL Dewata no 9 Sidakarya Denpasar</h5>
+         <h5 style="text-align: center">Telp.+621246588229</h5>
+         <br>
+         <h3 style="text-align : center">Laporan Transaksi Supplier</h3>
+         <p>
 <table>
   <tr>
     <td>Dari Tanggal</td>
@@ -35,9 +40,9 @@
                 <tr class="odd gradeX">
                   <td><?php echo $no++?></td>
                   <td><?php echo $i['nama_barang'];?></td>
-                  <td><?php echo $i['harga_menyuplai'];?></td>
+                  <td><?php echo 'Rp.'.number_format($i['harga_menyuplai']);?></td>
                   <td><?php echo $i['jumlah_menyuplai'];?></td>
-                  <td><?php echo $i['totalharga_menyuplai'];?></td>
+                  <td><?php echo 'Rp.'.number_format($i['totalharga_menyuplai']);?></td>
                   <td><?php echo $i['tanggal_menyuplai'];?></td>
                   <td><?php echo $i['nama_supplier'];?></td>
                 </tr>
@@ -78,7 +83,7 @@
                  <td><?php echo $no++?></td>        
                  <td><?php echo $i['nama_barang'];?></td>
                  <td><?php echo $i['jumlah_menyuplai'];?></td>
-                 <td><?php echo $i['totalharga_menyuplai'];?></td>
+                 <td><?php echo 'Rp.'.number_format($i['totalharga_menyuplai']);?></td>
                  <tr>
                  <?php endforeach;?>
                </table>  
@@ -89,7 +94,7 @@
                </tr>
                <tr>
                 <td><?php echo $totaljumlah?></td>
-                <td><?php echo $total?></td>
+                <td><?php echo 'Rp'.number_format($total)?></td>
               </tr>
             </table>
  <script type="text/javascript">

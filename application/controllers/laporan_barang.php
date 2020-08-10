@@ -36,6 +36,7 @@ function print_laporan(){
 			redirect('login');
 		}else{
 			if($this->session->level == 'Admin'){
+
 				$x['data']=$this->m_barang->show_barang1();
 				$this->load->view("t_admin/header");
 				$this->load->view("v_laporan/v_printbarang",$x);

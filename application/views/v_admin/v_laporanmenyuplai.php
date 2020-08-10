@@ -20,13 +20,12 @@
              <div class="navbar-form navbar-right">
             <div class="form-group">
               <label>Dari Tanggal</label>
-              <input type="date" name="dari" class="form-control">
-              <?php echo form_error('dari','<span class="text-small text-danger">','</span>')?>
+              <input type="date" name="dari" class="form-control" required oninvalid="this.setCustomValidity('Dari Tanggal tidak boleh kosong')" oninput="setCustomValidity('')">
+             
             </div>
             <div class="form-group">
               <label>Sampai Tanggal</label>
-              <input type="date" name="sampai" class="form-control">
-              <?php echo form_error('sampai','<span class="text-small text-danger">','</span>')?>
+              // <input type="date" name="sampai" class="form-control" required oninvalid="this.setCustomValidity('Sampai Tanggal tidak boleh kosong')" oninput="setCustomValidity('')">
             </div>
             <button type="submit" class="btn  btn-sm btn-primary">Tampilkan Data</button>
           </div>
@@ -59,9 +58,9 @@
                 <tr class="odd gradeX">
                   <td><?php echo $no++?></td>
                   <td><?php echo $i['nama_barang'];?></td>
-                  <td><?php echo $i['harga_menyuplai'];?></td>
+                  <td><?php echo 'Rp.'.number_format($i['harga_menyuplai']);?></td>
                   <td><?php echo $i['jumlah_menyuplai'];?></td>
-                  <td><?php echo $i['totalharga_menyuplai'];?></td>
+                  <td><?php echo 'Rp.'.number_format($i['totalharga_menyuplai']);?></td>
                   <td><?php echo $i['tanggal_menyuplai'];?></td>
                   <td><?php echo $i['nama_supplier'];?></td>
                 </tr>
@@ -96,7 +95,7 @@
                 <th>No</th>
                 <th>Nama Barang</th>
                 <th>Jumlah Barang</th>
-                <th>Total Harga</th>
+                <th>Total Harga Barang</th>
               </tr>
               <?php 
               $no=1; 
@@ -106,7 +105,7 @@
                  <td><?php echo $no++?></td>        
                  <td><?php echo $i['nama_barang'];?></td>
                  <td><?php echo $i['jumlah_menyuplai'];?></td>
-                 <td><?php echo $i['totalharga_menyuplai'];?></td>
+                 <td><?php echo 'Rp.'.number_format($i['totalharga_menyuplai']);?></td>
                  <tr>
                  <?php endforeach;?>
                </table>  
@@ -117,7 +116,7 @@
                </tr>
                <tr>
                 <td><?php echo $totaljumlah?></td>
-                <td><?php echo $total?></td>
+                <td><?php echo 'Rp.'.number_format($total)?></td>
               </tr>
             </table>
 

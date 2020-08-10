@@ -49,6 +49,8 @@ class pemesanan extends CI_Controller{
     	$user = $this->session->id_user; }
 	 $x['data']=$this->m_pemesanan->detail_pemesanan($id_pemesanan,$user);
 	 $x['data1']=$this->m_dipesan->detail_pemesan($id_pemesanan);
+	 $this->m_pemesanan->update_status($id_pemesanan);
+
 
 	 /*foreach ($x['data']->result_array()as $i):
                var_dump($i);

@@ -24,7 +24,8 @@
         <div class="mobile-nav">
             <!-- Navbar Brand -->
             <div class="amado-navbar-brand">
-                <a href="index.html"><img src="<?=base_url()?>assets/img/core-img/logo.png" alt=""></a>
+                <a href=""><img src="<?=base_url()?>assets/img/core-img/logo.jpeg" height="20px" width="50px" alt=""></a>
+
             </div>
             <!-- Navbar Toggler -->
             <div class="amado-navbar-toggler">
@@ -39,7 +40,9 @@
                 <i class="fa fa-close" aria-hidden="true"></i>
             </div>
             <!-- Logo -->
-            <div class="logo"><img src="<?=base_url()?>assets/img/core-img/logo.png" alt=""></a>
+            <div class="logo"><img src="<?=base_url()?>assets/img/core-img/logo.jpeg" alt=""></a><p>
+                <center><h4>JK STORE BALI </h4></center>
+
                 <a href="index.html"></a>
             </div>
             <!-- Amado Nav -->

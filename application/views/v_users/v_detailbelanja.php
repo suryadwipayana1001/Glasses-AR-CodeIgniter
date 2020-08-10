@@ -54,8 +54,10 @@
 										<p>Brand : <?php echo $i['brand_barang'];?></p>
 										<p>Lensa : <?php echo $i['lensa_barang'];?></p>
 										<p>Frame : <?php echo $i['frame_barang'];?></p>
+										<p>Deskripsi : <?php echo $i['deskripsi_barang'];?></p>
+										
 										<p><a href="<?=site_url('ar'.'?code='.$i['model_3d'])?>" class="btn btn-xs amado-btn">Coba AR</a></p>
-										<p>Deskripsi : <?php echo $i['deskripsi_barang'];?>
+
 									</h5>
 
 
@@ -64,6 +66,8 @@
 								</div>
 								
 							</div>
+						</div>
+
 
 							
 
@@ -79,9 +83,9 @@
 									</div>
 								</div>
 								<div class="mb-15">
-									<a href="<?=site_url('keranjang')?>" class="add_cart btn amado-btn" data-gambar="<?=base_url('assets/img/foto/'.$gambar=$i['gambar'])?>" data-placement="left" title="Add to Cart" data-id_barang="<?php echo $id_barang=$i['id_barang']?>" data-nama_barang="<?php echo $nama_barang=$i['nama_barang']?>" data-harga_barang="<?php echo $harga_barang=$i['harga_barang']?>"class="btn amado-btn">Add to cart</a>
+									<a href="<?=site_url('keranjang')?>" class="add_cart btn amado-btn" data-gambar="<?=base_url('assets/img/foto/'.$gambar=$i['gambar'])?>" data-placement="left" title="Add to Cart" data-id_barang="<?php echo $id_barang=$i['id_barang']?>" data-nama_barang="<?php echo $nama_barang=$i['nama_barang']?>" data-harga_barang="<?php echo $harga_barang=$i['harga_barang']?>"class="btn amado-btn">Tambah Keranjang</a>
 								</div>
-								<a href="<?=site_url('belanja')?>" class="btn amado-btn">kembali</a>
+								<a href="<?=site_url('belanja')?>" class="btn amado-btn">Kembali</a>
 							</form>
 						<?php endforeach;?>
 					</div>

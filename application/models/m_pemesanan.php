@@ -6,7 +6,7 @@ class m_pemesanan extends CI_Model{
 		return $hasil;
 	}
 	function show_pemesanan1($mulai, $halaman, $id_user){
-		$hasil=$this->db->query("SELECT * FROM tb_pemesanan WHERE id_user='$id_user' LIMIT $mulai, $halaman");
+		$hasil=$this->db->query("SELECT * FROM tb_pemesanan WHERE id_user='$id_user' ORDER BY id_pemesanan DESC LIMIT $mulai, $halaman ");
 		return $hasil;
 	}
 
@@ -18,10 +18,15 @@ class m_pemesanan extends CI_Model{
 		$hasil=$this->db->query("SELECT * FROM tb_pemesanan p INNER JOIN tb_user u on u.id_user=p.id_user WHERE id_pemesanan='$id_pemesanan'");
 		return $hasil;
 	}
+	function update_status($id_pemesanan){
+		$hasil=$this->db->query("UPDATE  tb_pemesanan SET baca='1' WHERE id_pemesanan='$id_pemesanan'");
+		return $hasil;	
+	}
 	function detail_pemesan($id_pemesanan){
 		$hasil=$this->db->query("SELECT * FROM tb_dipesan WHERE id_pemesanan='$id_pemesanan'");
 		return $hasil;
 	}
+
 
 	function hapus_pemesanan($id_pemesanan){
 		$hasil=$this->db->query("DELETE FROM tb_pemesanan WHERE	id_pemesanan='$id_pemesanan'");

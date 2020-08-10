@@ -13,10 +13,10 @@
                             <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/akunsaya/loginakun'?>"enctype="multipart/form-data" >
                                 <div class="row">
                                     <div class="col-md-12 mb-3">
-                                       Email <input type="text" class="form-control" name="email_user" value="" placeholder="Email" required>
+                                       Email <input type="text" class="form-control" name="email_user" value="" placeholder="Email" required oninvalid="this.setCustomValidity('Data Email tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
                                      <div class="col-md-12 mb-3">
-                                       Password <input type="text" class="form-control" name="password_user" value="" placeholder="Password" required>
+                                       Password <input type="password" class="form-control" name="password_user" value="" placeholder="Password" required oninvalid="this.setCustomValidity('Data Password tidak boleh kosong')" oninput="setCustomValidity('')">
                                     </div>
 
                                     <div class="col-6 mb-3">

@@ -20,12 +20,12 @@
              <div class="navbar-form navbar-right">
             <div class="form-group">
               <label>Dari Tanggal</label>
-              <input type="date" name="dari" class="form-control">
+              <input type="date" name="dari" class="form-control" required oninvalid="this.setCustomValidity('Dari Tanggal tidak boleh kosong')" oninput="setCustomValidity('')">
               <?php echo form_error('dari','<span class="text-small text-danger">','</span>')?>
             </div>
             <div class="form-group">
               <label>Sampai Tanggal</label>
-              <input type="date" name="sampai" class="form-control">
+              <input type="date" name="sampai" class="form-control" required oninvalid="this.setCustomValidity('Sampai Tanggal tidak boleh kosong')" oninput="setCustomValidity('')">
               <?php echo form_error('sampai','<span class="text-small text-danger">','</span>')?>
             </div>
             <button type="submit" class="btn  btn-sm btn-primary">Tampilkan Data</button>

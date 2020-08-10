@@ -38,7 +38,15 @@
                                         $id_pemesanan=$i['id_pemesanan'];
                                         ?>
                                         <tr class="odd gradeX">
-                                            <td><?php echo $no++?></td>
+                                            <td><?php echo $no++?> 
+                                            <?php 
+                                                if ($i['baca'] == 0) {
+                                            ?>
+                                            <strong>*</strong>
+                                            <?php
+                                            }
+                                            ?>
+                                            </td>
                                             <td><?php echo $i['nama_pemesanan'];?></td>
                                             <td><?php echo $i['alamat_pemesanan'];?>, <?php echo $i['kecamatan_pemesanan'];?>, <?php echo $i['kabupaten_pemesanan'];?>,  <?php echo $i['provinsi_pemesanan'];?>, <?php echo $i['kodepos_pemesanan'];?></td>
                                             <td><?php echo $i['tanggal_pemesanan']?></td>
@@ -81,22 +89,22 @@
                                        <?php if($status_pemesanan=='Menunggu Konfirmasi'):?>
                                         <option value="Menunggu Konfirmasi" selected>Menunggu Konfirmasi</option>
                                         <option value="Sedang di Proses">Sedang di Proses</option>
-                                        <option value="Sedang Dalam Perjalanan">Sedang Dalam Perjalanan</option>
+                                        <option value="Sedang dalam Perjalanan">Sedang dalam Perjalanan</option>
                                          <option value="Selesai">Selesai</option>
                                         <?php elseif($status_pemesanan=='Sedang di Proses'):?>
                                         <option value="Menunggu Konfirmasi">Menunggu Konfirmasi</option>
                                         <option value="Sedang di Proses" selected>Sedang di Proses</option>
-                                        <option value="Sedang Dalam Perjalanan">Sedang Dalam Perjalanan</option>
+                                        <option value="Sedang dalam Perjalanan">Sedang dalam Perjalanan</option>
                                          <option value="Selesai">Selesai</option>
                                          <?php elseif($status_pemesanan=='Sedang Dalam Perjalanan'):?>
                                         <option value="Menunggu Konfirmasi">Menunggu Konfirmasi</option>
                                         <option value="Sedang di Proses">Sedang di Proses</option>
-                                        <option value="Sedang Dalam Perjalanan" selected>Sedang Dalam Perjalanan</option>
+                                        <option value="Sedang dalam Perjalanan" selected>Sedang dalam Perjalanan</option>
                                         <option value="Selesai">Selesai</option>
                                          <?php elseif($status_pemesanan=='Selesai'):?>
                                         <option value="Menunggu Konfirmasi">Menunggu Konfirmasi</option>
                                         <option value="Sedang di Proses">Sedang di Proses</option>
-                                        <option value="Sedang Dalam Perjalanan" >Sedang Dalam Perjalanan</option>
+                                        <option value="Sedang dalam Perjalanan" >Sedang dalam Perjalanan</option>
                                         <option value="Selesai" selected>Selesai</option>
                                          <?php endif;?>
                                         </select>
