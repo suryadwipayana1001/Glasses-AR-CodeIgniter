@@ -88,24 +88,34 @@
                                         <select name="status_pemesanan" class="form-control input-sm">
                                        <?php if($status_pemesanan=='Menunggu Konfirmasi'):?>
                                         <option value="Menunggu Konfirmasi" selected>Menunggu Konfirmasi</option>
+                                        <option value="Data Struk Kurang Jelas">Data Struk Kurang Jelas</option>
                                         <option value="Sedang di Proses">Sedang di Proses</option>
                                         <option value="Sedang dalam Perjalanan">Sedang dalam Perjalanan</option>
-                                         <option value="Selesai">Selesai</option>
+                                        <option value="Selesai">Selesai</option>
                                         <?php elseif($status_pemesanan=='Sedang di Proses'):?>
                                         <option value="Menunggu Konfirmasi">Menunggu Konfirmasi</option>
+                                        <option value="Data Struk Kurang Jelas">Data Struk Kurang Jelas</option>
                                         <option value="Sedang di Proses" selected>Sedang di Proses</option>
                                         <option value="Sedang dalam Perjalanan">Sedang dalam Perjalanan</option>
-                                         <option value="Selesai">Selesai</option>
-                                         <?php elseif($status_pemesanan=='Sedang Dalam Perjalanan'):?>
+                                        <option value="Selesai">Selesai</option>
+                                         <?php elseif($status_pemesanan=='Sedang dalam Perjalanan'):?>
                                         <option value="Menunggu Konfirmasi">Menunggu Konfirmasi</option>
+                                        <option value="Data Struk Kurang Jelas">Data Struk Kurang Jelas</option>
                                         <option value="Sedang di Proses">Sedang di Proses</option>
                                         <option value="Sedang dalam Perjalanan" selected>Sedang dalam Perjalanan</option>
                                         <option value="Selesai">Selesai</option>
                                          <?php elseif($status_pemesanan=='Selesai'):?>
                                         <option value="Menunggu Konfirmasi">Menunggu Konfirmasi</option>
+                                        <option value="Data Struk Kurang Jelas">Data Struk Kurang Jelas</option>
                                         <option value="Sedang di Proses">Sedang di Proses</option>
                                         <option value="Sedang dalam Perjalanan" >Sedang dalam Perjalanan</option>
                                         <option value="Selesai" selected>Selesai</option>
+                                        <?php elseif($status_pemesanan=='Data Struk Kurang Jelas'):?>
+                                        <option value="Menunggu Konfirmasi">Menunggu Konfirmasi</option>
+                                        <option value="Data Struk Kurang Jelas"selected>Data Struk Kurang Jelas</option>
+                                        <option value="Sedang di Proses">Sedang di Proses</option>
+                                        <option value="Sedang dalam Perjalanan" >Sedang dalam Perjalanan</option>
+                                        <option value="Selesai">Selesai</option>
                                          <?php endif;?>
                                         </select>
                                         </div>

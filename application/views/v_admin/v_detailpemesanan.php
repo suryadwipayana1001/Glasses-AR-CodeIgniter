@@ -44,6 +44,11 @@
                     <th width="1%">:</th>
                     <td><?php echo $i['nama_pemesanan'] ?></td>
                 </tr>
+                 <tr>
+                    <th width="20%">No Hp </th>
+                    <th width="1%">:</th>
+                    <td><?php echo $i['nohp_pemesanan'] ?></td>
+                </tr>
                 <tr>
                     <th width="20%">Provinsi</th>
                     <th width="1%">:</th>

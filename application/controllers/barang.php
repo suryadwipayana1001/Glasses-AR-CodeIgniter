@@ -28,7 +28,7 @@ class barang extends CI_Controller{
 
 	function simpan_barang(){
 		$config['upload_path'] = './assets/img/foto/'; //path folder
-	    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+	    $config['allowed_types'] = 'jpg|png|jpeg'; //type yang dapat diakses bisa anda sesuaikan
 	    $config['encrypt_name'] = TRUE; //Enkripsi nama yang terupload
 	    
 	    $this->upload->initialize($config);
@@ -64,7 +64,7 @@ class barang extends CI_Controller{
 	        }else{
 	        	$this->session->set_flashdata('message','<div class="alert alert-danger alert-dismissible" role="alert">
 	                		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	                		Data Foto harus bertipe GIF|JPG|PNG|JPEG|BMP"
+	                		Data Foto harus bertipe JPG|PNG|JPEG"
 	                		</div>
 	                		');
 	        	redirect('barang');

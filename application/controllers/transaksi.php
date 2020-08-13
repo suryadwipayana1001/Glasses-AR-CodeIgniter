@@ -55,7 +55,7 @@ class transaksi extends CI_Controller{
 	    	$this->m_pemesanan->simpan_struk($id_pemesanan,$struk_pemesanan);
 	    // var_dump($id_pemesanan);
 		$config['upload_path'] = './assets/img/struk/'; //path folder
-	    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+	    $config['allowed_types'] = 'jpg|png|jpeg'; //type yang dapat diakses bisa anda sesuaikan
 	    $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
 	    $this->upload->initialize($config);
@@ -69,11 +69,16 @@ class transaksi extends CI_Controller{
 	    		$this->m_pemesanan->simpan_struk($id_pemesanan,$struk_pemesanan);
 	    		redirect('transaksi');
 	    	}else{
-	    		echo "Gambar Gagal Upload. Gambar harus bertipe gif|jpg|png|jpeg|bmp";
+			        	echo "Gagal Upload Struk, Data Struk Harus Bertipe JPG|PNG|JPEG"
+	                		;
+			
+
 	    	}
 
 	    }else{
-	    	echo "Gagal, gambar belum di pilih";
+	    	$struk_pemesanan=$this->input->post('gbr');
+	    	$this->m_pemesanan->simpan_struk($id_pemesanan,$struk_pemesanan);
+	    		redirect('transaksi');
 	    }
 	}
 
