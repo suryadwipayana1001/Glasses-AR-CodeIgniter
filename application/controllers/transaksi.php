@@ -85,6 +85,7 @@ class transaksi extends CI_Controller{
 
 	function tambah_struk(){
 		$id_pemesanan =  $this->uri->segment(3);
+		$x['data1']=$this->m_dipesan->detail_pemesan($id_pemesanan);
 		$x['data']=$this->m_pemesanan->detail_pemesanan($id_pemesanan);
 		$this->load->view("t_users/header");
 		$this->load->view("v_users/v_struk",$x);	

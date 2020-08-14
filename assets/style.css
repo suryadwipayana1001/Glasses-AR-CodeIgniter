@@ -74,3 +74,15 @@
 .detailtransaksi tbody{
    background-color: #f5f7fa !important;
 }
+.struk td {
+        font-size: 15px !important;
+        flex: 0 0 30% !important;
+        width: 30% !important;
+        max-width: 30% !important;
+    }
+    .struk1 td,th {
+        font-size: 14px !important;
+        flex: 0 0 20% !important;
+        width: 20% !important;
+        max-width: 20% !important;
+    }

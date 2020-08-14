@@ -68,7 +68,7 @@
                     <input type="text" class="form-control" name="nama_pemesanan" value="<?php echo $i['nohp_pemesanan']?>" readonly>
                   </div>
                   <div class="col-12 mb-3">
-                   <a href="<?=site_url('transaksi')?>" class="btn amado-btn w-100">Kembali</a>
+                  <button type="button" class="btn amado-btn w-100" onclick="javascript:history.back()">Kembali</button> 
                  </div>
                </div>
              </form>
@@ -83,10 +83,10 @@
             <?php
             foreach ($data->result_array()as $i):
               ?>
-              <li><span>Subtotal : </span> <span id="subtotal">Rp.<?php echo$i['subtotal_pemesanan'];?></span></li>
-              <li><span>Kurir : </span><span><?php echo$i['kurir_pemesanan']?></span></li>
-              <li><span>Ongkos Kirim : </span> <span>Rp.<?php echo $i['ongkir_pemesanan'];?></span></li>
-              <li><span>Total : </span><span>Rp.<?php echo$i['total_pemesanan']?></span></li>
+              <li><span>Subtotal : </span> <span id="subtotal"><?php echo 'Rp ' .number_format($i['subtotal_pemesanan']);?></span></li>
+              <li><span>Kurir : </span><span><?php echo strtoupper($i['kurir_pemesanan'])?></span></li>
+              <li><span>Ongkos Kirim : </span> <span><?php echo  'Rp ' .number_format($i['ongkir_pemesanan']);?></span></li>
+              <li><span>Total : </span><span><?php echo  'Rp ' .number_format($i['total_pemesanan'])?></span></li>
               <li><span>Status : </span><span><?php echo$i['status_pemesanan']?></span></li>
               <li><span>Struk : </span><span><img src="<?=base_url('assets/img/struk/'.$i['struk_pemesanan'])?>" width="270px"></span></li>
               <li><span>No Resi : </span><span><?php echo$i['resi_pemesanan']?></span></li>
