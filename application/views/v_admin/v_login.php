@@ -16,11 +16,11 @@
                     <h3 class="text-center title-login"> <h4 style="font-weight: bold; color:white">Login <em class="glyphicon glyphicon-user"></em></h4></h3>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" name="email_user" placeholder="Email" required oninvalid="this.setCustomValidity('Email tidak boleh kosong')" oninput="setCustomValidity('')">>
+                        <input type="text" class="form-control" name="email_user" placeholder="Email" required oninvalid="this.setCustomValidity('Email tidak boleh kosong')" oninput="setCustomValidity('')">
                     </div>
 
                     <div class="form-group">
-                        <input type="password" class="form-control" name="password_user" placeholder="Password" required oninvalid="this.setCustomValidity('Password tidak boleh kosong')" oninput="setCustomValidity('')">>
+                        <input type="password" class="form-control" name="password_user" placeholder="Password" required oninvalid="this.setCustomValidity('Password tidak boleh kosong')" oninput="setCustomValidity('')">
                     </div>
 
                     <input type="submit" class="btn btn-block btn-custom-green" value="LOGIN" />

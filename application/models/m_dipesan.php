@@ -21,7 +21,7 @@ class m_dipesan extends CI_Model{
 		return $hasil;
 	}
 	function laporan_dipesan2(){
-		$hasil=$this->db->query("SELECT t.nama_barang,SUM(t.jumlah_dipesan)jumlah_dipesan,SUM(t.totalharga_dipesan)totalharga_dipesan from (SELECT b.id_barang,b.nama_barang,p.id_user,p.status_pemesanan,d.jumlah_dipesan,d.totalharga_dipesan FROM tb_dipesan d Inner JOIN tb_barang b on d.id_barang=b.id_barang inner JOIN tb_pemesanan p on d.id_pemesanan=p.id_pemesanan ) as t Inner JOIN tb_user u on t.id_user=u.id_user WHERE u.level_user='Customer' AND(t.status_pemesanan='Sedang di Proses' OR t.status_pemesanan= 'Sedang dalam Perjalanan' OR t.status_pemesanan='Selesai') group by t.id_barang");
+		$hasil=$this->db->query("SELECT t.nama_barang,SUM(t.jumlah_dipesan)jumlah_dipesan,SUM(t.totalharga_dipesan)totalharga_dipesan from (SELECT b.id_barang,b.nama_barang,p.id_user,p.status_pemesanan,d.jumlah_dipesan,d.totalharga_dipesan FROM tb_dipesan d Inner JOIN tb_barang b on d.id_barang=b.id_barang inner JOIN tb_pemesanan p on d.id_pemesanan=p.id_pemesanan ) as t Inner JOIN tb_user u on t.id_user=u.id_user WHERE u.level_user='Customer' AND(t.status_pemesanan='Sedang di Proses' OR t.status_pemesanan= 'Sedang Dalam Perjalanan' OR t.status_pemesanan='Selesai') group by t.id_barang");
 		return $hasil;
 	}
 	function laporan_dipesanfilter($dari, $sampai){
