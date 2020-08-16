@@ -73,7 +73,7 @@
 								$k = "kos";?>
 								<div data-kosong="yes" class="kos alert alert-danger alert-dismissible" role="alert">
 		                		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		                		Untuk dapat melanjutkan Checkout silahkan hapus data Barang yang Stok Tidak Tersedia
+		                		Untuk dapat melanjutkan Checkout silahkan hapus data produk yang stoknya telah Tidak Tersedia
 		                		</div>
 		                		<?php 
 								foreach ($stokkos as $kosong) {

@@ -126,7 +126,7 @@
             <tr>
                 <th width="20%">Struk</th>
                 <th width="1%">:</th>
-                <td><img src="<?=base_url('assets/img/struk/'.$i['struk_pemesanan'])?>" width="300"></td>
+                <td data-toggle="modal" data-target="#exampleModal"><img src="<?=base_url('assets/img/struk/'.$i['struk_pemesanan'])?>" width="300"></td>
             </tr>  
             <tr>
                 <th width="20%">No Resi</th>
@@ -139,9 +139,24 @@
     <!-- /.row (nested) -->
 </div>
 
-
-
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel"></h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="<?=base_url('assets/img/struk/'.$i['struk_pemesanan'])?>" width="100%">
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
 <th width="100%"></th>
 <td><a href="<?=site_url('pemesanan')?>"  class="btn btn-danger">Kembali</a></td>
 </table>

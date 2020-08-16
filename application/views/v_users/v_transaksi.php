@@ -8,6 +8,7 @@
             <div class="">
                 <div class="cart-title mt-50">
                     <h2>Transaksi</h2>
+                     <?php echo $this->session->flashdata('message');?>
                 </div>
                 <div class=" keranjang">
                     <table class="table table-responsive transaksi">
@@ -34,7 +35,7 @@
                                 <td><img src="<?=base_url('assets/img/struk/'.$i['struk_pemesanan'])?>"></td>
                                 <td><?php echo $status_pemesanan=$i['status_pemesanan'];?></td>
                                 <td>
-                                 <a href="<?=site_url('transaksi/tambah_struk/'.$i['id_pemesanan'])?>"  class="tulisbtn btn btn-warning btn-xs"><i class="fa fa-file-o "></i>Kelola Struk</a> <div class="mt-2"></div>
+                                 <a href="<?=site_url('transaksi/tambah_struk/'.$i['id_pemesanan'])?>"  class="tulisbtn btn btn-warning btn-xs"><i class="fa fa-file-o "></i>Pembayaran</a> <div class="mt-2"></div>
                                   <a href="<?=site_url('transaksi/detail/'.$i['id_pemesanan'])?>"  class="tulisbtn btn btn-warning btn-xs"><i class="fa fa-check-square-o"></i>Detail Transaksi</a><div class="mt-2">  </div>
                                    <a href="<?=site_url('transaksi/invoice/'.$i['id_pemesanan'])?>"  target="_blank"  class="tulisbtn btn btn-warning btn-xs"><i class="fa fa-file-text-o"></i>Cetak  Invoice</a>
                                

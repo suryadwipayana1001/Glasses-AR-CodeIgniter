@@ -7,6 +7,8 @@
   					<h2>Pembayaran</h2>
   				</div>
 
+            <h5>Silahkan melakukan pembayaran pada No REK BCA 171723123123123 dan tambahkan bukti pembayaran pada form tambah struk</h5>
+            <hr>
   				<div class="cart-table clearfix struk ">
   					<table class="table table-responsive">
 
@@ -40,6 +42,7 @@
   						</tbody>
   					</table>
   				</div>
+
   				<div class="cart-title mt-50">
   					<h2>Produk</h2>
   				</div>
@@ -71,11 +74,13 @@
   							<?php endforeach;?>
   						</tbody>
   					</table>
+
   				</div>
   			</div>
   			<div class="col-12 col-lg-4">
   				<div class="cart-summary">
-  					<h2>Kelola Struk</h2>
+          
+  					<h5>Form Tambah Struk</h5>
   					<?php foreach($data->result_array() as $i):
   						?>
   						<form class="form-horizontal" action="<?php echo base_url().'index.php/transaksi/simpan_struk'?>" method="post" enctype="multipart/form-data">

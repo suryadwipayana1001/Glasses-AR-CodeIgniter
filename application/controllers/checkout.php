@@ -83,15 +83,14 @@ class checkout extends CI_Controller{
 		$this->m_pemesanan->simpan_pemesanan($user,$nama_pemesanan,$provinsi_pemesanan,$kabupaten_pemesanan,$kecamatan_pemesanan,$alamat_pemesanan,$kodepos_pemesanan,$nohp_pemesanan,$kurir_pemesanan,$ongkir_pemesanan,$status_pemesanan,$struk_pemesanan,$tanggal_pemesanan,$subtotal_pemesanan,$total_pemesanan);
 
 		$this->cart->destroy();
-	redirect('checkout/berhasil');
+		$this->session->set_flashdata('message','<div class="alert alert-success alert-dismissible" role="alert">
+	                		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	                		 Pesanan anda telah berhasil ditambahkan dan untuk melanjutkan proses transaksi dapat memilih menu Pembayaran
+	                		</div>
+	                		');
+	redirect('transaksi');
 	}
-	public function berhasil()
-	{
-		$this->load->view("t_users/header");
-		$this->load->view("v_users/v_berhasil");		
-		$this->load->view("t_users/footer");
-
-	}
+	
 	public function get_provinsi()
 	{
 		$provinces = $this->rajaongkir->province();
