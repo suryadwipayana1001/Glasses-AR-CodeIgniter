@@ -92,14 +92,10 @@
 							}
 
   							?>
-
-  							
-
   						</tbody>
   					</table>
   				</div>
   			</div>
-
   			<div class="col-12 col-lg-4">
   				<div class="cart-summary">
   					<h5>Cart Total</h5>

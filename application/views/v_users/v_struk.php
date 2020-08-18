@@ -7,7 +7,7 @@
   					<h2>Pembayaran</h2>
   				</div>
 
-            <h5>Silahkan melakukan pembayaran pada No REK BCA 171723123123123 dan tambahkan bukti pembayaran pada form tambah struk</h5>
+            <h5>Silahkan melakukan pembayaran pada No REK BNI 023 827 2088 dan tambahkan bukti pembayaran pada form tambah struk</h5>
             <hr>
   				<div class="cart-table clearfix struk ">
   					<table class="table table-responsive">

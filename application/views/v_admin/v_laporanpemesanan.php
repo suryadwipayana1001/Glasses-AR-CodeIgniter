@@ -122,7 +122,7 @@
                                    <th>Total Harga Barang</th>
                                </tr>
                                <tr>
-                                <td><?php echo 'Rp.'.number_format($totaljumlah)?></td>
+                                <td><?php echo ($totaljumlah)?></td>
                                 <td><?php echo 'Rp.'.number_format($total)?></td>
                             </tr>
                         </table>

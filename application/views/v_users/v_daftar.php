@@ -20,7 +20,7 @@
                                    Email <input type="email" class="form-control" name="email_user" value="" placeholder="Email" required oninvalid="this.setCustomValidity('Masukan Alamat Email dengan benar atau Email tidak boleh kosong')" oninput="setCustomValidity('')">
                                </div>
                                <div class="col-md-12 mb-3">
-                                   Password <input type="password" class="form-control" name="password_userz" value="" placeholder="Password" required oninvalid="this.setCustomValidity('Password tidak boleh kosong')" oninput="setCustomValidity('')">
+                                   Password <input type="password" class="form-control" name="password_user" value="" placeholder="Password" required oninvalid="this.setCustomValidity('Password tidak boleh kosong')" oninput="setCustomValidity('')">
                                </div>
 
                                <!--  <div class="col-md-12 mb-3">

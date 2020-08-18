@@ -94,6 +94,11 @@ class barang extends CI_Controller{
 	    		$gbr = $this->upload->data();
 	                $gambar=$gbr['file_name']; //Mengambil file name dari gambar yang diupload
 	                $this->m_barang->edit_barang($id_barang,$nama_barang, $jumlah_barang,$harga_barang,$gambar,$brand_barang,$lensa_barang,$frame_barang,$deskripsi_barang,$model_3d);
+	                $this->session->set_flashdata('message','<div class="alert alert-info alert-dismissible" role="alert">
+	        		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        		Data Berhasil Dirubah
+	        		</div>
+	        		');
 	                redirect('barang');
 	            }else{
 	            	echo "Gambar Gagal Upload. Gambar harus bertipe gif|jpg|png|jpeg|bmp";

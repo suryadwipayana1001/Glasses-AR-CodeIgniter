@@ -99,7 +99,7 @@
                             </table>  
                             <tr>
                                 <table class="table table-striped table-bordered table-hover">
-                                   <th>Total Jumlah barang:</th>
+                                   <th>Total Jumlah Barang</th>
                                    <th>Total Harga Barang</th>
                                </tr>
                                <tr>

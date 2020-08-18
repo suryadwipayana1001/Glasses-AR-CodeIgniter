@@ -122,11 +122,13 @@
                                     <div class="col-xs-8">
                                         <select name="model_3d" class="form-control input-sm" >
                                             <option value="">--Pilih Model 3D--</option>
-                                            <option value="rayban_andy_havane_orange_flash">rayban_andy_havane_orange_flash</option>
-                                            <option value="rayban_caravan_or_vert_flash">rayban_caravan_or_vert_flash</option>
-                                            <option value="rayban_wayfarer_havane_vert">rayban_wayfarer_havane_vert</option>
-                                            <option value="rayban_round_gun_vert">rayban_round_gun_vert</option>
-                                            <option value="rayban_erika_noir_grisDegrade">rayban_erika_noir_grisDegrade</option>
+                                            <option value="rayban_andy_havane_orange_flash">Rayban Andy Havane Orange Flash</option>
+                                            <option value="rayban_caravan_or_vert_flash">Rayban Caraven Or Vert Flash</option>
+                                            <option value="rayban_wayfarer_havane_vert">Rayban Wayfarer Havane Vert</option>
+                                            <option value="rayban_round_gun_vert">Rayban Round Gun Vert</option>
+                                            <option value="rayban_erika_noir_grisDegrade">Rayban Erika Noir Gris Degrade</option>
+                                            <option value="carrera_113S_blue">Carrera 113/S Blue D6K KU</option>
+                                            <option value="carrera_6008_black_brown">Carrera 6008 Black Brown ANS 70</option>
                                         </select>
                                     </div>
                                 </div>
@@ -218,35 +220,67 @@
                                     <div class="col-xs-8">
                                         <select name="model_3d" class="form-control input-sm" >
                                             <?php if($model_3d=='rayban_andy_havane_orange_flash'):?>
-                                            <option value="rayban_andy_havane_orange_flash" selected>rayban_andy_havane_orange_flash</option>
-                                            <option value="rayban_caravan_or_vert_flash">rayban_caravan_or_vert_flash</option>
-                                            <option value="rayban_wayfarer_havane_vert">rayban_wayfarer_havane_vert</option>
-                                            <option value="rayban_round_gun_vert">rayban_round_gun_vert</option>
-                                            <option value="rayban_erika_noir_grisDegrade">rayban_erika_noir_grisDegrade</option>
+                                            <option value="rayban_andy_havane_orange_flash" selected>Rayban Andy Havane Orange Flash</option>
+                                            <option value="rayban_caravan_or_vert_flash">Rayban Caraven Or Vert Flash</option>
+                                            <option value="rayban_wayfarer_havane_vert">Rayban Wayfarer Havane Vert</option>
+                                            <option value="rayban_round_gun_vert">Rayban Round Gun Vert</option>
+                                            <option value="rayban_erika_noir_grisDegrade">Rayban Erika Noir Gris Degrade</option>
+                                             <option value="carrera_113S_blue">Carrera 113/S Blue D6K KU</option>
+                                             <option value="carrera_6008_black_brown">Carrera 6008 Black Brown ANS 70</option>
+
                                              <?php elseif($model_3d=='rayban_caravan_or_vert_flash'):?>
-                                            <option value="rayban_andy_havane_orange_flash">rayban_andy_havane_orange_flash</option>
-                                            <option value="rayban_caravan_or_vert_flash" selected >rayban_caravan_or_vert_flash</option>
-                                            <option value="rayban_wayfarer_havane_vert">rayban_wayfarer_havane_vert</option>
-                                            <option value="rayban_round_gun_vert">rayban_round_gun_vert</option>
-                                            <option value="rayban_erika_noir_grisDegrade">rayban_erika_noir_grisDegrade</option>
+                                            <option value="rayban_andy_havane_orange_flash">Rayban Andy Havane Orange Flash</option>
+                                            <option value="rayban_caravan_or_vert_flash" selected >Rayban Caraven Or Vert Flash</option>
+                                            <option value="rayban_wayfarer_havane_vert">Rayban Wayfarer Havane Vert</option>
+                                            <option value="rayban_round_gun_vert">Rayban Round Gun Vert</option>
+                                            <option value="rayban_erika_noir_grisDegrade">Rayban Erika Noir Gris Degrade</option>
+                                            <option value="carrera_113S_blue">Carrera 113/S Blue D6K KU</option>
+                                            <option value="carrera_6008_black_brown">Carrera 6008 Black Brown ANS 70</option>
+
                                              <?php elseif($model_3d=='rayban_wayfarer_havane_vert'):?>
-                                            <option value="rayban_andy_havane_orange_flash">rayban_andy_havane_orange_flash</option>
-                                            <option value="rayban_caravan_or_vert_flash" >rayban_caravan_or_vert_flash</option>
-                                            <option value="rayban_wayfarer_havane_vert" selected>rayban_wayfarer_havane_vert</option>
-                                            <option value="rayban_round_gun_vert">rayban_round_gun_vert</option>
-                                            <option value="rayban_erika_noir_grisDegrade">rayban_erika_noir_grisDegrade</option>
+                                            <option value="rayban_andy_havane_orange_flash">Rayban Andy Havane Orange Flash</option>
+                                            <option value="rayban_caravan_or_vert_flash">Rayban Caraven Or Vert Flash</option>
+                                            <option value="rayban_wayfarer_havane_vert" selected>Rayban Wayfarer Havane Vert</option>
+                                            <option value="rayban_round_gun_vert">Rayban Round Gun Vert</option>
+                                            <option value="rayban_erika_noir_grisDegrade">Rayban Erika Noir Gris Degrade</option>
+                                            <option value="carrera_113S_blue">Carrera 113/S Blue D6K KU</option>
+                                            <option value="carrera_6008_black_brown">Carrera 6008 Black Brown ANS 70</option>
+
                                             <?php elseif($model_3d=='rayban_round_gun_vert'):?>
-                                            <option value="rayban_andy_havane_orange_flash">rayban_andy_havane_orange_flash</option>
-                                            <option value="rayban_caravan_or_vert_flash" >rayban_caravan_or_vert_flash</option>
-                                            <option value="rayban_wayfarer_havane_vert">rayban_wayfarer_havane_vert</option>
-                                            <option value="rayban_round_gun_vert" >rayban_round_gun_vert</option>
-                                            <option value="rayban_erika_noir_grisDegrade">rayban_erika_noir_grisDegrade</option>
-                                            <?php elseif($model_3d=='rayban_round_gun_vert'):?>
-                                            <option value="rayban_andy_havane_orange_flash">rayban_andy_havane_orange_flash</option>
-                                            <option value="rayban_caravan_or_vert_flash" >rayban_caravan_or_vert_flash</option>
-                                            <option value="rayban_wayfarer_havane_vert">rayban_wayfarer_havane_vert</option>
-                                            <option value="rayban_round_gun_vert"  selected >rayban_round_gun_vert</option>
-                                            <option value="rayban_erika_noir_grisDegrade"  selected >rayban_erika_noir_grisDegrade</option>
+                                            <option value="rayban_andy_havane_orange_flash">Rayban Andy Havane Orange Flash</option>
+                                            <option value="rayban_caravan_or_vert_flash">Rayban Caraven Or Vert Flash</option>
+                                            <option value="rayban_wayfarer_havane_vert">Rayban Wayfarer Havane Vert</option>
+                                            <option value="rayban_round_gun_vert"selected>Rayban Round Gun Vert</option>
+                                            <option value="rayban_erika_noir_grisDegrade">Rayban Erika Noir Gris Degrade</option>
+                                            <option value="carrera_113S_blue">Carrera 113/S Blue D6K KU</option>
+                                            <option value="carrera_6008_black_brown">Carrera 6008 Black Brown ANS 70</option>
+
+                                             <?php elseif($model_3d=='rayban_erika_noir_grisDegrade'):?>
+                                            <option value="rayban_andy_havane_orange_flash">Rayban Andy Havane Orange Flash</option>
+                                            <option value="rayban_caravan_or_vert_flash">Rayban Caraven Or Vert Flash</option>
+                                            <option value="rayban_wayfarer_havane_vert">Rayban Wayfarer Havane Vert</option>
+                                            <option value="rayban_round_gun_vert">Rayban Round Gun Vert</option>
+                                            <option value="rayban_erika_noir_grisDegrade"selected>Rayban Erika Noir Gris Degrade</option>
+                                            <option value="carrera_113S_blue">Carrera 113/S Blue D6K KU</option>
+                                            <option value="carrera_6008_black_brown">Carrera 6008 Black Brown ANS 70</option>
+
+                                            <?php elseif($model_3d=='carrera_113S_blue'):?>
+                                            <option value="rayban_andy_havane_orange_flash">Rayban Andy Havane Orange Flash</option>
+                                            <option value="rayban_caravan_or_vert_flash">Rayban Caraven Or Vert Flash</option>
+                                            <option value="rayban_wayfarer_havane_vert">Rayban Wayfarer Havane Vert</option>
+                                            <option value="rayban_round_gun_vert">Rayban Round Gun Vert</option>
+                                            <option value="rayban_erika_noir_grisDegrade">Rayban Erika Noir Gris Degrade</option>
+                                            <option value="carrera_113S_blue"selected>Carrera 113/S Blue D6K KU</option>
+                                            <option value="carrera_6008_black_brown">Carrera 6008 Black Brown ANS 70</option>
+
+                                             <?php elseif($model_3d=='carrera_6008_black_brown'):?>
+                                            <option value="rayban_andy_havane_orange_flash">Rayban Andy Havane Orange Flash</option>
+                                            <option value="rayban_caravan_or_vert_flash">Rayban Caraven Or Vert Flash</option>
+                                            <option value="rayban_wayfarer_havane_vert">Rayban Wayfarer Havane Vert</option>
+                                            <option value="rayban_round_gun_vert">Rayban Round Gun Vert</option>
+                                            <option value="rayban_erika_noir_grisDegrade">Rayban Erika Noir Gris Degrade</option>
+                                            <option value="carrera_113S_blue">Carrera 113/S Blue D6K KU</option>
+                                            <option value="carrera_6008_black_brown"selected>Carrera 6008 Black Brown ANS 70</option>
                                                <?php endif;?>
                                         </select>
                                     </div>
